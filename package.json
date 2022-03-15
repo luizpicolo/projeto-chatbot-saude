@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "projeto-chatbot-123",
+=======
+  "name": "projeto-chatbot-saude",
+>>>>>>> 90b12da4b64067cff7ab47770d1243417f927a70
   "version": "0.0.0",
   "private": true,
   "scripts": {
