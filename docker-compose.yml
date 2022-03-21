@@ -12,9 +12,12 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
   web:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - .:/app
+      - node_modules:/app/node_modules
     ports:
       - 3000:3000
     command: "npm start --host 0.0.0.0"
@@ -23,3 +26,4 @@ services:
 
 volumes:
   postgres-data:
+  node_modules:
