@@ -19,7 +19,7 @@ module.exports = {
       },
       usuario_id:{
         type: DataTypes.INTEGER,
-        references: {         // relação de 1:N com a tabela "Usuário"
+        references: {         
           model: 'usuarios',
           key: 'id'
         }

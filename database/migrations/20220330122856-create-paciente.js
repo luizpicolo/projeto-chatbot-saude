@@ -31,7 +31,7 @@ module.exports = {
       },
       esf_id:{
         type: DataTypes.INTEGER,
-        references: {         // relação de 1:N com a tabela "ESFS"
+        references: {         
           model: 'esfs',
           key: 'id'
         }
