@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async  (queryInterface, DataTypes) => {
-    await queryInterface.createTable('agendamentoConsultas', {
+    await queryInterface.createTable('agendamento_consultas', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,24 +13,23 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
       },
-      pacientes_id:{
+      paciente_id:{
         type: DataTypes.INTEGER,
         references: {         
-          //model: 'pacientes',
+          model: 'pacientes',
           key: 'id'
         }
       },
-      esfs_id:{
+      esf_id:{
         type: DataTypes.INTEGER,
         references: {         
-          //model: 'esfs',
+          model: 'esfs',
           key: 'id'
         }
       }
     })
   },
-
   down: async (queryInterface)=>{
-    return queryInterface.dropTable('agendamentoConsultas');
+    return queryInterface.dropTable('agendamento_consultas');
   }
 };

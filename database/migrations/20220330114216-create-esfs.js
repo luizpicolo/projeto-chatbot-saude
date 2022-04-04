@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      name: {
+      nome: {
         allowNull: false,
         type: DataTypes.STRING,
       },
@@ -17,18 +17,15 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      usuarios_id:{
+      usuario_id:{
         type: DataTypes.INTEGER,
         references: {         // relação de 1:N com a tabela "Usuário"
-          //model: 'usuario',
+          model: 'usuarios',
           key: 'id'
         }
       }
-
-
     })
   },
-
   down: async (queryInterface)=>{
     return queryInterface.dropTable('esfs');
   }

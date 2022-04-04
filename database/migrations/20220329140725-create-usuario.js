@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      name: {
+      nome: {
         allowNull: false,
         type: DataTypes.STRING,
       },
@@ -17,11 +17,8 @@ module.exports = {
         allowNull: false,
         type: DataTypes.INTEGER,
       },
-
     })
-    
   },
-
   down: async (queryInterface)=>{
     return queryInterface.dropTable('usuarios');
   }

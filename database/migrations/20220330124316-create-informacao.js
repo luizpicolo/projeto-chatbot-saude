@@ -21,18 +21,15 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      usuarios_id:{
+      usuario_id:{
         type: DataTypes.INTEGER,
         references: {         // relação de 1:N com a tabela "ESFS"
-          //model: 'usuario',
+          model: 'usuarios',
           key: 'id'
         }
       }
-
-
     })
   },
-
   down: async (queryInterface)=>{
     return queryInterface.dropTable('informacoes');
   }
