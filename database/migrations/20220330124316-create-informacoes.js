@@ -27,15 +27,7 @@ module.exports = {
           model: 'usuarios',
           key: 'id'
         }
-      },
-      createdAt: {
-        allowNull: false,
-        type: DataTypes.DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: DataTypes.DATE,
-      },
+      }
     })
   },
   down: async (queryInterface)=>{
