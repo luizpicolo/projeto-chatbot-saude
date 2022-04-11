@@ -9,6 +9,9 @@ var usuariosRouter = require('./routes/usuarios');
 
 var app = express();
 
+// AdminJS
+app.use("/admin", require("./admin"))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
