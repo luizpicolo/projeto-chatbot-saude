@@ -1,5 +1,3 @@
-![alt](https://pictec.ledes.net/img/fundect.png)
-
 # Projeto Fundect - Pictec
 Programa de Iniciação Científica e Tecnológica de Mato Grosso do Sul
 
@@ -27,9 +25,3 @@ Luiz Fernando Picolo
 **Bolsistas:**
 Guilherme Ferreira Tombini, 
 Rafael de Andrade Albuquerque dos Santos
-
-# Instalação 
-
-Usando Docker
-
-    git clone 
