@@ -15,7 +15,7 @@ module.exports = {
       },
       admin: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.BOOLEAN,
       },
     })
   },
