@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const { User } = require('../app/models');
+const { Usuario } = require('../app/models');
 
 //Listar todos
 router.get('/', async (req, res) => {
-  const users = await User.findAll();
-  res.json(users);
+  const usuarios = await Usuario.findAll();
+  res.json(usuarios);
 }); 
 
 router.post('/', (req, res) => {}); // Criar
