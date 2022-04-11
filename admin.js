@@ -8,10 +8,14 @@ const { Usuario, Esf } = require('./app/models/');
 
 const adminJs = new AdminJS({
   databases: [], 
-  resources: [Usuario, Esf],
+  resources: [
+    Usuario,
+    Esf
+  ],
   rootPath: '/admin',
 })
 
+//module.exports = adminRouter = AdminBroExpress.buildRouter(adminBro)
 module.exports = adminRouter = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
   authenticate: async (email, password) => {
     const usuario = await Usuario.findOne({ email })
