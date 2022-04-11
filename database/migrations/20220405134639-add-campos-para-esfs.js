@@ -5,10 +5,12 @@ module.exports = {
     await queryInterface.addColumn('esfs', 'createdAt', {
       allowNull: false,
       type: DataTypes.DATE,
+      defaultValue: DataTypes.fn('NOW')
     });
     await queryInterface.addColumn('esfs', 'updatedAt', {
       allowNull: false,
       type: DataTypes.DATE,
+      defaultValue: DataTypes.fn('NOW')
     });
   },
 

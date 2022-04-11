@@ -14,10 +14,12 @@ module.exports = {
     await queryInterface.addColumn('usuarios', 'createdAt', {
       allowNull: false,
       type: DataTypes.DATE,
+      defaultValue: DataTypes.fn('NOW')
     });
     await queryInterface.addColumn('usuarios', 'updatedAt', {
       allowNull: false,
       type: DataTypes.DATE,
+      defaultValue: DataTypes.fn('NOW')
     });
   },
 

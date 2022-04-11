@@ -5,10 +5,12 @@ module.exports = {
     await queryInterface.addColumn('pacientes', 'createdAt', {
       allowNull: false,
       type: DataTypes.DATE,
+      defaultValue: DataTypes.fn('NOW')
     });
     await queryInterface.addColumn('pacientes', 'updatedAt', {
       allowNull: false,
       type: DataTypes.DATE,
+      defaultValue: DataTypes.fn('NOW')
     });
   },
 
