@@ -18,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-  esfs.associate = function(models) {
-    esfs.hasMany(models.Usuario, { foreignKey: 'usuario_id', as: 'usuario' });
+  Esf.associate = function(models) {
+    Esf.hasMany(models.Usuario, { foreignKey: 'id', as: 'usuario' });
   }
 
   Esf.model_name = function () {
