@@ -4,11 +4,11 @@ const AdminJSSequelize = require('@adminjs/sequelize')
 var bcrypt = require('bcryptjs');
 AdminJS.registerAdapter(AdminJSSequelize)
 
-const { Usuario, Esf, Paciente, Informacao, Agendamento_consultas  } = require('./app/models/');
+const { Usuario, Esf, Paciente, Informacao, AgendamentoConsulta  } = require('./app/models/');
 
 const adminJs = new AdminJS({
   databases: [], 
-  resources: [Usuario, Esf, Paciente, Informacao, Agendamento_consultas ],
+  resources: [Usuario, Esf, Paciente, Informacao, AgendamentoConsulta],
   rootPath: '/admin',
 })
 
