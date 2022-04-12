@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Esf.associate = function(models) {
     Esf.hasMany(models.Usuario, { foreignKey: 'id', as: 'usuario' });
-  }
+  };
 
   Esf.model_name = function () {
     return model_name
