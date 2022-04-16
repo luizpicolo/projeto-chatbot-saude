@@ -1,28 +1,26 @@
 const AdminJS = require('adminjs')
 const AdminJSExpress = require('@adminjs/express')
 const AdminJSSequelize = require('@adminjs/sequelize')
-var bcrypt = require('bcryptjs');
+const options = require('./config/options.js');
 AdminJS.registerAdapter(AdminJSSequelize)
 
-const { Usuario, Esf, Paciente, Informacao, AgendamentoConsulta  } = require('./app/models/');
+const adminJs = new AdminJS(options)
 
-const adminJs = new AdminJS({
-  databases: [], 
-  resources: [Usuario, Esf, Paciente, Informacao, AgendamentoConsulta],
-  rootPath: '/admin',
-})
-
-module.exports = adminRouter = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
-  authenticate: async (email, password) => {
-    const usuario = await Usuario.findOne({ email })
-    if (usuario) {
-      const matched = await bcrypt.compare(password, usuario.password)
-      if (matched) {
-        return usuario
+if (process.env.ENV == 'production'){
+  module.exports = adminRouter = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
+    authenticate: async (email, password) => {
+      const usuario = await Usuario.findOne({ email })
+      if (usuario) {
+        const matched = await bcrypt.compare(password, usuario.password)
+        if (matched) {
+          return usuario
+        }
       }
-    }
-    return false
-  },
-  cookieName: 'adminjs',
-  cookiePassword: 'some-secret-password-used-to-secure-cookie',
-})
+      return false
+    },
+    cookieName: 'adminjs',
+    cookiePassword: 'some-secret-password-used-to-secure-cookie',
+  })
+} else {
+  module.exports = adminRouter = AdminJSExpress.buildRouter(adminJs);
+}
