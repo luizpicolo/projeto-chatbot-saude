@@ -20,13 +20,6 @@ module.exports = {
       tipo: {
         allowNull: false,
         type: DataTypes.STRING,
-      },
-      usuario_id:{
-        type: DataTypes.INTEGER,
-        references: {         
-          model: 'usuarios',
-          key: 'id'
-        }
       }
     })
   },

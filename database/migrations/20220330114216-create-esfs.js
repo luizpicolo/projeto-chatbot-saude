@@ -13,16 +13,13 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      cnpj: {
+      email: {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      usuario_id:{
-        type: DataTypes.INTEGER,
-        references: {         
-          model: 'usuarios',
-          key: 'id'
-        }
+      cnpj: {
+        allowNull: false,
+        type: DataTypes.STRING,
       }
     })
   },

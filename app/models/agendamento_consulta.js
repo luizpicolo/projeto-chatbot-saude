@@ -1,32 +1,24 @@
+const Paciente = require('../models/paciente');
+const ESF = require('../models/esf');
+
 module.exports = (sequelize, DataTypes) => {
   
-    const table_name = 'Agendamento_consultas';
-    const model_name = 'Agendamento_consulta';
+    const table_name = 'agendamento_consultas';
+    const model_name = 'AgendamentoConsulta';
   
-    const Agendamento_consulta = sequelize.define(table_name, {
+    const AgendamentoConsulta = sequelize.define(table_name, {      
       data_agendamento: {
         type: DataTypes.DATE,
       },
     });
   
-    Agendamento_consulta.associate = (models) => {
-        models.Agendamento_consulta.belongsTo(models.Paciente, {
-          as: 'pacientes',
-          through: Agendamento_consulta,
-          foreignKey: 'id',
-          otherKey: 'paciente_id',
-        });
-        models.Agendamento_consulta.belongsTo(models.Esf, {
-          as: 'esfs',
-          through: Agendamento_consulta,
-          foreignKey: 'id',
-          otherKey: 'esf_id',
-        });
-    }
-
-    Agendamento_consulta.model_name = function () {
+    AgendamentoConsulta.associate = function(models) {
+      this.belongsTo(models.Paciente, { foreignKey: 'paciente_id' });
+    };
+    
+    AgendamentoConsulta.model_name = function () {
       return model_name
     };
     
-    return Agendamento_consulta;
+    return AgendamentoConsulta;
   }

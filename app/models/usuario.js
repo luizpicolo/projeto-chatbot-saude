@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
+  Usuario.associate = function(models) {
+    Usuario.belongsTo(models.Esf, { foreignKey: 'esf_id' }); 
+  };
+
   Usuario.model_name = function () {
     return model_name
   };
