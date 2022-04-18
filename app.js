@@ -1,13 +1,14 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usuariosRouter = require('./routes/usuarios');
+const indexRouter = require('./routes/index');
+const usuariosRouter = require('./routes/usuarios');
+const botRouter = require('./routes/bot');
 
-var app = express();
+const app = express();
 
 // AdminJS
 app.use("/admin", require("./admin"))
@@ -24,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/usuarios', usuariosRouter);
+app.use('/bot', botRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

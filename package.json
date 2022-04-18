@@ -17,10 +17,12 @@
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.2",
     "http-errors": "~1.6.3",
+    "latinize": "^0.5.0",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.15",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
+    "rivescript": "^2.2.0",
     "sequelize": "^6.17.0"
   },
   "devDependencies": {
