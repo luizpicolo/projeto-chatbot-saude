@@ -1,5 +1,3 @@
-//const Usuario = require('../models/usuario');
-
 module.exports = (sequelize, DataTypes) => {
   
   const table_name = 'esfs';

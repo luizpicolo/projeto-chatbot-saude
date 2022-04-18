@@ -1,4 +1,4 @@
-const {Esf, Usuario, Paciente, Informacao, AgendamentoConsulta} = require('../app/models');
+const {Esf, Usuario, Paciente, Informacao, AgendamentoExame} = require('../app/models');
 
 const resources = [
   { resource: Esf, 
@@ -16,7 +16,7 @@ const resources = [
       listProperties: ['id', 'nome', 'telefone', 'esf_id', 'createdAt', 'updatedAt']
     }
   }, 
-  { resource: AgendamentoConsulta, 
+  { resource: AgendamentoExame, 
     options: {
       listProperties: ['id', 'paciente_id', 'data_agendamento', 'createdAt', 'updatedAt']
     }
