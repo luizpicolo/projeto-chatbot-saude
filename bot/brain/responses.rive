@@ -15,7 +15,7 @@
 < object
 
 + 2
-- Seu exame está marcado no dia......
+- Seu exame está marcado no dia <call>getDataConsulta</call>
 
 + 3
 - Este vídeo pode falar melhor oque seria o câncer de colo de útero: https://www.youtube.com/watch?v=KZk1UYPrKOE\n\n Para voltar, digite "oi" ou "ola"
