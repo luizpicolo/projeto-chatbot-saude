@@ -1,7 +1,9 @@
+! version = 2.0
+
 // A generic set of chatting responses. This set mimicks the classic Eliza bot.
 
-+ (oi|ola) [*]
-- Olá, espero lhe encontrar bem o que deseja fazer? \n\n1 - Agendar Exame\n2 - Consultar Exame 
++ (oi|ola|oie|eai|eae|bom dia|boa tarde|boa noite) [*]
+- Olá, espero lhe encontrar bem o que deseja fazer? \n\n1 - Agendar Exame\n2 - Consultar Exame\n3 - Saber mais sobre o Câncer de colo do útero; 
 
 + 1
 - Sua consulta está agendada para: !\n<call>getDataConsulta</call>
@@ -11,6 +13,12 @@
     //return email;
     return "20/20/2020"
 < object
+
++ 2
+- Seu exame está marcado no dia......
+
++ 3
+- Este vídeo pode falar melhor oque seria o câncer de colo de útero: https://www.youtube.com/watch?v=KZk1UYPrKOE\n\n Para voltar, digite "oi" ou "ola"
 
 + *
 - Infelizmente eu não tenho resposta para isso.
