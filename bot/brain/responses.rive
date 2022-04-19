@@ -3,24 +3,41 @@
 // A generic set of chatting responses. This set mimicks the classic Eliza bot.
 
 + (oi|ola|oie|eai|eae|bom dia|boa tarde|boa noite) [*]
-- Ola, sou a bot '........', como posso ajudar?\n\n1- Saber mais sobre o Câncer de colo do útero;\n2-  Agendar um exame\n3- Como eu posso fazer o acompanhamento da doença?\n4 - Consultar exame 
+- Antes de prosseguir vamos a algumas instruções para utilizar-me\n• Nunca utilize os seguintes caracteres nas respostas: " - ", " ; " , " . ", " , ", " ç "\n\nOla, sou a bot '........', como posso ajudar?\n\n1- Saber mais sobre o Câncer de colo do útero;\n2-  Agendar um exame\n3- Como eu posso fazer o Tratamento da doença?\n4- Consultar exame
 
 + 1
 - Este vídeo pode falar melhor oque seria o câncer de colo de útero: https://www.youtube.com/watch?v=KZk1UYPrKOE\n\n Para voltar, digite "oi" ou "ola"
 
 + 2
-- Sua consulta está agendada para: !\n<call>getDataConsulta</call>
+- Para agendar o exame digite o dia da semana em que você está mais disponível?\n\n1- Segunda-feira\n2- Terça-feira\n3- Quarta-feira\n4- Quinta-feira\n5- Sexta-feira
+
++ segunda
+- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
+
++ terca
+- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
+
++ quarta
+- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
+
++ quinta
+- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
+
++ sexta
+- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
 
 > object getDataConsulta javascript
     //var email = this.getDataConsulta();
     //return email;
     return "20/20/2020"
+    
 < object
 
-//+ 3
-//- 
++ 3
+- Para o tratamento da doença, precisamos que você marque um exame.\n\nInformações sobre os tratamentos:\nO tratamento depende do estadiamento da doença. Assim, quando a enfermidade se encontra em fase inicial, a cirurgia pode ser empregada, podendo ser ou não complementada pela radio e pela quimioterapia. Em casos em que a doença apresenta-se com maior gravidade, porém limitada ao colo do útero, é realizado o tratamento concomitante de radio e quimioterapia, que permitirá, posteriormente, a realização da cirurgia curativa. Em casos mais avançados, a associação de radio e quimioterapia poderá oferecer bom controle da doença. Se a enfermidade já não estiver limitada à pelve, e mesmo quando já comprometeu órgãos a distância, como o pulmão, por exemplo, estagio IV, a quimioterapia terá a função de tentar conter a doença e oferecer melhora sintomática.\n\nPara voltar, digite "oi" ou "ola" 
+
 + 4
-- Seu exame está marcado no dia <call>getDataConsulta</call>
+- Seu exame está marcado no dia <call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola" 
 
 + *
 - Infelizmente eu não tenho resposta para isso.
