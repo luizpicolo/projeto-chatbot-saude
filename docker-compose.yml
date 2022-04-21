@@ -2,6 +2,8 @@ version: '3.8'
 services:
   postgres:
     image: postgres
+    restart: always 
+    container_name: postgres_db
     ports:
       - 5432:5432
     environment:
@@ -24,6 +26,8 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    restart: always 
+    container_name: web_app
     environment:
       ENV: development
     volumes:
