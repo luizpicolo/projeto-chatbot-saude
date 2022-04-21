@@ -11,6 +11,15 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
+  bot: 
+    image: node:16
+    restart: always 
+    container_name: bot_app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: node /app/bot
+    
   web:
     build: 
       context: .
