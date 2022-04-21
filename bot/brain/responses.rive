@@ -1,15 +1,14 @@
 // A generic set of chatting responses. This set mimicks the classic Eliza bot.
 
 + (oi|ola) [*]
-- Olá, espero lhe encontrar bem o que deseja fazer? \n\n1 - Agendar Exame\n2 - Consultar Exame 
+- Olá, espero lhe encontrar bem. O que deseja fazer? \n\n1 - Agendar Exame\n2 - Consultar Exame 
 
 + 1
-- Sua consulta está agendada para: !\n<call>getDataConsulta</call>
+- Sua consulta está agendada para: !\n<call>getDataExame</call>
 
-> object getDataConsulta javascript
-    //var email = this.getDataConsulta();
-    //return email;
-    return "20/20/2020"
+> object getDataExame javascript
+    var data = this.getDataExame();
+    return data;
 < object
 
 + *
