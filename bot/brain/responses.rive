@@ -1,16 +1,33 @@
 // A generic set of chatting responses. This set mimicks the classic Eliza bot.
 
 + (oi|ola) [*]
-- Olá, espero lhe encontrar bem. O que deseja fazer? \n\n1 - Agendar Exame\n2 - Consultar Exame 
+- Mensagem inicial *
+* <call>verificarCadastro</call> == null => {topic=cadastro}
+* <call>verificarCadastro</call> != null => {topic=boas_vindas}
 
-+ 1
-- Sua consulta está agendada para: !\n<call>getDataExame</call>
++ *
+- Infelizmente eu não tenho resposta para isso.
+- Tente me fazer uma pergunta diferente.
 
+// Topics
+> topic cadastro
+    + *
+    - Olá, espero lhe encontrar bem. Verifiquei que você ainda não tem cadastro. \s 
+    ^ Deseja se cadastrar? É rapidinho :)!!
+< topic
+
+> topic boas_vindas
+    + *
+    - Olá, espero lhe encontrar bem. O que deseja fazer?
+< topic
+
+// Functions
 > object getDataExame javascript
     var data = this.getDataExame();
     return data;
 < object
 
-+ *
-- Infelizmente eu não tenho resposta para isso.
-- Tente me fazer uma pergunta diferente.
+> object verificarCadastro javascript
+    var data = this.verificarCadastro();
+    return data
+< object
