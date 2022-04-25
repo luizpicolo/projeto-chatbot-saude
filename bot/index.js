@@ -10,10 +10,8 @@ const chatbot = new ChatBot();
 
 bot.on('message', async (msg, match) => {
   //console.log(await Usuario.findAll());
-  console("Mensagem" + "\n")
-  console(msg + "\n\n")
-  console("Match" + "\n")
-  console(match + "\n\n")
+  console.log("Mensagem" + "\n")
+  console.log(JSON.stringify(msg.chat) + "\n\n")
 
   const chatId = msg.chat.id;
   const resp = await chatbot.loading_done(latinize(msg.text))
