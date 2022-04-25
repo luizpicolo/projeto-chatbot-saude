@@ -1,12 +1,14 @@
 const RiveScript = require('rivescript');
+const { Paciente } = require('../../app/models');
 
 const ChatBot = function() {
   var self = this;
-  self.rs = new RiveScript();
+  self.rs = new RiveScript({utf8: true});
   self.rs.loadDirectory("/app/bot/brain").then(self.loading_done).catch(self.loading_error);
 
-  self.loading_done =  async function(req){
+  self.loading_done = async function(req, chatID){
     self.rs.sortReplies();
+    self.id = chatID;
     return await self.rs.reply('nome', req, self);
   }
 
@@ -16,6 +18,11 @@ const ChatBot = function() {
 
   self.getDataExame = function() {
       return "20/12/2022"
+  };
+
+  self.verificarCadastro = async function() {
+    const paciente = await Paciente.findOne({ where: { identificador: self.id.toString() } });
+    return paciente
   };
 }
 
