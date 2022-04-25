@@ -17,6 +17,10 @@ const ChatBot = function() {
   self.getDataExame = function() {
       return "20/12/2022"
   };
+
+  self.verificarUsuario = function() {
+      return "usuario encontrado"
+  }
 }
 
 module.exports = ChatBot
