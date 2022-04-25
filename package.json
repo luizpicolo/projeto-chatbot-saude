@@ -19,13 +19,14 @@
     "http-errors": "~1.6.3",
     "latinize": "^0.5.0",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.15",
+    "node-telegram-bot-api": "^0.56.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "rivescript": "^2.2.0",
     "sequelize": "^6.17.0"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "nodemon": "^2.0.15"
   }
 }

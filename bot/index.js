@@ -1,22 +1,17 @@
-const RiveScript = require('rivescript');
+const TelegramBot = require('node-telegram-bot-api');
+const latinize = require('latinize');
+const ChatBot = require("./model")
+const Telegran = require('../config/telegran')
+const bot = new TelegramBot(Telegran.token, {polling: true});
 
-const ChatBot = function() {
-  var self = this;
-  self.rs = new RiveScript();
-  self.rs.loadDirectory("bot/brain").then(self.loading_done).catch(self.loading_error);
+//const { Usuario } = require('../app/models');
 
-  self.loading_done =  async function(req){
-    self.rs.sortReplies();
-    return await self.rs.reply('nome', req, self);
-  }
+const chatbot = new ChatBot();
 
-  self.loading_error = function(error){
-    console.log("Error when loading files: " + error);
-  }
-
-  self.getDataConsulta = function() {
-      return "20/12/2022"
-  };
-}
-
-module.exports = ChatBot
+bot.on('message', async (msg, match) => {
+  //console.log(await Usuario.findAll());
+  
+  const chatId = msg.chat.id;
+  const resp = await chatbot.loading_done(latinize(msg.text))
+  bot.sendMessage(chatId, resp);
+});

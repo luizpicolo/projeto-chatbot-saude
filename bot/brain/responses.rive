@@ -2,35 +2,15 @@
 
 // A generic set of chatting responses. This set mimicks the classic Eliza bot.
 
-+ (oi|ola|oie|eai|eae|bom dia|boa tarde|boa noite) [*]
-- Antes de prosseguir vamos a algumas instruções para utilizar-me\n• Nunca utilize os seguintes caracteres nas respostas: " - ", " ; " , " . ", " , ", " ç "\n\nOla, sou a bot '........', como posso ajudar?\n\n1- Saber mais sobre o Câncer de colo do útero;\n2-  Agendar um exame\n3- Como eu posso fazer o Tratamento da doença?\n4- Consultar exame
++ (oi|ola) [*]
+- Olá, espero lhe encontrar bem. O que deseja fazer? \n\n1 - Agendar Exame\n2 - Consultar Exame 
 
 + 1
-- Este vídeo pode falar melhor oque seria o câncer de colo de útero: https://www.youtube.com/watch?v=KZk1UYPrKOE\n\n Para voltar, digite "oi" ou "ola"
+- Sua consulta está agendada para: !\n<call>getDataExame</call>
 
-+ 2
-- Para agendar o exame digite o dia da semana em que você está mais disponível?\n\n1- Segunda-feira\n2- Terça-feira\n3- Quarta-feira\n4- Quinta-feira\n5- Sexta-feira
-
-+ segunda
-- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
-
-+ terca
-- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
-
-+ quarta
-- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
-
-+ quinta
-- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
-
-+ sexta
-- ok, sua consulta está agendada para: \n<call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola"
-
-> object getDataConsulta javascript
-    //var email = this.getDataConsulta();
-    //return email;
-    return "20/20/2020"
-    
+> object getDataExame javascript
+    var data = this.getDataExame();
+    return data;
 < object
 
 + 3
