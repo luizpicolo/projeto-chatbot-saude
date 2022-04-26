@@ -21,9 +21,17 @@ const ChatBot = function() {
   };
 
   self.verificarCadastro = async function() {
-    const paciente = await Paciente.findOne({ where: { identificador: self.id.toString() } });
-    return paciente
+    let paciente = await Paciente.findOne({ where: { identificador: self.id.toString() } });
+    return paciente ? paciente : null    
   };
+
+  self.salvarCadastro = async function(data){
+    console.log(data)
+  }
+
+  self.getEsfs = async function(){
+    return ['esf1', 'esf2', 'wsf3']   
+  }
 }
 
 module.exports = ChatBot
