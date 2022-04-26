@@ -15,7 +15,6 @@
     ^ Deseja se cadastrar? É rapidinho :)!! \n\n
     ^ 1 - Sim \n
     ^ 2 - Não \n 
-    ^ 3 - Voltar ao início
 
     + 1
     - Que maravilha, vamos começar com seus dados. \n\n 
@@ -23,9 +22,17 @@
 < topic
 
 > topic setnome
-    + _
-    - <set nome=<star>>Prazer em lhe conhecer, <get nome>! \n\n 
+    + *
+    - <set nome=<star>> O nome esta correto? <get nome> \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n
+
+    + 1
+    - Prazer em lhe conhecer, <get nome>! \n\n 
     ^ Agora por favor, digite, com apenas números, seu cpf. {topic=setcpf}
+
+    + 2
+    - Está tudo bem, digite novamente o seu nome completo ou como você gostaria de ser chamada. {topic=setnome}
 < topic
 
 > topic setcpf
