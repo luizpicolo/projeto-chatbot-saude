@@ -13,19 +13,11 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      telefone: {
+      contato: {
         allowNull: false,
         type: DataTypes.STRING,
       },
       cpf: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
-      sexo: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
-      email: {
         allowNull: false,
         type: DataTypes.STRING,
       },
