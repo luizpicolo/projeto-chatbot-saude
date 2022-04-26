@@ -2,6 +2,8 @@ version: '3.8'
 services:
   postgres:
     image: postgres
+    restart: always 
+    container_name: postgres_db
     ports:
       - 5432:5432
     environment:
@@ -11,16 +13,29 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
+  bot: 
+    image: node:16
+    restart: always 
+    container_name: bot_app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: node /app/bot
+    
   web:
     build: 
       context: .
       dockerfile: Dockerfile
+    restart: always 
+    container_name: web_app
+    environment:
+      ENV: development
     volumes:
       - .:/app
       - node_modules:/app/node_modules
     ports:
       - 3000:3000
-    command: "npm start --host 0.0.0.0"
+    command: npm start --host 0.0.0.0
     depends_on:
       - postgres
 

@@ -17,6 +17,13 @@ module.exports = {
         allowNull: false,
         type: DataTypes.BOOLEAN,
       },
+      esf_id:{
+        type: DataTypes.INTEGER,
+        references: {         
+          model: 'esfs',
+          key: 'id'
+        }
+      }
     })
   },
   down: async (queryInterface)=>{

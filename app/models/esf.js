@@ -12,14 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     cnpj:{
       type: DataTypes.STRING,
-    },
-    usuario_id:{
-      type: DataTypes.INTEGER,
     }
   });
 
   Esf.associate = function(models) {
-    Esf.hasMany(models.Usuario, { foreignKey: 'id', as: 'usuario' });
+    Esf.hasMany(models.Usuario, { foreignKey: 'esf_id' }); 
+    Esf.hasMany(models.Paciente, { foreignKey: 'esf_id' }); 
   };
 
   Esf.model_name = function () {

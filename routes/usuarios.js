@@ -1,16 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const { Usuario } = require('../app/models');
+var UsuariosController = require('../app/controllers/usuarios_controller');
 
-//Listar todos
-router.get('/', async (req, res) => {
-  const usuarios = await Usuario.findAll();
-  res.json(usuarios);
-}); 
-
-router.post('/', (req, res) => {}); // Criar
-router.get('/:id', (req, res) => {}); //Buscar
-router.put('/:id', (req, res) => {}); //Editar
-router.delete('/:id', (req, res) => {}); //Deletar
+router.get('/', UsuariosController.listar); 
+router.post('/criar', UsuariosController.criar); 
+router.get('/buscar/:id', UsuariosController.buscar); 
+router.put('/atualizar/:id', UsuariosController.atualizar); 
+router.delete('/deletar/:id', UsuariosController.deletar); 
 
 module.exports = router;

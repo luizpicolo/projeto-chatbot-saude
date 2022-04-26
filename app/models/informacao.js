@@ -12,15 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       tipo:{
         type: DataTypes.STRING,
-      },
-      usuario_id:{
-        type: DataTypes.INTEGER,
       }
     });
-  
-    Informacao.associate = function(models) {
-      Informacao.hasMany(models.Usuario, { foreignKey: 'id', as: 'usuario' });
-    };
   
     Informacao.model_name = function () {
       return model_name
