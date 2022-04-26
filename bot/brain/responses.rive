@@ -1,18 +1,63 @@
-! version = 2.0
 
-// A generic set of chatting responses. This set mimicks the classic Eliza bot.
++ (oi|ola)
+* <call>verificarCadastro</call> == null => {topic=cadastro}{@menu}
+* <call>verificarCadastro</call> != null => {topic=boas_vindas}{@ola}
+- Diga olá para que possamos iniciar nossa conversa <call>verificarCadastro</call> == null
 
-+ (oi|ola) [*]
-- Olá, espero lhe encontrar bem.<call>verificarUsuario</call> 
++ *
+- Infelizmente eu não tenho resposta para isso.
+- Tente me fazer uma pergunta diferente.
 
-+ 1
-- Sua consulta está agendada para: !\n<call>getDataExame</call>
+// Cadastro paciente
+> topic cadastro
+    + menu
+    - Olá, espero lhe encontrar bem. Verifiquei que você ainda não tem cadastro. \n\n 
+    ^ Deseja se cadastrar? É rapidinho :)!! \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n 
+    ^ 3 - Voltar ao início
 
+    + 1
+    - Que maravilha, vamos começar com seus dados. \n\n 
+    ^ Digite seu nome completo, ou como deseja ser chamada: {topic=setnome}
+< topic
+
+> topic setnome
+    + _
+    - <set nome=<star>>Prazer em lhe conhecer, <get nome>! \n\n 
+    ^ Agora por favor, digite, com apenas números, seu cpf. {topic=setcpf}
+< topic
+
+> topic setcpf
+    + #
+    - <set cpf=<star>> O CPF esta correto? <get cpf> \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n 
+
+    + 1
+    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro :). \n\n 
+    ^ AQUI PRECISA SER CONTINUADO
+    
+    + 2
+    - Digite novamente, com apenas números, seu cpf. {topic=setcpf}
+< topic
+
+> topic boas_vindas
+    + (oi|ola)
+    - Olá, espero lhe encontrar bem. O que deseja fazer?
+
+    + *
+    - Infelizmente eu não tenho resposta para isso.
+    - Tente me fazer uma pergunta diferente.
+< topic
+
+// Functions
 > object getDataExame javascript
     var data = this.getDataExame();
     return data;
 < object
 
+<<<<<<< HEAD
 > object verificarUsuario javascript
     var data = this.verificarUsuario();
     return data;
@@ -27,3 +72,14 @@
 + *
 - Infelizmente eu não tenho resposta para isso.
 - Tente me fazer uma pergunta diferente.
+=======
+> object salvarCadastro javascript
+    var data = this.salvarCadastro(args);
+    return data
+< object
+
+> object verificarCadastro javascript
+    var data = this.verificarCadastro();
+    return data
+< object
+>>>>>>> main
