@@ -57,22 +57,6 @@
     return data;
 < object
 
-<<<<<<< HEAD
-> object verificarUsuario javascript
-    var data = this.verificarUsuario();
-    return data;
-< object
-
-+ 3
-- Para o tratamento da doença, precisamos que você marque um exame.\n\nInformações sobre os tratamentos:\nO tratamento depende do estadiamento da doença. Assim, quando a enfermidade se encontra em fase inicial, a cirurgia pode ser empregada, podendo ser ou não complementada pela radio e pela quimioterapia. Em casos em que a doença apresenta-se com maior gravidade, porém limitada ao colo do útero, é realizado o tratamento concomitante de radio e quimioterapia, que permitirá, posteriormente, a realização da cirurgia curativa. Em casos mais avançados, a associação de radio e quimioterapia poderá oferecer bom controle da doença. Se a enfermidade já não estiver limitada à pelve, e mesmo quando já comprometeu órgãos a distância, como o pulmão, por exemplo, estagio IV, a quimioterapia terá a função de tentar conter a doença e oferecer melhora sintomática.\n\nPara voltar, digite "oi" ou "ola" 
-
-+ 4
-- Seu exame está marcado no dia <call>getDataConsulta</call>\n\nPara voltar, digite "oi" ou "ola" 
-
-+ *
-- Infelizmente eu não tenho resposta para isso.
-- Tente me fazer uma pergunta diferente.
-=======
 > object salvarCadastro javascript
     var data = this.salvarCadastro(args);
     return data
@@ -82,4 +66,3 @@
     var data = this.verificarCadastro();
     return data
 < object
->>>>>>> main
