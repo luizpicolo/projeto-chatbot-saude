@@ -6,9 +6,10 @@ const ChatBot = function() {
   self.rs = new RiveScript({utf8: true});
   self.rs.loadDirectory("/app/bot/brain").then(self.loading_done).catch(self.loading_error);
 
-  self.loading_done = async function(req, chatID){
+  self.loading_done = async function(req, id, messager){
     self.rs.sortReplies();
-    self.id = chatID;
+    self.id = id;
+    self.messager = `${messager}_id`;
     return await self.rs.reply('nome', req, self);
   }
 
@@ -21,7 +22,7 @@ const ChatBot = function() {
   };
 
   self.verificarCadastro = async function() {
-    let paciente = await Paciente.findOne({ where: { identificador: self.id.toString() } });
+    let paciente = await Paciente.findOne({ where: { [self.messager]: self.id.toString() } });
     return paciente ? paciente : null    
   };
 

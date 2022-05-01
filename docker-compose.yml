@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   postgres:
-    image: postgres
+    image: postgres:14-alpine
     restart: always 
     container_name: postgres_db
     ports:
@@ -14,7 +14,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
   bot: 
-    image: node:16
+    image: node:18-alpine
     restart: always 
     container_name: bot_app
     ports:
