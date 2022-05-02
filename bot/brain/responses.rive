@@ -1,7 +1,7 @@
 
 + (oi|ola)
-* <call>verificarCadastro</call> == null => {topic=cadastro}{@menu}
-* <call>verificarCadastro</call> != null => {topic=boas_vindas}{@ola}
+* <call>verificarCadastro</call> == null => {topic=cadastro}{@inicio}
+* <call>verificarCadastro</call> != null => {topic=boas_vindas}{@inicio}
 - Diga olá para que possamos iniciar nossa conversa <call>verificarCadastro</call> == null
 
 + *
@@ -10,15 +10,18 @@
 
 // Cadastro paciente
 > topic cadastro
-    + menu
-    - Olá, espero lhe encontrar bem. Verifiquei que você ainda não tem cadastro. \n\n 
-    ^ Deseja se cadastrar? É rapidinho :)!! \n\n
+    + inicio
+    - Olá, espero lhe encontrar bem. Verifiquei que você ainda não possui cadastro. \n\n 
+    ^ Deseja se cadastrar? É rapidinho 😁!! \n\n
     ^ 1 - Sim \n
     ^ 2 - Não \n 
 
     + 1
     - Que maravilha, vamos começar com seus dados. \n\n 
     ^ Digite seu nome completo, ou como deseja ser chamada: {topic=setnome}
+
+    + 2
+    - Que pena. Nos vemos em outra oportunidade {topic=random}. \n\n 
 < topic
 
 > topic setnome
@@ -37,20 +40,36 @@
 
 > topic setcpf
     + #
-    - <set cpf=<star>> O CPF esta correto? <get cpf> \n\n
+    - <set cpf=<star>> O CPF está correto? <get cpf> \n\n
     ^ 1 - Sim \n
     ^ 2 - Não \n 
 
     + 1
-    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro :). \n\n 
-    ^ AQUI PRECISA SER CONTINUADO
+    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n\n {topic=setesf}{@inicio}
     
     + 2
     - Digite novamente, com apenas números, seu cpf. {topic=setcpf}
 < topic
 
+> topic setesf
+    + inicio
+    - <call>getEsfs</call>
+
+    + #
+    - <set esf=<star>> O Esf está correto? <get esf> \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n 
+
+    + 1
+    - Perfeito, estou salvando seu dados, só um minutinho 👍🏼.
+    * <call>salvarCadastro</call> != null => {topic=boas_vindas}
+
+    + 2
+    - Sem problema, escolha novamente o seu esf. \n\n {topic=setesf}{@inicio}
+< topic 
+
 > topic boas_vindas
-    + (oi|ola)
+    + inicio
     - Olá, espero lhe encontrar bem. O que deseja fazer?
 
     + *
@@ -64,12 +83,18 @@
     return data;
 < object
 
+> object getEsfs javascript
+    //var data = this.getEsfs();
+    var data = "001 - esf1 \n 002 - esf2 \n 003 - esf3"
+    return data;
+< object
+
 > object salvarCadastro javascript
-    var data = this.salvarCadastro(args);
-    return data
+    //var data = this.salvarCadastro(args);
+    return true
 < object
 
 > object verificarCadastro javascript
-    var data = this.verificarCadastro();
-    return data
+    //var data = this.verificarCadastro();
+    return null
 < object
