@@ -1,11 +1,10 @@
 const express = require('express');
 const ChatBot = require("../models")
 const latinize = require('latinize');
-const accountSid = ""; 
-const authToken = ""; 
+const whatsapp = require('../../config/tokens')
 const port = 3001;
 
-const client = require('twilio')(accountSid, authToken); 
+const client = require('twilio')(whatsapp.accountSid, whatsapp.authToken); 
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const app = express();

@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const latinize = require('latinize');
 const ChatBot = require("../models")
-const telegran = require('../../config/telegran')
+const telegran = require('../../config/tokens')
 const bot = new TelegramBot(telegran.token, {polling: true});
 
 const chatbot = new ChatBot();
