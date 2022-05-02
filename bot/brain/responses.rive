@@ -11,7 +11,7 @@
 // Cadastro paciente
 > topic cadastro
     + inicio
-    - Olá, espero lhe encontrar bem. Verifiquei que você ainda não possui cadastro. \n\n 
+    - Olá, sou a bot Any 👩🏻, espero lhe encontrar bem. Verifiquei que você ainda não possui cadastro. \n\n 
     ^ Deseja se cadastrar? É rapidinho 😁!! \n\n
     ^ 1 - Sim \n
     ^ 2 - Não \n 
@@ -69,9 +69,31 @@
 < topic 
 
 > topic boas_vindas
-    + inicio
-    - Olá, espero lhe encontrar bem. O que deseja fazer?
+     + inicio
+    - Olá, sou a bot Any 👩🏻, espero lhe encontrar bem 😁. Digite o que deseja fazer?\n
+    ^ 1 - o que seria o câncer de colo do útero?\n
+    ^ 2 - agendar exame\n
+    ^ 3 - como é feito o tratamento?\n
+    ^ 4 - consulta do exame
+   
+    + 1
+    - O câncer de colo de útero é um tumor maligno da parte 
+    ^ inferior do útero que pode ser prevenido por exame de 
+    ^ Papanicolau e por uma vacina contra o HPV.\n
+    ^ Pode não haver sintomas,  em alguns casos, pode ocorrer 
+    ^ sangramento irregular ou dor.\n\n 
+    ^ Caso deseja informações mais detalhadas, acesse esse vídeo:\n
+    ^ https://youtu.be/eTzIQmA46kI
+    
+    + 2
+    - Só um minutinho, estou verificando horários e dias da semana  disponíveis para o agendamento: FUNÇÃO COM OS HORÁRIOS DISPONÍVEIS    
 
+    + 3
+    - Tudo certo 😃,  para saber como é feito o tratamento acesse esse link que irá direcionar você para um vídeo:\n\nhttps://youtu.be/FXOJLdRJs5Y
+    
+    + 4
+    - Ok, sua consulta está marcada para o seguinte horario <call>getDataExame</call>
+    
     + *
     - Infelizmente eu não tenho resposta para isso.
     - Tente me fazer uma pergunta diferente.
