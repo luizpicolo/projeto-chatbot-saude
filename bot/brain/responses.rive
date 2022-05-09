@@ -1,8 +1,8 @@
 
 + (oi|ola)
-* <call>verificarCadastro</call> == null => {topic=cadastro}{@inicio}
-* <call>verificarCadastro</call> != null => {topic=boas_vindas}{@inicio}
-- Diga olá para que possamos iniciar nossa conversa <call>verificarCadastro</call> == null
+* <call>verificarCadastroPaciente</call> == null => {topic=cadastro}{@inicio}
+* <call>verificarCadastroPaciente</call> != null => {topic=boas_vindas}{@inicio}
+- Diga olá para que possamos iniciar nossa conversa <call>verificarCadastroPaciente</call> == null
 
 + *
 - Infelizmente eu não tenho resposta para isso.
@@ -62,7 +62,7 @@
 
     + 1
     - Perfeito, estou salvando seu dados, só um minutinho 👍🏼.
-    * <call>salvarCadastro</call> != null => {topic=boas_vindas}
+    * <call>salvarCadastroPaciente</call> != null => {topic=boas_vindas}
 
     + 2
     - Sem problema, escolha novamente o seu esf. \n\n {topic=setesf}{@inicio}
