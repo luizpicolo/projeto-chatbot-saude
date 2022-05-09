@@ -18,7 +18,7 @@ const ChatBot = function() {
     console.log("Error when loading files: " + error);
   }
 
-  self.getDataExame = function() {
+  self.getDataExamePaciente = function() {
       return "20/12/2022"
   };
 
