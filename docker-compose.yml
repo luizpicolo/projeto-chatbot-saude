@@ -14,7 +14,9 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
   bot: 
-    image: node:18-alpine
+    build: 
+      context: .
+      dockerfile: Dockerfile
     restart: always 
     container_name: bot_app
     ports:
