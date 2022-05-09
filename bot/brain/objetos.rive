@@ -16,7 +16,8 @@
 
 // Funcões para Paciente
 > object getDataExamePaciente javascript
-    var data = this.getDataExame();
+    //var data = this.getDataExamePaciente();
+    var data = "20/12/2022 às 12:00"
     return data;
 < object
 
@@ -27,7 +28,7 @@
 
 > object verificarCadastroPaciente javascript
     //var data = this.verificarCadastro();
-    return null
+    return true
 < object
 
 > object checarCPF javascript
