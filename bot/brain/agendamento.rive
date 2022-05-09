@@ -1,9 +1,93 @@
 > topic agendamento_horario
     + inicio
-    - Só um minutinho, estou verificando horários e dias da semana  disponíveis para o agendamento:
-    ^ {topic=menu_inicial}{@inicio} 
+    - Vamos começar então 😄, selecione o dia da semana que você está mais disponivel:\n 
+    ^ 1 - Segunda-feira\n
+    ^ 2 - Terça-feira\n
+    ^ 3 - Quarta-feira\n
+    ^ 4 - Quinta-feira\n
+    ^ 5 - Sexta-feira
+
+    + #
+    - <set dia=<star>> O dia da semana esta correto? <call>mostrarDia <get dia></call> \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n {topic=condicao}
+    
 
     + *
     - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.
     ^ {topic=agendamento_horario}{@inicio}
 < topic
+
+> topic condicao
+ + 1
+ - ok, vamos agora selecionar o período, digite 'Ok' para prosseguir {topic=periodo}
+
+ + 2
+ - Se está incorreto, por favor selecione novamente o dia da semana 
+ ^ {topic=agendamento_horario}{@inicio}
+< topic
+
+> topic periodo
++ ok
+- Tudo certo, vamos agora para os a escolha dos períodos 😃, digite o número abaixo com o período de sua maior disponibilidade:\n
+^ 1 - período matutino (manhã)\n
+^ 2 - período vespertino (tarde){topic=horario}
+
+< topic
+
+> topic horario
++ 1
+- Selecione abaixo o melhor horário:\n
+^ 1- 7h às 8h
+^ 2- 8h às 9h 
+^ 3- 9h às 10h 
+^ 4- 10h às 11h{topic=horario2}
+
++ 2
+- Selecione abaixo o melhor horário:\n
+^ 1- 13h às 14h
+^ 2- 14h às 15h 
+^ 3- 15h às 16h 
+^ 4- 16h às 17h{topic=horario3}
+
+< topic
+
+> topic horario2
++ #
+- <set horario1=<star>>ok, este é o seu horario: <call>mostrarHorario <get horario1></call>, se o horario está certo, digite 'ok', senão digite 'voltar'
+
++ ok
+- Esses foram os dados coletados:\n
+^ Dia da semana: <call>mostrarDia <get dia></call> \n
+^ Horario do exame: <call>mostrarHorario <get horario1></call> \n
+^ Digite 'ok' para confirmar{topic=pedido}
+
++ voltar
+- {topic=periodo}{@ok}
+
+< topic
+
+> topic horario3
++ #
+- <set horario2=<star>>ok, este é o seu horario: <call>mostrarHorario2 <get horario2></call>, se o horario está certo, digite 'ok', senão digite 'voltar'
+
++ ok
+- Esses foram os dados coletados:\n
+^ Dia da semana: <call>mostrarDia <get dia></call> \n
+^ Horario do exame: <call>mostrarHorario2 <get horario2></call> \n
+^ Digite 'ok' para confirmar{topic=pedido}
+
++ voltar
+- {topic=periodo}{@ok}
+
+< topic
+
+> topic pedido
++ ok
+- O pedido foi encaminhado
+< topic
+
+> topic condicao3
++ voltar
+- {topic=agendamento_horario}{@inicio}
+< topic 

@@ -14,6 +14,48 @@
     }
 < object
 
+//Funções para o agendamento
+> object mostrarDia javascript
+    //var data = this.getEsfs();
+    if (args[0] == '1'){
+        return "Segunda-feira"
+    }else if(args[0] == '2'){
+        return "Terça-feira"
+    }else if(args[0] == '3'){
+        return "Quarta-feira"
+    }else if(args[0] == '4'){
+        return "Quinta-feira"
+    }else if(args[0] == '5'){
+        return "Sexta-feira"
+    }
+< object
+
+> object mostrarHorario javascript
+    //var data = this.getEsfs();
+    if (args[0] == '1'){
+        return "7h às 8h"
+    }else if (args[0] == '2'){
+        return "8h às 9h"
+    }else if (args[0] == '3'){
+        return "9h às 10h"
+    }else if (args[0] == '4'){
+        return "10h às 11h"
+    }
+< object
+
+> object mostrarHorario2 javascript
+    //var data = this.getEsfs();
+    if (args[0] == '1'){
+        return "13h às 14h"
+    }else if (args[0] == '2'){
+        return "14h às 15h"
+    }else if (args[0] == '3'){
+        return "15h às 16h"
+    }else if (args[0] == '4'){
+        return "16h às 17h"
+    }
+< object
+
 // Funcões para Paciente
 > object getDataExamePaciente javascript
     //var data = this.getDataExamePaciente();
