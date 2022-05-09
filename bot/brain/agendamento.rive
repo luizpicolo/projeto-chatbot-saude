@@ -1,0 +1,9 @@
+> topic agendamento_horario
+    + inicio
+    - Só um minutinho, estou verificando horários e dias da semana  disponíveis para o agendamento:
+    ^ {topic=menu_inicial}{@inicio} 
+
+    + *
+    - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.
+    ^ {topic=agendamento_horario}{@inicio}
+< topic

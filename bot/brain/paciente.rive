@@ -1,0 +1,64 @@
+// Cadastro paciente
+> topic cadastro
+    + inicio
+    - Olá, sou a bot <bot nome> 👩🏻, espero lhe encontrar bem. Verifiquei que você ainda não possui cadastro. \n\n 
+    ^ Deseja se cadastrar? É rapidinho 😁!! \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n 
+
+    + 1
+    - Que maravilha, vamos começar com seus dados. \n\n 
+    ^ Digite seu nome completo, ou como deseja ser chamada: {topic=setnome}
+
+    + 2
+    - Que pena. Nos vemos em outra oportunidade {topic=random}. \n\n 
+< topic
+
+> topic setnome
+    + *
+    - <set nome=<star>> O nome esta correto? <get nome> \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n
+
+    + 1
+    - Prazer em lhe conhecer, <get nome>! \n\n 
+    ^ Agora por favor, digite, com apenas números, seu cpf. {topic=setcpf}
+
+    + 2
+    - Está tudo bem, digite novamente o seu nome completo ou como você gostaria de ser chamada. {topic=setnome}
+< topic
+
+> topic setcpf
+    + #
+    - <set cpf=<star>>O CPF está correto? <get cpf> \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n 
+
+    + 1
+    - Checando se o CPF é válido... <call>checarCPF <get cpf></call>
+    * <call>checarCPF <get cpf></call> == true => {topic=setesf}{@inicio}
+    * <call>checarCPF <get cpf></call> == false => {topic=setcpf}{@*}
+    
+    + 2
+    - Digite novamente, com apenas números, seu cpf. {topic=setcpf}
+
+    + *
+    - Seu cpf contém alguns erros ou não é válido 🙁, vamos tentar novamente. {topic=setcpf}{@2}
+< topic
+
+> topic setesf
+    + inicio
+    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n\n <call>listarEsfs</call>
+
+    + #
+    - <set esf=<star>> O Esf está correto? <call>mostrarEsf <get esf></call> \n\n
+    ^ 1 - Sim \n
+    ^ 2 - Não \n 
+
+    + 1
+    - Perfeito, estou salvando seu dados, só um minutinho 👍🏼.
+    * <call>salvarCadastroPaciente</call> != null => {topic=boas_vindas}
+
+    + 2
+    - Sem problema, escolha novamente o seu esf. \n\n {topic=setesf}{@inicio}
+< topic 

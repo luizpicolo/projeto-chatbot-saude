@@ -1,0 +1,29 @@
+> topic menu_global
+    + inicio
+    - \nO que deseja fazer? 
+    ^ 1 - Voltar ao menu anterior
+    ^ 2 - Voltar ao menu inícial\n
+
+    + 1
+    - {topic=informacoes}{@inicio}
+
+    + 2
+    - {topic=boas_vindas}{@inicio}
+
+    + *
+    - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.
+    ^ {topic=menu_global}{@inicio}
+< topic
+
+> topic menu_inicial
+    + inicio
+    - \nO que deseja fazer? 
+    ^ 1 - Voltar ao menu inícial\n
+
+    + 1
+    - {topic=boas_vindas}{@inicio}
+
+    + *
+    - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.
+    ^ {topic=menu_inicial}{@inicio}
+< topic

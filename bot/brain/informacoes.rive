@@ -1,0 +1,13 @@
+> topic informacoes
+    + inicio
+    - Aqui temos algumas informações sobre o câncer de colo do útero, qual delas você deseja ver?\n
+    ^ <call>getTopicosInformacoes</call>
+
+    + #
+    * <call>getConteudoInformacao <star></call> == null => {topic=informacoes}{@*}
+    * <call>getConteudoInformacao <star></call> != null => <call>getConteudoInformacao <star></call> \n {topic=menu_global}{@inicio} 
+
+    + *
+    - Infelizmente eu não tenho resposta para essa opção.
+    ^ {topic=informacoes}{@inicio}
+< topic

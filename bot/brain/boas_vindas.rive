@@ -1,0 +1,22 @@
+> topic boas_vindas
+    + inicio
+    - Olá, sou a bot <bot nome> 👩🏻, espero lhe encontrar bem 😁. Digite o que deseja fazer?\n
+    ^ 1 - Agendar exame
+    ^ 2 - Consulta do exame marcado
+    ^ 3 - Informações sobre o câncer de colo do útero\n
+   
+    + 1
+    - {topic=agendamento_horario}{@inicio}
+ 
+    + 2
+    - Ok, seu exame está marcada para o seguinte horário:\n 
+    ^ <call>getDataExamePaciente</call> 
+    ^ {topic=menu_inicial}{@inicio} 
+
+    + 3
+    - {topic=informacoes}{@inicio}
+
+    + *
+    - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.
+    ^ {topic=boas_vindas}{@inicio}
+< topic
