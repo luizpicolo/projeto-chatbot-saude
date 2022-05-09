@@ -1,1 +1,35 @@
-// Functions
+// Funções para ESF
+> object listarEsfs javascript
+    //var data = this.getEsfs();
+    var data = "001 - esf1 \n 002 - esf2 \n 003 - esf3"
+    return data;
+< object
+
+> object mostrarEsf javascript
+    //var data = this.getEsfs();
+    if (args[0] == '001'){
+        return "esf1"
+    } else {
+        return "esf2"
+    }
+< object
+
+// Funcões para Paciente
+> object getDataExamePaciente javascript
+    var data = this.getDataExame();
+    return data;
+< object
+
+> object salvarCadastroPaciente javascript
+    //var data = this.salvarCadastro(args);
+    return true
+< object
+
+> object verificarCadastroPaciente javascript
+    //var data = this.verificarCadastro();
+    return null
+< object
+
+> object checarCPF javascript
+    return this.checarCPF(args[0]);
+< object

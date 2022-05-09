@@ -1,5 +1,6 @@
 const RiveScript = require('rivescript');
 const { Paciente } = require('../../app/models');
+const CPF = require('cpf-check');
 
 const ChatBot = function() {
   var self = this;
@@ -32,6 +33,10 @@ const ChatBot = function() {
 
   self.getEsfs = async function(){
     return ['esf1', 'esf2', 'wsf3']   
+  }
+
+  self.checarCPF = async function(cpf){
+    return CPF.validate(cpf)  
   }
 }
 

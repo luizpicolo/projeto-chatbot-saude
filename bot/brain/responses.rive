@@ -1,12 +1,12 @@
 
 + (oi|ola)
-* <call>verificarCadastro</call> == null => {topic=cadastro}{@inicio}
-* <call>verificarCadastro</call> != null => {topic=boas_vindas}{@inicio}
-- Diga olá para que possamos iniciar nossa conversa <call>verificarCadastro</call> == null
+* <call>verificarCadastroPaciente</call> == null => {topic=cadastro}{@inicio}
+* <call>verificarCadastroPaciente</call> != null => {topic=boas_vindas}{@inicio}
+- Diga olá para que possamos iniciar nossa conversa <call>verificarCadastroPaciente</call> == null
 
 + *
-- Infelizmente eu não tenho resposta para isso.
-- Tente me fazer uma pergunta diferente.
+- Infelizmente eu não tenho resposta para isso. Digite *Olá* para iniciar uma conversa.
+- Tente me fazer uma pergunta diferente, ou, digite *Olá* para iniciar uma conversa..
 
 // Cadastro paciente
 > topic cadastro
@@ -40,29 +40,35 @@
 
 > topic setcpf
     + #
-    - <set cpf=<star>> O CPF está correto? <get cpf> \n\n
+    - <set cpf=<star>>O CPF está correto? <get cpf> \n\n
     ^ 1 - Sim \n
     ^ 2 - Não \n 
 
     + 1
-    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n\n {topic=setesf}{@inicio}
+    - Checando se o CPF é válido... <call>checarCPF <get cpf></call>
+    * <call>checarCPF <get cpf></call> == true => {topic=setesf}{@inicio}
+    * <call>checarCPF <get cpf></call> == false => {topic=setcpf}{@*}
+    // - 
     
     + 2
     - Digite novamente, com apenas números, seu cpf. {topic=setcpf}
+
+    + *
+    - Seu cpf contém alguns erros ou não é válido 🙁, vamos tentar novamente. {topic=setcpf}{@2}
 < topic
 
 > topic setesf
     + inicio
-    - <call>getEsfs</call>
+    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n\n <call>listarEsfs</call>
 
     + #
-    - <set esf=<star>> O Esf está correto? <get esf> \n\n
+    - <set esf=<star>> O Esf está correto? <call>mostrarEsf <get esf></call> \n\n
     ^ 1 - Sim \n
     ^ 2 - Não \n 
 
     + 1
     - Perfeito, estou salvando seu dados, só um minutinho 👍🏼.
-    * <call>salvarCadastro</call> != null => {topic=boas_vindas}
+    * <call>salvarCadastroPaciente</call> != null => {topic=boas_vindas}
 
     + 2
     - Sem problema, escolha novamente o seu esf. \n\n {topic=setesf}{@inicio}
@@ -138,25 +144,3 @@
  + 2
  - {topic=boas_vindas}{@1}
 < topic
-
-// Functions
-> object getDataExame javascript
-    var data = this.getDataExame();
-    return data;
-< object
-
-> object getEsfs javascript
-    //var data = this.getEsfs();
-    var data = "001 - esf1 \n 002 - esf2 \n 003 - esf3"
-    return data;
-< object
-
-> object salvarCadastro javascript
-    //var data = this.salvarCadastro(args);
-    return true
-< object
-
-> object verificarCadastro javascript
-    //var data = this.verificarCadastro();
-    return null
-< object
