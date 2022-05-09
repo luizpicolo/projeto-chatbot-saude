@@ -33,3 +33,19 @@
 > object checarCPF javascript
     return this.checarCPF(args[0]);
 < object
+
+// Funções para Informações
+> object getTopicosInformacoes javascript
+    return "1 - O que é cancer de colo do útero \n2 - Como é feito o tratamento\n"
+< object
+
+> object getConteudoInformacao javascript
+    console.log(args[0])
+    if (args[0] == '1'){
+        return "Conteudo referente a informacao 1"
+    } else if (args[0] == '2'){
+        return "Conteudo referente a informacao 2"
+    } else {
+        return null
+    }
+< object
