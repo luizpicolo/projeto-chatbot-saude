@@ -5,7 +5,7 @@
 
     + #
     * <call>getConteudoInformacao <star></call> == null => {topic=informacoes}{@*}
-    * <call>getConteudoInformacao <star></call> != null => <call>getConteudoInformacao <star></call> \n {topic=menu_global}{@inicio} 
+    * <call>getConteudoInformacao <star></call> != null => <call>getConteudoInformacao <star></call> \n {topic=dialogo}{@inicio} 
 
     + *
     - Infelizmente eu não tenho resposta para essa opção.

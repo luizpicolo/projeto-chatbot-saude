@@ -10,8 +10,8 @@
  
     + 2
     - Ok, seu exame está marcada para o seguinte horário:\n 
-    ^ <call>getDataExamePaciente</call> 
-    ^ {topic=menu_inicial}{@inicio} 
+    ^ <call>getDataExamePaciente</call>\n 
+    ^ {topic=dialogo}{@inicio} 
 
     + 3
     - {topic=informacoes}{@inicio}

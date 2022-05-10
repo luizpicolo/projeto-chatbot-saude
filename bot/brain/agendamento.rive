@@ -84,7 +84,7 @@
 
 > topic pedido
 + ok
-- O pedido foi encaminhado
+- O pedido foi encaminhado, lembrando que este pedido não garante o agentamento, aguarde o retorno.{topic=dialogo}{@inicio}
 < topic
 
 > topic condicao3

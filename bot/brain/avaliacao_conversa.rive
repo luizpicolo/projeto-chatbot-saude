@@ -1,0 +1,22 @@
+> topic dialogo
+  + inicio
+  - Bem, agora por gentileza você poderia avaliar a conversa, quanto a nossa conversa ajudou você em uma escala de 0 a 10?
+  
+  + #
+  - <set nota=<star>>Ok, muito obrigado pela sua avaliação.
+  ^ {topic=voltar}{@inicio}
+< topic
+
+> topic voltar
+ + inicio
+ - \nO que deseja fazer Agora?\n 
+ ^ 1 - Voltar ao menu inícial\n
+ ^ 2 - Finalizar conversa
+
+ + 1
+ - {topic=boas_vindas}{@inicio}
+
+ + 2
+ - Muito obrigado por ter utilizado o nosso serviço 😄. {topic=random}
+
+< topic
