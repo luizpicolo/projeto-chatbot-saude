@@ -2,13 +2,17 @@
     + inicio
     - \nO que deseja fazer? 
     ^ 1 - Voltar ao menu anterior
-    ^ 2 - Voltar ao menu inícial\n
+    ^ 2 - Voltar ao menu inícial
+    ^ 3 - Finalizar atendimento\n
 
     + 1
     - {topic=informacoes}{@inicio}
 
     + 2
     - {topic=boas_vindas}{@inicio}
+
+    + 3
+    - Okay, até a próxima {topic=random}
 
     + *
     - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.
@@ -18,10 +22,14 @@
 > topic menu_inicial
     + inicio
     - \nO que deseja fazer? 
-    ^ 1 - Voltar ao menu inícial\n
+    ^ 1 - Voltar ao menu inícial
+    ^ 2 - Finalizar atendimento\n
 
     + 1
     - {topic=boas_vindas}{@inicio}
+
+    + 2
+    - Okay, até a próxima {topic=random}
 
     + *
     - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.

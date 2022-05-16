@@ -1,0 +1,12 @@
+> topic finalizar
+  + inicio
+  - Deseja avaliar esse atendimento? É super rápido 😁!\n
+  ^ 1 - Sim
+  ^ 2 - Não\n
+
+  + 1
+  - {topic=avaliacao}{@inicio}
+
+  + 2
+  - Okay, até a próxima {topic=random}
+< topic

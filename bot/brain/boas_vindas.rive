@@ -3,18 +3,22 @@
     - Olá, sou a bot <bot nome> 👩🏻, espero lhe encontrar bem 😁. Digite o que deseja fazer?\n
     ^ 1 - Agendar exame
     ^ 2 - Consulta do exame marcado
-    ^ 3 - Informações sobre o câncer de colo do útero\n
+    ^ 3 - Informações sobre o câncer de colo do útero
+    ^ 4 - Finalizar atendimento\n
    
     + 1
     - {topic=agendamento_horario}{@inicio}
  
     + 2
-    - Ok, seu exame está marcada para o seguinte horário:\n 
-    ^ <call>getDataExamePaciente</call> 
+    - Seu exame está marcado para o seguinte horário:\n 
+    ^ <call>getDataExamePaciente</call>\n 
     ^ {topic=menu_inicial}{@inicio} 
 
     + 3
     - {topic=informacoes}{@inicio}
+
+    + 4
+    - Okay, até a próxima {topic=random}
 
     + *
     - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.

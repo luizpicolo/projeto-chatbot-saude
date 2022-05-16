@@ -70,6 +70,6 @@
 
 > topic pedido_confirmado
     + inicio
-    - O pedido foi encaminhado
-    ^ {topic=menu_inicial}{@inicio}
+    - O pedido foi encaminhado, aguarde nosso retorno.\n
+    ^ {topic=finalizar}{@inicio}
 < topic
