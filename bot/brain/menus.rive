@@ -1,9 +1,9 @@
 > topic menu_global
     + inicio
-    - \nO que deseja fazer? 
-    ^ 1 - Voltar ao menu anterior
-    ^ 2 - Voltar ao menu inícial
-    ^ 3 - Finalizar atendimento\n
+    - \nO que deseja fazer?\n 
+    ^ 1 - Voltar ao menu anterior\n
+    ^ 2 - Voltar ao menu inícial\n
+    ^ 3 - Finalizar atendimento
 
     + 1
     - {topic=informacoes}{@inicio}
@@ -15,15 +15,15 @@
     - Okay, até a próxima {topic=random}
 
     + *
-    - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.
+    - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.\n
     ^ {topic=menu_global}{@inicio}
 < topic
 
 > topic menu_inicial
     + inicio
-    - \nO que deseja fazer? 
-    ^ 1 - Voltar ao menu inícial
-    ^ 2 - Finalizar atendimento\n
+    - \nO que deseja fazer?\n 
+    ^ 1 - Voltar ao menu inícial\n
+    ^ 2 - Finalizar atendimento
 
     + 1
     - {topic=boas_vindas}{@inicio}

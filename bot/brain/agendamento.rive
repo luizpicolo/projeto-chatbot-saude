@@ -1,15 +1,15 @@
 > topic agendamento_horario
     + inicio
     - Vamos começar então 😄, selecione o dia da semana que você está mais disponivel:\n
-    ^ 1 - Segunda-feira
-    ^ 2 - Terça-feira
-    ^ 3 - Quarta-feira
-    ^ 4 - Quinta-feira
-    ^ 5 - Sexta-feira\n
+    ^ 1 - Segunda-feira\n
+    ^ 2 - Terça-feira\n
+    ^ 3 - Quarta-feira\n
+    ^ 4 - Quinta-feira\n
+    ^ 5 - Sexta-feira
 
     + (1|2|3|4|5)[*]
     - <set dia=<star>> O dia da semana esta correto? <call>mostrarDia <get dia></call> \n
-    ^ 1 - Sim
+    ^ 1 - Sim\n
     ^ 2 - Não
     ^ {topic=condicao}
 
@@ -30,16 +30,16 @@
 > topic horario
     + inicio
     - Selecione o horário que está disponível:\n
-    ^ Perído matutino (Manhã)
-    ^ 1 - 7h às 8h
-    ^ 2 - 8h às 9h 
-    ^ 3 - 9h às 10h 
+    ^ Perído matutino (Manhã)\n
+    ^ 1 - 7h às 8h\n
+    ^ 2 - 8h às 9h\n 
+    ^ 3 - 9h às 10h\n 
     ^ 4 - 10h às 11h\n
-    ^ Perído matutino (Manhã)
-    ^ 5 - 13h às 14h
-    ^ 6 - 14h às 15h 
-    ^ 7 - 15h às 16h 
-    ^ 8 - 16h às 17h\n
+    ^ Perído vespertino (Tarde)\n
+    ^ 5 - 13h às 14h\n
+    ^ 6 - 14h às 15h\n 
+    ^ 7 - 15h às 16h\n 
+    ^ 8 - 16h às 17h
 
     + (1|2|3|4|5|6|7|8)[*]
     - <set horario=<star>>
@@ -52,13 +52,13 @@
 > topic mostrar_agendamento
     + inicio
     - Ok, este é o seu horário: <call>mostrarHorario <get horario></call>. Ele está correto?\n
-    ^ 1 - Sim
-    ^ 2 - Não\n
+    ^ 1 - Sim\n
+    ^ 2 - Não
 
     + 1
     - Esses foram os dados coletados:\n
-    ^ Dia da semana: <call>mostrarDia <get dia></call>
-    ^ Horario do exame: <call>mostrarHorario <get horario></call>
+    ^ Dia da semana: <call>mostrarDia <get dia></call>\n
+    ^ Horario do exame: <call>mostrarHorario <get horario></call>\n
     ^ {topic=pedido_confirmado}{@inicio}
 
     + 2
