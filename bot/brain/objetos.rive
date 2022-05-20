@@ -9,7 +9,7 @@
     //var data = this.getEsfs();
     if (args[0] == '001'){
         return "esf1"
-    } else {
+    } else if (args[0] == '002'){
         return "esf2"
     }
 < object
@@ -40,6 +40,14 @@
         return "9h às 10h"
     }else if (args[0] == '4'){
         return "10h às 11h"
+    }else if (args[0] == '5'){
+        return "13h às 14h"
+    }else if (args[0] == '6'){
+        return "14h às 15h"
+    }else if (args[0] == '7'){
+        return "15h às 16h"
+    }else if (args[0] == '8'){
+        return "16h às 17h"
     }
 < object
 
@@ -57,7 +65,7 @@
 
 > object verificarCadastroPaciente javascript
     //var data = this.verificarCadastro();
-    return true
+    return null
 < object
 
 > object checarCPF javascript

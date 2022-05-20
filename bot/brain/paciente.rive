@@ -12,6 +12,10 @@
 
     + 2
     - Que pena. Nos vemos em outra oportunidade {topic=random}. \n\n 
+
+    + *
+    - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.\n
+    ^ {topic=cadastro}{@inicio}
 < topic
 
 > topic setnome
