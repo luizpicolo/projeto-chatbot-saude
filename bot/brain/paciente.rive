@@ -25,10 +25,10 @@
     
     > topic setnome
         + *
-        - <set nome=<star>> {topic=inserir_nome}{topic=checagem}{@inicio}
+        - <set nome=<star>> {topic=inserir_nome}{topic=checar_nome}{@inicio}
     < topic
 
-    > topic checagem
+    > topic checar_nome
         + inicio
         - O nome está correto? <get nome> \n\n
         ^ 1 - Sim \n
@@ -36,33 +36,48 @@
 
         + 1
         - Prazer em lhe conhecer, <get nome>! \n\n 
-        ^ Agora por favor, digite, com apenas números, seu cpf. {topic=inserir_cpf}
+        ^ {topic=inserir_cpf}{@inicio}
 
         + 2
         - Está tudo bem, digite novamente o seu nome completo ou como você gostaria de ser chamada. {topic=inserir_nome}{topic=setnome}
 
         + *
         - Infelizmente eu não tenho resposta para essa opção. Escolha uma presente no menu.\n
-        ^ {topic=inserir_nome}{topic=checagem}{@inicio}
+        ^ {topic=inserir_nome}{topic=checar_nome}{@inicio}
     < topic
 < topic
 
 > topic inserir_cpf
-    + #
-    - <set cpf=<star>>O CPF está correto? <get cpf> \n\n
-    ^ 1 - Sim \n
-    ^ 2 - Não \n 
+    + inicio
+    - Agora por favor, digite, com apenas números, seu cpf. 
+    ^ {topic=inserir_cpf}{topic=setcpf}
 
-    + 1
-    - Checando se o CPF é válido... <call>checarCPF <get cpf></call>
-    * <call>checarCPF <get cpf></call> == true => {topic=setesf}{@inicio}
-    * <call>checarCPF <get cpf></call> == false => {topic=inserir_cpf}{@*}
-    
-    + 2
-    - Digite novamente, com apenas números, seu cpf. {topic=inserir_cpf}
+    > topic setcpf
+        + #
+        - <set cpf=<star>> {topic=inserir_cpf}{topic=checar_cpf}{@inicio}
 
-    + *
-    - Seu cpf contém alguns erros ou não é válido 🙁, vamos tentar novamente. {topic=inserir_cpf}{@2}
+        + *
+        - Seu cpf contém alguns erros ou não é válido 🙁, vamos tentar novamente.\n 
+        ^ {topic=inserir_cpf}{@inicio}
+    < topic
+
+    > topic checar_cpf
+        + inicio
+        - O CPF está correto? <get cpf> \n\n
+        ^ 1 - Sim \n
+        ^ 2 - Não \n
+
+        + 1
+        - Checando se o CPF é válido... <call>checarCPF <get cpf></call>
+        * <call>checarCPF <get cpf></call> == true => {topic=setesf}{@inicio}
+        * <call>checarCPF <get cpf></call> == false => {topic=inserir_cpf}{topic=checar_cpf}{@*}
+        
+        + 2
+        - Digite novamente, com apenas números, seu cpf. {topic=inserir_cpf}{topic=setcpf}
+
+        + *
+        - Seu cpf contém alguns erros ou não é válido 🙁, vamos tentar novamente. {topic=inserir_cpf}{@inicio}
+    < topic
 < topic
 
 > topic setesf
