@@ -7,7 +7,7 @@ ADD package.json /app/package.json
 ADD package-lock.json /app/package-lock.json
 
 RUN npm install
-RUN npm install -g npm
+RUN npm install -g npm@8.10.0
 
 ADD . /app
 
