@@ -69,7 +69,7 @@
 
         + 1
         - Checando se o CPF é válido... <call>checarCPF <get cpf></call>
-        * <call>checarCPF <get cpf></call> == true => {topic=setesf}{@inicio}
+        * <call>checarCPF <get cpf></call> == true => {topic=inserir_esf}{@inicio}
         * <call>checarCPF <get cpf></call> == false => {topic=inserir_cpf}{topic=checar_cpf}{@*}
         
         + 2
@@ -80,19 +80,33 @@
     < topic
 < topic
 
-> topic setesf
+> topic inserir_esf
     + inicio
-    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n\n <call>listarEsfs</call>
+    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n\n 
+    ^ <call>listarEsfs</call>
+    ^ {topic=inserir_esf}{topic=setesf}
 
-    + #
-    - <set esf=<star>> O Esf está correto? <call>mostrarEsf <get esf></call> \n\n
-    ^ 1 - Sim \n
-    ^ 2 - Não \n 
+    > topic setesf
+        + #
+        - <set esf=<star>> {topic=inserir_esf}{topic=checar_esf}{@inicio}
 
-    + 1
-    - Perfeito, estou salvando seu dados, só um minutinho 👍🏼.
-    * <call>salvarCadastroPaciente</call> != null => {topic=boas_vindas}
+        + *
+        - Ocorreu um erro 🙁, vamos tentar novamente.\n 
+        ^ {topic=inserir_esf}{@inicio}
+    < topic
 
-    + 2
-    - Sem problema, escolha novamente o seu esf. \n\n {topic=setesf}{@inicio}
+    > topic checar_esf
+        + inicio
+        - O Esf está correto? <call>mostrarEsf <get esf></call> \n\n
+        ^ 1 - Sim \n
+        ^ 2 - Não \n 
+
+        + 1
+        - Perfeito, estou salvando seu dados, só um minutinho 👍🏼.
+        ^ <call>salvarCadastroPaciente</call> 
+        ^ {topic=random}{@oi}
+
+        + 2
+        - {topic=inserir_esf}{@inicio}
+    < topic
 < topic 
