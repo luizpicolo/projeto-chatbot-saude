@@ -1,5 +1,5 @@
 const RiveScript = require('rivescript');
-const { Paciente } = require('../../app/models');
+const { Paciente, Esf } = require('../../app/models');
 const CPF = require('cpf-check');
 
 const ChatBot = function() {
@@ -31,8 +31,18 @@ const ChatBot = function() {
     console.log(data)
   }
 
-  self.getEsfs = async function(){
-    return ['esf1', 'esf2', 'wsf3']   
+  self.buscarEsf = async (id) => {
+    let paciente = await Esf.findByPk(id)
+    return paciente ? paciente.nome : null    
+  }
+
+  self.listarEsfs = async () => {
+    let string_esfs = "";
+    let esfs = await Esf.findAll();
+    esfs.forEach(esf => {
+      string_esfs += `${esf.id} - ${esf.nome}\n`  
+    });
+    return string_esfs
   }
 
   self.checarCPF = async function(cpf){

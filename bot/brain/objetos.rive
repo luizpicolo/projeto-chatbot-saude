@@ -1,17 +1,10 @@
 // Funções para ESF
 > object listarEsfs javascript
-    //var data = this.getEsfs();
-    var data = "1 - esf1\n2 - esf2\n3 - esf3"
-    return data;
+    return this.listarEsfs();
 < object
 
 > object mostrarEsf javascript
-    //var data = this.getEsfs();
-    if (args[0] == '1'){
-        return "esf1"
-    } else if (args[0] == '2'){
-        return "esf2"
-    }
+    return this.buscarEsf(args[0]);
 < object
 
 //Funções para o agendamento
@@ -59,6 +52,7 @@
 < object
 
 > object salvarCadastroPaciente javascript
+    console.log(args)
     //var data = this.salvarCadastro(args);
     return true
 < object
