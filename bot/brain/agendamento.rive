@@ -41,7 +41,7 @@
     ^ 7 - 15h às 16h\n 
     ^ 8 - 16h às 17h
 
-    + (1|2|3|4|5|6|7|8)[*]
+    + (1|2|3|4|5|6|7|8)
     - <set horario=<star>>
     ^ {topic=mostrar_agendamento}{@inicio}
 
