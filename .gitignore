@@ -1,3 +1,4 @@
 node_modules
 config/database.js
 config/tokens.js
+bot/models/teste.js
