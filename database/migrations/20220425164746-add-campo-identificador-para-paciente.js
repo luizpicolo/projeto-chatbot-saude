@@ -3,12 +3,12 @@
 module.exports = {
   async up (queryInterface, DataTypes) {
     await queryInterface.addColumn('pacientes', 'telegran_id', {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.STRING,
       unique: true,
     }),
     await queryInterface.addColumn('pacientes', 'whatsapp_id', {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.STRING,
       unique: true,
     })
