@@ -2,11 +2,7 @@
 ! var nome = Liz
 
 // Primeira chamada Bot
-+ (oi|ola)
++ (*)
+- Ola tudo bem? 
 * <call>verificarCadastroPaciente</call> == null => {topic=cadastro}{@inicio}
 * <call>verificarCadastroPaciente</call> != null => {topic=boas_vindas}{@inicio}
-- Diga olá para que possamos iniciar nossa conversa <call>verificarCadastroPaciente</call> == null
-
-+ *
-- Infelizmente eu não tenho resposta para isso. Digite *Olá* para iniciar uma conversa.
-- Tente me fazer uma pergunta diferente, ou, digite *Olá* para iniciar uma conversa.
