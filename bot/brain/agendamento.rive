@@ -7,14 +7,14 @@
     ^ 4 - Quinta-feira\n
     ^ 5 - Sexta-feira
 
-    + (1|2|3|4|5)[*]
+    + (1|2|3|4|5)
     - <set dia=<star>> O dia da semana esta correto? <call>mostrarDia <get dia></call> \n
     ^ 1 - Sim\n
     ^ 2 - Não
-    ^ {topic=condicao}
+    ^ {topic=checar_dia}
 
     // Sub tópico para verificar se o dia selecionado está correto
-    > topic condicao
+    > topic checar_dia
         + 1
         - {topic=horario}{@inicio}
 
