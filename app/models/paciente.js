@@ -10,6 +10,12 @@ module.exports = (sequelize, DataTypes) => {
       contato:{
         type: DataTypes.STRING,
       },
+      telegran_id: {
+        type: DataTypes.STRING,
+      },
+      whatsapp_id: {
+        type: DataTypes.STRING,
+      },
       cpf:{
         type: DataTypes.STRING,
       },
