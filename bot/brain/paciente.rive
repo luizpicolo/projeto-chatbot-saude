@@ -102,8 +102,8 @@
         ^ 2 - Não \n 
 
         + 1
-        - Perfeito, estou salvando seu dados, só um minutinho 👍🏼.
-        ^ <call>salvarCadastroPaciente</call> 
+        - Perfeito, estou salvando seu dados, só um minutinho 👍🏼\n.
+        ^ <call>salvarCadastroPaciente "<get nome>" "<get cpf>" <get esf></call> 
         ^ {topic=random}{@oi}
 
         + 2

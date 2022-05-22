@@ -22,13 +22,29 @@ const ChatBot = function() {
       return "20/12/2022"
   };
 
-  self.verificarCadastro = async function() {
-    let paciente = await Paciente.findOne({ where: { [self.messager]: self.id.toString() } });
-    return paciente ? paciente : null    
+  self.verificarCadastroPaciente = async () => {
+    try {
+      let paciente = await Paciente.findOne({ where: { [self.messager]: self.id.toString() } });
+      return paciente ? paciente : null    
+    } catch (error) {
+      return null 
+    }
   };
 
-  self.salvarCadastro = async function(data){
-    console.log(data)
+  self.salvarCadastroPaciente = async (args) => {
+    let paciente = {
+      "nome": args[0],
+      "contato": "3333",
+      "cpf": args[1],
+      "esf_id": args[2]
+    }
+    paciente[self.messager] = self.id.toString();
+    
+    try {
+      return await Paciente.create(paciente)
+    } catch (error) {
+      return false 
+    }
   }
 
   self.buscarEsf = async (id) => {

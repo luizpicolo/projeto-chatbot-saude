@@ -52,19 +52,19 @@
 < object
 
 > object salvarCadastroPaciente javascript
-    console.log(args)
-    //var data = this.salvarCadastro(args);
-    return true
+    if (this.salvarCadastroPaciente(args)){
+        return "Sucesso\n"
+    } else {
+        return "Erro ao realizar cadastro\n"
+    }
 < object
 
 > object verificarCadastroPaciente javascript
-    //var data = this.verificarCadastro();
-    return null
+    return this.verificarCadastroPaciente();
 < object
 
 > object checarCPF javascript
-    //return this.checarCPF(args[0]);
-    return true;
+    return this.checarCPF(args[0]);
 < object
 
 // Funções para Informações
