@@ -2,7 +2,7 @@
 > topic cadastro
     + inicio
     - Olá, sou a bot <bot nome> 👩🏻, espero lhe encontrar bem. Verifiquei que você ainda não possui cadastro. \n\n 
-    ^ Deseja se cadastrar? É rapidinho 😁!! \n\n
+    ^ Deseja se cadastrar? É rapidinho 😁!! Para sua resposta, digite apenas números, cada número representa uma respectiva resposta. \n\n
     ^ 1 - Sim \n
     ^ 2 - Não \n 
 
@@ -31,6 +31,7 @@
     > topic checar_nome
         + inicio
         - O nome está correto? <get nome> \n\n
+        ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
         ^ 1 - Sim \n
         ^ 2 - Não \n
 
@@ -64,6 +65,7 @@
     > topic checar_cpf
         + inicio
         - O CPF está correto? <get cpf> \n\n
+        ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
         ^ 1 - Sim \n
         ^ 2 - Não \n
 
@@ -82,7 +84,8 @@
 
 > topic inserir_esf
     + inicio
-    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n\n 
+    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n
+    ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ <call>listarEsfs</call>
     ^ {topic=inserir_esf}{topic=setesf}
 
@@ -98,6 +101,7 @@
     > topic checar_esf
         + inicio
         - O Esf está correto? <call>mostrarEsf <get esf></call> \n\n
+        ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
         ^ 1 - Sim \n
         ^ 2 - Não \n 
 

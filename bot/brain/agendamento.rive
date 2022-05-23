@@ -1,6 +1,7 @@
 > topic agendamento_horario
     + inicio
     - Vamos começar então 😄, selecione o dia da semana que você está mais disponivel:\n
+    ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ 1 - Segunda-feira\n
     ^ 2 - Terça-feira\n
     ^ 3 - Quarta-feira\n
@@ -9,6 +10,7 @@
 
     + (1|2|3|4|5)
     - <set dia=<star>> O dia da semana esta correto? <call>mostrarDia <get dia></call> \n
+    ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ 1 - Sim\n
     ^ 2 - Não
     ^ {topic=checar_dia}
@@ -30,12 +32,13 @@
 > topic horario
     + inicio
     - Selecione o horário que está disponível:\n
-    ^ Perído matutino (Manhã)\n
+    ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
+    ^ Período matutino (Manhã)\n
     ^ 1 - 7h às 8h\n
     ^ 2 - 8h às 9h\n 
     ^ 3 - 9h às 10h\n 
     ^ 4 - 10h às 11h\n
-    ^ Perído vespertino (Tarde)\n
+    ^ Período vespertino (Tarde)\n
     ^ 5 - 13h às 14h\n
     ^ 6 - 14h às 15h\n 
     ^ 7 - 15h às 16h\n 
@@ -52,6 +55,7 @@
 > topic mostrar_agendamento
     + inicio
     - Ok, este é o seu horário: <call>mostrarHorario <get horario></call>. Ele está correto?\n
+    ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ 1 - Sim\n
     ^ 2 - Não
 
@@ -70,6 +74,6 @@
 
 > topic pedido_confirmado
     + inicio
-    - O pedido foi encaminhado, aguarde nosso retorno.\n
+    - O pedido foi encaminhado, aguarde nosso retorno.\n\n
     ^ {topic=finalizar}{@inicio}
 < topic

@@ -1,6 +1,7 @@
 > topic informacoes
     + inicio
     - Aqui temos algumas informações sobre o câncer de colo do útero, qual delas você deseja ver?\n
+    ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ <call>getTopicosInformacoes</call>
 
     + #
