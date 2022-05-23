@@ -11,7 +11,7 @@ const ChatBot = function() {
     self.rs.sortReplies();
     self.id = id;
     self.messager = `${messager}_id`;
-    return await self.rs.reply('nome', req, self);
+    return await self.rs.reply(self.id, req, self);
   }
 
   self.loading_error = function(error){
