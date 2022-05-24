@@ -62,8 +62,16 @@ const ChatBot = function() {
   }
 
   self.buscarInfo = async (id) => {
-    let paciente = await Informacao.findByPk(id)
-    return paciente ? paciente.conteudo: null    
+    let paciente = await Informacao.findByPk(id)   
+    function removeTags(str) {
+      if ((str===null) || (str===''))
+          return false;
+      else
+          str = str.toString();
+      return str.replace( /(<([^>]+)>)/ig, '');
+  }
+  let resul=removeTags(paciente.conteudo);
+  return paciente ? resul: null 
   }
 
   self.listarInfo = async () => {
