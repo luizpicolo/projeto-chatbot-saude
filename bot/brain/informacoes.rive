@@ -8,7 +8,7 @@
     // * <call>getConteudoInformacao <star></call> == null => {topic=informacoes}{@*}
     // * <call>getConteudoInformacao <star></call> != null => <call>getConteudoInformacao <star></call> \n {topic=menu_global}{@inicio}  
     + #
-    - <call>mostrarInformacao <star></call>/n{topic=menu_global}{@inicio} 
+    - <call>mostrarInformacao <star></call>\n{topic=menu_global}{@inicio} 
 
     + *
     - Infelizmente eu não tenho resposta para essa opção.

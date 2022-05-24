@@ -63,14 +63,14 @@ const ChatBot = function() {
 
   self.buscarInfo = async (id) => {
     let paciente = await Informacao.findByPk(id)
-    return paciente ? paciente.nome : null    
+    return paciente ? paciente.conteudo: null    
   }
 
   self.listarInfo = async () => {
     let string_info = "";
     let info = await Informacao.findAll();
     info.forEach(info => {
-      string_info += `${info.id} - ${info.nome}\n`  
+      string_info += `${info.id} - ${info.tipo}\n`  
     });
     return string_info
   }
