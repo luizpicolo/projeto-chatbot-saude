@@ -61,20 +61,21 @@ const ChatBot = function() {
     return string_esfs
   }
 
-  self.buscarInfo = async (id) => {
-    let paciente = await Informacao.findByPk(id)   
-    function removeTags(str) {
+  self.removeTags = (str)=>{
       if ((str===null) || (str===''))
           return false;
       else
           str = str.toString();
       return str.replace( /(<([^>]+)>)/ig, '');
   }
-  let resul=removeTags(paciente.conteudo);
-  return paciente ? resul: null 
+
+  self.buscarInformacoes = async (id) => {
+   let paciente = await Informacao.findByPk(id)   
+   let resul = self.removeTags(paciente.conteudo);
+   return paciente ? resul: null 
   }
 
-  self.listarInfo = async () => {
+  self.listarInformacoes = async () => {
     let string_info = "";
     let info = await Informacao.findAll();
     info.forEach(info => {

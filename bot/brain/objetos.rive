@@ -84,9 +84,9 @@
 // < object
 
 > object listarInformacao javascript
-    return this.listarInfo();
+    return this.listarInformacoes();
 < object
 
 > object mostrarInformacao javascript
-    return this.buscarInfo(args[0]);
+    return this.buscarInformacoes(args[0]);
 < object
