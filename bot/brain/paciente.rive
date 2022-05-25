@@ -106,11 +106,41 @@
         ^ 2 - Não \n 
 
         + 1
-        - Perfeito, estou salvando seu dados, só um minutinho 👍🏼\n.
-        ^ <call>salvarCadastroPaciente "<get nome>" "<get cpf>" <get esf></call> 
-        ^ {topic=random}{@oi}
+        - Ok, estamos quase no final.\n{topic=inserir_contato}{@inicio}
 
         + 2
         - {topic=inserir_esf}{@inicio}
     < topic
 < topic 
+
+> topic inserir_contato
++ inicio
+- Agora precisamos de seu telefone para um possivel contato, digite com apenas números:{topic=inserir_contato}{topic=set_contato}
+
+> topic set_contato
++ #
+- <set contato=<star>> {topic=inserir_contato}{topic=checar_contato}{@inicio}
+
++ *
+- Seu telefone para contato contém alguns erros ou não é válido 🙁, vamos tentar novamente.\n 
+^ {topic=inserir_contato}{@inicio}
+
+< topic
+
+> topic checar_contato
+ + inicio
+ - O telefone está correto? <get contato> \n\n
+ ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
+ ^ 1 - Sim \n
+ ^ 2 - Não \n
+
+ + 1
+ - Perfeito, estou salvando seu dados, só um minutinho 👍🏼\n.
+ ^ <call>salvarCadastroPaciente "<get nome>" "<get cpf>" <get esf> "<get contato>"</call> 
+ ^ {topic=random}{@oi}
+
+ + 2
+ - Digite novamente, com apenas números, seu telefone do contato. {topic=inserir_contato}{topic=set_contato}
+< topic
+
+< topic

@@ -34,7 +34,7 @@ const ChatBot = function() {
   self.salvarCadastroPaciente = async (args) => {
     let paciente = {
       "nome": args[0],
-      "contato": "3333",
+      "contato": args[3],
       "cpf": args[1],
       "esf_id": args[2]
     }
