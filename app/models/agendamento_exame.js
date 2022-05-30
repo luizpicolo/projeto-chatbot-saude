@@ -7,6 +7,15 @@ module.exports = (sequelize, DataTypes) => {
       data_agendamento: {
         type: DataTypes.DATE,
       },
+      horario_previsto:{
+        type: DataTypes.STRING,
+      },
+      dia_previsto:{
+        type: DataTypes.STRING,
+      },
+      status:{
+        type: DataTypes.STRING,
+      },
     });
   
     AgendamentoExame.associate = function(models) {

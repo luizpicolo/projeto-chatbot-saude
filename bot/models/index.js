@@ -1,5 +1,5 @@
 const RiveScript = require('rivescript');
-const { Paciente, Esf, Informacao } = require('../../app/models');
+const { Paciente, Esf, Informacao, AgendamentoExame} = require('../../app/models');
 const CPF = require('cpf-check');
 
 const ChatBot = function() {
@@ -84,10 +84,13 @@ const ChatBot = function() {
     return string_info
   }
 
-  self.salvarAgendamento = async () => {
+  self.salvarAgendamentoPrevio = async (args) => { 
     let agendamento = {
-      "data_agendamento": args[0], 
+      "dia_previsto": args[0],
+      "horario_previsto": args[1],
+      "status": 'pendente',
     }
+      return await AgendamentoExame.create(agendamento)
   }
 
   self.checarCPF = async function(cpf){

@@ -18,7 +18,7 @@ const resources = [
   }, 
   { resource: AgendamentoExame, 
     options: {
-      listProperties: ['id', 'paciente_id', 'data_agendamento', 'createdAt', 'updatedAt']
+      listProperties: ['id', 'paciente_id', 'data_agendamento', 'horario_previsto', 'dia_previsto', 'status', 'createdAt', 'updatedAt']
     }
   },
   { resource: Informacao, 
