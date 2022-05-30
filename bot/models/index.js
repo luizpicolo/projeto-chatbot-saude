@@ -86,10 +86,8 @@ const ChatBot = function() {
 
   self.salvarAgendamentoPrevio = async (args) => { 
     let agendamento = {
-      "data_agendamento": null,
       "dia_previsto": args[0],
       "horario_previsto": args[1],
-      "status": false,
     }
       return await AgendamentoExame.create(agendamento)
   }
