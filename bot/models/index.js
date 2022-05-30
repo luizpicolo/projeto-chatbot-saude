@@ -84,6 +84,12 @@ const ChatBot = function() {
     return string_info
   }
 
+  self.salvarAgendamento = async () => {
+    let agendamento = {
+      "data_agendamento": args[0], 
+    }
+  }
+
   self.checarCPF = async function(cpf){
     return CPF.validate(cpf)  
   }
