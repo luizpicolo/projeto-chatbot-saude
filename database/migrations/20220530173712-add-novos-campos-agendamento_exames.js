@@ -11,8 +11,8 @@ module.exports = {
       type: DataTypes.STRING
     });
     await queryInterface.addColumn('agendamento_exames', 'status', {
-      allowNull: false,
-      type: DataTypes.STRING
+      defaultValue: 'false',
+      type: DataTypes.BOOLEAN
     });
 
   },

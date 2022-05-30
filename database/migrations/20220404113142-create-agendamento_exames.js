@@ -10,7 +10,6 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       data_agendamento: {
-        allowNull: false,
         type: DataTypes.DATE,
       },
       paciente_id:{

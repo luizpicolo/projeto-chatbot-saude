@@ -64,7 +64,7 @@
     ^ Dia da semana: <call>mostrarDia <get dia></call>\n
     ^ Horario do exame: <call>mostrarHorario <get horario></call>\n
     ^ {topic=pedido_confirmado}{@inicio} 
-    ^ <call>salvarAgendamentoPrevio "<call>mostrarHorario <get dia></call>" "<call>mostrarHorario <get horario></call>"</call>
+    ^ <call>salvarAgendamentoPrevio "<call>mostrarDia <get dia></call>" "<call>mostrarHorario <get horario></call>"</call>
 
     + 2
     - {topic=horario}{@inicio}
