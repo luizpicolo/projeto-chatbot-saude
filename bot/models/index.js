@@ -1,5 +1,5 @@
 const RiveScript = require('rivescript');
-const { Paciente, Esf } = require('../../app/models');
+const { Paciente, Esf, Informacao } = require('../../app/models');
 const CPF = require('cpf-check');
 
 const ChatBot = function() {
@@ -59,6 +59,29 @@ const ChatBot = function() {
       string_esfs += `${esf.id} - ${esf.nome}\n`  
     });
     return string_esfs
+  }
+
+  self.removeTags = (str) => {
+      if ((str === null) || (str === ''))
+          return false;
+      else
+          str = str.toString();
+      return str.replace( /(<([^>]+)>)/ig, '');
+  }
+
+  self.buscarInformacao = async (id) => {
+   let informacao = await Informacao.findByPk(id)   
+   let resul = self.removeTags(informacao.conteudo);
+   return informacao ? resul: null
+  }
+
+  self.listarInformacoes = async () => {
+    let string_info = "";
+    let info = await Informacao.findAll();
+    info.forEach(info => {
+      string_info += `${info.id} - ${info.tipo}\n`  
+    });
+    return string_info
   }
 
   self.checarCPF = async function(cpf){
