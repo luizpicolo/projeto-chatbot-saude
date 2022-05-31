@@ -46,7 +46,7 @@
 
 > object salvarAgendamentoPrevio javascript
     if (this.salvarAgendamentoPrevio(args)){
-        return "Sucesso\n"
+        return "Sucesso 👍🏼 👍🏼 😁 😁\n"
     } else {
         return "Erro ao realizar agendamento\n"
     }
@@ -61,7 +61,7 @@
 
 > object salvarCadastroPaciente javascript
     if (this.salvarCadastroPaciente(args)){
-        return "Sucesso\n"
+        return "Sucesso 👍🏼 👍🏼 😁 😁\n"
     } else {
         return "Erro ao realizar cadastro\n"
     }
