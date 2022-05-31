@@ -5,18 +5,18 @@ module.exports = {
     await queryInterface.bulkInsert('esfs', [
       {
         nome: 'Esf - Morada do Sol',
-        email: 'admin@admin.com.br',
+        email: 'admin1@admin.com.br',
         cnpj: '12345678'
       },
       {
         nome: 'Esf - Centro Educacional',
-        email: 'admin@admin.com.br',
-        cnpj: '12345678'
+        email: 'admin2@admin.com.br',
+        cnpj: '123456789'
       },
       {
         nome: 'Esf - Vila Operária',
-        email: 'admin@admin.com.br',
-        cnpj: '12345678'
+        email: 'admin3@admin.com.br',
+        cnpj: '1234567810'
       }
   ], {});
   },
