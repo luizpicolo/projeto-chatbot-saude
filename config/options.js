@@ -10,8 +10,7 @@ const resources = [
   },
   { resource: Usuario, 
     options: { 
-      listProperties: ['id', 'nome', 'email', 'esf_id', 'admin', 'createdAt', 'updatedAt'],
-      // properties: { esf_id: "teste" }
+      listProperties: ['id', 'nome', 'email', 'esf_id', 'admin', 'createdAt', 'updatedAt']
     }
   },
   { resource: Paciente, 

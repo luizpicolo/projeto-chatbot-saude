@@ -18,8 +18,12 @@ const ChatBot = function() {
     console.log("Error when loading files: " + error);
   }
 
-  self.getDataExamePaciente = function() {
-      return "20/12/2022"
+  self.mostrarDataExamePaciente = function() {
+    try {
+      return "20/12/2022"  
+    } catch (error) {
+      return "Data não encontrada" 
+    } 
   };
 
   self.verificarCadastroPaciente = async () => {

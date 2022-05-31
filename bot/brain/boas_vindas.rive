@@ -12,7 +12,7 @@
  
     + 2
     - Seu exame está marcado para o seguinte horário:\n 
-    ^ <call>getDataExamePaciente</call>\n 
+    ^ <call>mostrarDataExamePaciente</call>\n 
     ^ {topic=menu_inicial}{@inicio} 
 
     + 3
