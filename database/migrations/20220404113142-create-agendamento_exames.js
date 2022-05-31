@@ -20,13 +20,6 @@ module.exports = {
           model: 'pacientes',
           key: 'id'
         }
-      },
-      esf_id:{
-        type: DataTypes.INTEGER,
-        references: {         
-          model: 'esfs',
-          key: 'id'
-        }
       }
     })
   },
