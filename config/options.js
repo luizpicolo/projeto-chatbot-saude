@@ -1,4 +1,4 @@
-const {Esf, Usuario, Paciente, Informacao, AgendamentoExame} = require('../app/models');
+const {Esf, Usuario, Paciente, Informacao, AgendamentoExame, Avaliacao} = require('../app/models');
 const translations = require('./translations');
 
 const resources = [
@@ -28,6 +28,12 @@ const resources = [
     options: {
       listProperties: ['id', 'tipo', 'conteudo', 'fonte', 'createdAt', 'updatedAt'],
       properties: { conteudo: { type: 'richtext' }, },
+    }
+  },
+  { resource: Avaliacao, 
+    options: {
+      //showProperties: ['id', 'nome', 'cnpj', 'email', 'createdAt', 'updatedAt'],
+      listProperties: ['id', 'paciente_id', 'nota', 'createdAt', 'updatedAt']
     }
   },
 ];
