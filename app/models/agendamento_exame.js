@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     });
   
     AgendamentoExame.associate = function(models) {
-      this.belongsTo(models.Paciente, { foreignKey: 'paciente_id' });
+      AgendamentoExame.belongsTo(models.Paciente, { foreignKey: 'paciente_id' });
     };
     
     AgendamentoExame.model_name = function () {
