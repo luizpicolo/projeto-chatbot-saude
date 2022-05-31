@@ -1,4 +1,5 @@
 const {Esf, Usuario, Paciente, Informacao, AgendamentoExame} = require('../app/models');
+const translations = require('./translations');
 
 const resources = [
   { resource: Esf, 
@@ -30,18 +31,10 @@ const resources = [
 ];
 
 const locale = {
-  translations: {
-    labels: {
-      loginWelcome: '',
-    },
-    messages: {
-      loginWelcome: '',
-    },
-  },
-};
+  translations: translations,
+}
 
 const options = {
-  locale: { language: 'en' },
   databases: [], 
   resources: resources,
   rootPath: '/admin',
