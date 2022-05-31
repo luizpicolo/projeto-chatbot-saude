@@ -82,3 +82,12 @@
 > object mostrarInformacao javascript
     return this.buscarInformacao(args[0]);
 < object
+
+//Funções para salvar avaliação
+> object salvarAvaliacao javascript
+    if (this.salvarAvaliacao(args)){
+        return "Sucesso 👍🏼 👍🏼 😁 😁\n"
+    } else {
+        return "Erro ao realizar agendamento\n"
+    }
+< object
