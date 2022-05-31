@@ -10,6 +10,7 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       nota: {
+        allowNull: false,
         type: DataTypes.INTEGER,
       },
       paciente_id:{

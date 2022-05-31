@@ -88,6 +88,6 @@
     if (this.salvarAvaliacao(args)){
         return "Sucesso 👍🏼 👍🏼 😁 😁\n"
     } else {
-        return "Erro em salvar a nota\n"
+        return "Erro ao salvar a avaliacao\n"
     }
 < object
