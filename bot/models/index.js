@@ -85,11 +85,19 @@ const ChatBot = function() {
   }
 
   self.salvarAgendamentoPrevio = async (args) => { 
+    let paciente = await self.verificarCadastroPaciente()
+    
     let agendamento = {
+      "paciente_id": paciente.id,
       "dia_previsto": args[0],
-      "horario_previsto": args[1],
+      "horario_previsto": args[1]
     }
+
+    try {
       return await AgendamentoExame.create(agendamento)
+    } catch (error) {
+      return false 
+    }
   }
 
   self.checarCPF = async function(cpf){
