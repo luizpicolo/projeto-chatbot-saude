@@ -48,8 +48,8 @@ const ChatBot = function() {
   }
 
   self.buscarEsf = async (id) => {
-    let paciente = await Esf.findByPk(id)
-    return paciente ? paciente.nome : null    
+    let esf = await Esf.findByPk(id)
+    return esf ? esf.nome : null    
   }
 
   self.listarEsfs = async () => {
