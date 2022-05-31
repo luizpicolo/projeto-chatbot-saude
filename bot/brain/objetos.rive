@@ -54,8 +54,7 @@
 
 // Funcões para Paciente
 > object mostrarDataExamePaciente javascript
-    //var data = this.mostrarDataExamePaciente();
-    var data = "20/12/2022 às 12:00"
+    var data = this.mostrarDataExamePaciente();
     return data;
 < object
 

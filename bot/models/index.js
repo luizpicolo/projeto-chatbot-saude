@@ -1,6 +1,9 @@
 const RiveScript = require('rivescript');
 const { Paciente, Esf, Informacao, AgendamentoExame} = require('../../app/models');
 const CPF = require('cpf-check');
+const moment = require('moment');
+
+moment.locale('pt-br');
 
 const ChatBot = function() {
   var self = this;
@@ -18,12 +21,19 @@ const ChatBot = function() {
     console.log("Error when loading files: " + error);
   }
 
-  self.mostrarDataExamePaciente = function() {
+  self.mostrarDataExamePaciente = async function() {
     try {
-      return "20/12/2022"  
+      let paciente = await self.verificarCadastroPaciente();
+      let paciente_ = await Paciente.findByPk(paciente.id, {include: ['agendamentos']});
+      let data = paciente_.agendamentos[0].data_agendamento;
+      if (data){
+        return self.formatarData(data)
+      } else {
+        return "Ainda não há data agendada" 
+      }   
     } catch (error) {
-      return "Data não encontrada" 
-    } 
+      return "Ainda não há data agendada"  
+    }
   };
 
   self.verificarCadastroPaciente = async () => {
@@ -104,7 +114,11 @@ const ChatBot = function() {
     }
   }
 
-  self.checarCPF = async function(cpf){
+  self.formatarData = (data) => {
+    return moment(data).format('LLLL');
+  }
+
+  self.checarCPF = function(cpf){
     return CPF.validate(cpf)  
   }
 }

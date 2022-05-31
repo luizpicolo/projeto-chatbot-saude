@@ -25,8 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     });
   
     Paciente.associate = function(models) {
-      Paciente.belongsTo(models.Esf, { foreignKey: 'esf_id' });
-      Paciente.hasMany(models.AgendamentoExame, { foreignKey: 'paciente_id' });
+      Paciente.belongsTo(models.Esf, { foreignKey: 'esf_id', as: 'esf' });
+      Paciente.hasMany(models.AgendamentoExame, { foreignKey: 'paciente_id', as: 'agendamentos' });
     };
   
     Paciente.model_name = function () {
