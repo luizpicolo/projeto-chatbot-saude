@@ -11,6 +11,7 @@ module.exports = {
       },
       nome: {
         allowNull: false,
+        unique: true,
         type: DataTypes.STRING,
       },
       admin: {

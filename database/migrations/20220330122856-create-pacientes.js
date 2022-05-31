@@ -19,6 +19,7 @@ module.exports = {
       },
       cpf: {
         allowNull: false,
+        unique: true,
         type: DataTypes.STRING,
       },
       esf_id:{

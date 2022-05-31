@@ -11,6 +11,7 @@ module.exports = {
       },
       conteudo: {
         allowNull: false,
+        unique: true,
         type: DataTypes.STRING,
       },
       fonte: {

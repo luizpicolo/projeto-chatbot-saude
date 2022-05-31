@@ -11,14 +11,17 @@ module.exports = {
       },
       nome: {
         allowNull: false,
+        unique: true,
         type: DataTypes.STRING,
       },
       email: {
         allowNull: false,
+        unique: true,
         type: DataTypes.STRING,
       },
       cnpj: {
         allowNull: false,
+        unique: true,
         type: DataTypes.STRING,
       }
     })

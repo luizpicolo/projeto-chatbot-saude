@@ -10,9 +10,11 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       data_agendamento: {
+        unique: true,
         type: DataTypes.DATE,
       },
       paciente_id:{
+        unique: true,
         type: DataTypes.INTEGER,
         references: {         
           model: 'pacientes',
