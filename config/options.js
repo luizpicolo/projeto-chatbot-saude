@@ -4,17 +4,20 @@ const translations = require('./translations');
 const resources = [
   { resource: Esf, 
     options: {
+      //showProperties: ['id', 'nome', 'cnpj', 'email', 'createdAt', 'updatedAt'],
       listProperties: ['id', 'nome', 'cnpj', 'email', 'createdAt', 'updatedAt']
     }
   },
   { resource: Usuario, 
     options: { 
-      listProperties: ['id', 'nome', 'email', 'esf_id', 'createdAt', 'updatedAt']
+      listProperties: ['id', 'nome', 'email', 'esf_id', 'admin', 'createdAt', 'updatedAt'],
+      // properties: { esf_id: "teste" }
     }
   },
   { resource: Paciente, 
     options: { 
-      listProperties: ['id', 'nome', 'telefone', 'esf_id', 'createdAt', 'updatedAt']
+      showProperties: ['id', 'nome', 'contato', 'esf_id', 'createdAt', 'updatedAt'],
+      listProperties: ['id', 'nome', 'contato', 'esf_id', 'createdAt', 'updatedAt']
     }
   }, 
   { resource: AgendamentoExame, 
