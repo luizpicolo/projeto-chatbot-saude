@@ -44,6 +44,14 @@
     }
 < object
 
+> object salvarAgendamentoPrevio javascript
+    if (this.salvarAgendamentoPrevio(args)){
+        return "Sucesso\n"
+    } else {
+        return "Erro ao realizar agendamento\n"
+    }
+< object
+
 // Funcões para Paciente
 > object getDataExamePaciente javascript
     //var data = this.getDataExamePaciente();
