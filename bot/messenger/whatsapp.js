@@ -7,6 +7,13 @@ const port = 3001;
 const client = require('twilio')(whatsapp.accountSid, whatsapp.authToken); 
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
+// Mensagem automatica: WhatsApp
+// client.messages.create({ 
+//   from: process.env.WHATSAPP_FROM,       
+//   to: process.env.WHATSAPP_TO,
+//   body: 'Olá seu exame está marcado para tal dia: .........'
+// }).then(message => console.log(message.sid)).done();
+
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));
