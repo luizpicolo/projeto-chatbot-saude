@@ -15,18 +15,8 @@ exports.start = bot.on('message', async (msg, match) => {
   const resp = await chatbot.loading_done(latinize(msg.text), chatId, 'telegran')
   bot.sendMessage(chatId, resp);
 
-  // Mensagem automatica: Telegram
-  let timer = null;
-
-  bot.onText(/\/start/, chatId=> {
-      timer = setInterval(() => {
-          if(new Date().getSeconds() === 1) {
-              bot.sendMessage(chatId, "Ola, seu exame está chegando perto: ......");    
-          }
-      }, 1000)    
-  });
-  
-  bot.onText(/\/stop/, chatId => {
-      clearInterval(timer);
-  })
 });
+
+exports.sendMessage = () => {
+    bot.sendMessage(chatid, mensagem); 
+}
