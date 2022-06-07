@@ -3,7 +3,7 @@ const latinize = require('latinize');
 const ChatBot = require("../models")
 const telegran = require('../../config/tokens')
 const schedule = require('node-schedule');
-const { AgendamentoExame } = require('../../app/models');
+const { AgendamentoExame, Paciente } = require('../../app/models');
 const moment = require('moment');
 const bot = new TelegramBot(telegran.token, {polling: true});
 
@@ -21,10 +21,18 @@ exports.start = bot.on('message', async (msg, match) => {
 
 });
 
-exports.sendMessage = () => {
-    const dia_atual = new Date();
-    const dia_exame = AgendamentoExame.data_agendamento;
-    const data_formatada = moment(dia_exame).format('L');
-    
-    bot.sendMessage(chatid, "Olá, seu exame está chegando perto, ele está marcado no dia "); 
+exports.sendMessage = async () => {
+    const um_dia_atras = new Date(new Date().setDate(new Date().getDate() - 1));
+    var paciente = await Paciente.findAll(
+      {
+        where: {
+          my_date: {
+            $gt: um_dia_atras,
+            $lt: AgendamentoExame.data_agendamento,
+          },
+        },
+      });
+
+      bot.sendMessage(chatid, "Olá, seu exame está chegando perto, ele está marcado "+ data_formatada);
+     
 }
