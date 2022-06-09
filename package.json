@@ -27,7 +27,7 @@
     "pg-hstore": "^2.3.4",
     "rivescript": "^2.2.0",
     "sequelize": "^6.17.0",
-    "twilio": "^3.76.1"
+    "twilio": "^3.77.2"
   },
   "devDependencies": {
     "localtunnel": "^2.0.2",
