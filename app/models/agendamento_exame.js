@@ -17,6 +17,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
       },
+    }, {
+      hooks: {
+        beforeUpdate : (record, options) => {
+          console.log(record);
+          //bot.sendMessage(chatid, mensagem); 
+        }
+      }
     });
   
     AgendamentoExame.associate = function(models) {
