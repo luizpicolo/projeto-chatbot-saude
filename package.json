@@ -22,7 +22,7 @@
     "moment": "^2.29.3",
     "morgan": "~1.9.1",
     "node-schedule": "^2.1.0",
-    "node-telegram-bot-api": "^0.56.0",
+    "node-telegram-bot-api": "^0.57.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "rivescript": "^2.2.0",
