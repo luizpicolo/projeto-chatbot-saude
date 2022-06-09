@@ -22,7 +22,7 @@ module.exports = {
         unique: true,
         type: DataTypes.STRING,
       },
-      esf_id:{
+      esfId:{
         type: DataTypes.INTEGER,
         references: {         
           model: 'esfs',

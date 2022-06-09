@@ -1,3 +1,10 @@
+const TelegramBot = require('node-telegram-bot-api');
+const telegran = require('../../config/tokens')
+const bot = new TelegramBot(telegran.token, {polling: false});
+const moment = require('moment');
+
+moment.locale('pt-br');
+
 module.exports = (sequelize, DataTypes) => {
   
     const table_name = 'agendamento_exames';
@@ -19,15 +26,15 @@ module.exports = (sequelize, DataTypes) => {
       },
     }, {
       hooks: {
-        beforeUpdate : (record, options) => {
-          console.log(record);
-          //bot.sendMessage(chatid, mensagem); 
+        beforeUpdate : async (record, options) => {
+          const paciente = await sequelize.models.pacientes.findByPk(record.id);
+          bot.sendMessage(paciente.telegran_id, `Olá, tenho novidades sobre o seu exame, ele foi agendado para ${moment(record.data_agendamento).format('LLL')}`); 
         }
       }
     });
   
     AgendamentoExame.associate = function(models) {
-      AgendamentoExame.belongsTo(models.Paciente, { foreignKey: 'paciente_id' });
+      AgendamentoExame.belongsTo(models.Paciente, { as: 'paciente' });
     };
     
     AgendamentoExame.model_name = function () {

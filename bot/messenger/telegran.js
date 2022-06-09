@@ -5,7 +5,7 @@ const telegran = require('../../config/tokens')
 const schedule = require('node-schedule');
 const { AgendamentoExame, Paciente } = require('../../app/models');
 const moment = require('moment');
-global.bot = new TelegramBot(telegran.token, {polling: true});
+const bot = new TelegramBot(telegran.token, {polling: true});
 
 moment.locale('pt-br');
 

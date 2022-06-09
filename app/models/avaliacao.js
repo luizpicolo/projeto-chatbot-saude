@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     });
   
    Avaliacao.associate = function(models) {
-      Avaliacao.belongsTo(models.Paciente, { foreignKey: 'paciente_id' });
+      Avaliacao.belongsTo(models.Paciente, { as: 'paciente' });
     };
     
     Avaliacao.model_name = function () {

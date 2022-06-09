@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Esf.associate = function(models) {
-    Esf.hasMany(models.Usuario, { foreignKey: 'esf_id' }); 
-    Esf.hasMany(models.Paciente, { foreignKey: 'esf_id' }); 
+    Esf.hasMany(models.Usuario, { as: 'usuarios' }); 
+    Esf.hasMany(models.Paciente, { as: 'pacientes' }); 
   };
 
   Esf.model_name = function () {

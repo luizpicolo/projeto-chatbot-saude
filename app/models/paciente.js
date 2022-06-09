@@ -18,16 +18,13 @@ module.exports = (sequelize, DataTypes) => {
       },
       cpf:{
         type: DataTypes.STRING,
-      },
-      esf_id:{
-        type: DataTypes.INTEGER,
       }
     });
   
     Paciente.associate = function(models) {
-      Paciente.belongsTo(models.Esf, { foreignKey: 'esf_id', as: 'esf' });
-      Paciente.hasMany(models.AgendamentoExame, { foreignKey: 'paciente_id', as: 'agendamentos' });
-      Paciente.hasMany(models.Avaliacao, { foreignKey: 'paciente_id', as: 'avaliacoes' });
+      Paciente.belongsTo(models.Esf, { as: 'esf' });
+      Paciente.hasMany(models.AgendamentoExame, { as: 'agendamentos' });
+      Paciente.hasMany(models.Avaliacao, { as: 'avaliacoes' });
     };
   
     Paciente.model_name = function () {

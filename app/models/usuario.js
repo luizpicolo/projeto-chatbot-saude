@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Usuario.associate = function(models) {
-    Usuario.belongsTo(models.Esf, { foreignKey: 'esf_id' }); 
+    Usuario.belongsTo(models.Esf, { as: 'esf' }); 
   };
 
   Usuario.model_name = function () {

@@ -18,7 +18,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.BOOLEAN,
       },
-      esf_id:{
+      esfId:{
         type: DataTypes.INTEGER,
         references: {         
           model: 'esfs',

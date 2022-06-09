@@ -10,18 +10,18 @@ const resources = [
   },
   { resource: Usuario, 
     options: { 
-      listProperties: ['id', 'nome', 'email', 'esf_id', 'admin', 'createdAt', 'updatedAt']
+      listProperties: ['id', 'nome', 'email', 'esfId', 'admin', 'createdAt', 'updatedAt']
     }
   },
   { resource: Paciente, 
     options: { 
-      showProperties: ['id', 'nome', 'contato', 'esf_id', 'createdAt', 'updatedAt'],
-      listProperties: ['id', 'nome', 'contato', 'esf_id', 'createdAt', 'updatedAt']
+      showProperties: ['id', 'nome', 'contato', 'esfId', 'createdAt', 'updatedAt'],
+      listProperties: ['id', 'nome', 'contato', 'esfId', 'createdAt', 'updatedAt']
     }
   }, 
   { resource: AgendamentoExame, 
     options: {
-      listProperties: ['id', 'paciente_id', 'data_agendamento', 'horario_previsto', 'dia_previsto', 'status', 'createdAt', 'updatedAt']
+      listProperties: ['id', 'pacienteId', 'data_agendamento', 'horario_previsto', 'dia_previsto', 'status', 'createdAt', 'updatedAt']
     }
   },
   { resource: Informacao, 
@@ -33,7 +33,7 @@ const resources = [
   { resource: Avaliacao, 
     options: {
       //showProperties: ['id', 'nome', 'cnpj', 'email', 'createdAt', 'updatedAt'],
-      listProperties: ['id', 'paciente_id', 'nota', 'createdAt', 'updatedAt']
+      listProperties: ['id', 'pacienteId', 'nota', 'createdAt', 'updatedAt']
     }
   },
 ];

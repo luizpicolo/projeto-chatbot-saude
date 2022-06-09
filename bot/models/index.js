@@ -50,7 +50,7 @@ const ChatBot = function() {
       "nome": args[0],
       "contato": args[3],
       "cpf": args[1],
-      "esf_id": args[2]
+      "esfId": args[2]
     }
     paciente[self.messager] = self.id.toString();
     
@@ -102,7 +102,7 @@ const ChatBot = function() {
     let paciente = await self.verificarCadastroPaciente()
     
     let agendamento = {
-      "paciente_id": paciente.id,
+      "pacienteId": paciente.id,
       "dia_previsto": args[0],
       "horario_previsto": args[1]
     }
@@ -117,7 +117,7 @@ const ChatBot = function() {
   self.salvarAvaliacao = async (args) => {
     let paciente = await self.verificarCadastroPaciente()
     let avaliacao = {
-      "paciente_id": paciente.id,
+      "pacienteId": paciente.id,
       "nota": args[0],
     }
 

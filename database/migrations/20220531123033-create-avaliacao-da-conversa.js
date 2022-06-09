@@ -13,7 +13,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.INTEGER,
       },
-      paciente_id:{
+      pacienteId:{
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {         

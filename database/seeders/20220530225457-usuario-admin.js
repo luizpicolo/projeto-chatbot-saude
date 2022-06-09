@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('usuarios', [{
       nome: 'admin',
       email: 'admin123@admin.com.br',
-      esf_id: 1,
+      esfId: 1,
       password: await bcrypt.hash('12345678', bcrypt.genSaltSync(8)),
       admin: true
     }], {});
