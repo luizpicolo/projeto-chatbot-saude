@@ -16,7 +16,7 @@
     "ejs": "~3.1.7",
     "express": "~4.16.1",
     "express-formidable": "^1.2.0",
-    "express-session": "^1.17.2",
+    "express-session": "^1.17.3",
     "http-errors": "~1.6.3",
     "latinize": "^0.5.0",
     "moment": "^2.29.3",
