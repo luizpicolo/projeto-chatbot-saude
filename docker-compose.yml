@@ -25,6 +25,17 @@ services:
       - .:/app
       - node_modules:/app/node_modules
     command: node /app/bot
+
+  task: 
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always 
+    container_name: task_app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: node /app/bot/task.js
     
   web:
     build: 
