@@ -4,10 +4,10 @@ RUN mkdir /app
 
 WORKDIR /app
 ADD package.json /app/package.json
-ADD package-lock.json /app/package-lock.json
+ADD yarn.lock /app/yarn.lock
 
-RUN npm install
-# RUN npm install -g npm@8.12.1
+RUN yarn install
+
 
 ADD . /app
 
