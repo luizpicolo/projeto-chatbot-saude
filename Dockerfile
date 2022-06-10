@@ -8,6 +8,8 @@ ADD yarn.lock /app/yarn.lock
 
 RUN yarn install
 
+ENV TZ=America/Campo_Grande
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ADD . /app
 
