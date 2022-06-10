@@ -8,8 +8,9 @@ const bot = new TelegramBot(telegran.token, {polling: false});
 
 moment.locale('pt-br');
 
-(async () => {
-  const data_final = new moment(new Date()).add(2, 'd').format('L');
+schedule.scheduleJob('*/1 * * * *', async () => {
+  const data_final = moment(new Date()).add(2, 'd').format('YYYY/MM/DD');
+  const data_inicial = moment(new Date()).format('YYYY/MM/DD');
 
   var agendamentos = await AgendamentoExame.findAll({
     include: [
@@ -17,7 +18,7 @@ moment.locale('pt-br');
     ],
     where: {
       data_agendamento: {
-        [Op.between] : [new Date(), new Date(data_final)]
+        [Op.between] : [data_inicial, data_final]
       },
     },
   });
@@ -26,4 +27,4 @@ moment.locale('pt-br');
     let paciente = agenda.paciente
     bot.sendMessage(paciente.telegran_id, `Olá, ${paciente.nome}, seu exame está chegando perto, ele está marcado para ${moment(agenda.data_agendamento).format('LLL')}`); 
   });
-})();
+});
