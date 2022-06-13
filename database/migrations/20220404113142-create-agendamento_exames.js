@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async  (queryInterface, DataTypes) => {
-    await queryInterface.createTable('agendamento_exames', {
+    await queryInterface.createTable('agendamentos', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -24,6 +24,6 @@ module.exports = {
     })
   },
   down: async (queryInterface)=>{
-    return queryInterface.dropTable('agendamento_exames');
+    return queryInterface.dropTable('agendamentos');
   }
 };

@@ -1,27 +1,33 @@
-const {Esf, Usuario, Paciente, Informacao, AgendamentoExame, Avaliacao} = require('../app/models');
+const {Esf, Usuario, Paciente, Informacao, Agendamento, Avaliacao} = require('../app/models');
 const translations = require('./translations');
 
 const resources = [
   { resource: Esf, 
     options: {
-      //showProperties: ['id', 'nome', 'cnpj', 'email', 'createdAt', 'updatedAt'],
-      listProperties: ['id', 'nome', 'cnpj', 'email', 'createdAt', 'updatedAt']
+      showProperties: ['id', 'name', 'cnpj', 'email', 'createdAt', 'updatedAt'],
+      listProperties: ['id', 'name', 'cnpj', 'email', 'createdAt', 'updatedAt']
     }
   },
   { resource: Usuario, 
     options: { 
-      listProperties: ['id', 'nome', 'email', 'esfId', 'admin', 'createdAt', 'updatedAt']
+      listProperties: ['id', 'name', 'email', 'esfId', 'admin', 'createdAt', 'updatedAt']
     }
   },
   { resource: Paciente, 
     options: { 
-      showProperties: ['id', 'nome', 'contato', 'esfId', 'createdAt', 'updatedAt'],
-      listProperties: ['id', 'nome', 'contato', 'esfId', 'createdAt', 'updatedAt']
+      showProperties: ['id', 'name', 'contato', 'esfId', 'createdAt', 'updatedAt'],
+      listProperties: ['id', 'name', 'contato', 'esfId', 'createdAt', 'updatedAt']
     }
   }, 
-  { resource: AgendamentoExame, 
+  { resource: Agendamento, 
     options: {
-      listProperties: ['id', 'pacienteId', 'data_agendamento', 'horario_previsto', 'dia_previsto', 'status', 'createdAt', 'updatedAt']
+      listProperties: ['id', 'pacienteId', 'data_agendamento', 'dia_previsto', 'horario_previsto', 'status', 'createdAt', 'updatedAt'],
+      // properties: { 
+      //   pacienteId: { type: 'reference' },
+      //   //data_agendamento: { type: 'datetime' }
+      // },
+      //parent: { name: 'id' },
+      //sort: { direction: 'desc' },
     }
   },
   { resource: Informacao, 
@@ -32,14 +38,14 @@ const resources = [
   },
   { resource: Avaliacao, 
     options: {
-      //showProperties: ['id', 'nome', 'cnpj', 'email', 'createdAt', 'updatedAt'],
+      //showProperties: ['id', 'name', 'cnpj', 'email', 'createdAt', 'updatedAt'],
       listProperties: ['id', 'pacienteId', 'nota', 'createdAt', 'updatedAt']
     }
   },
 ];
 
 const locale = {
-  translations: translations,
+  translations: translations
 }
 
 const options = {

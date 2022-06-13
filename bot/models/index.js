@@ -1,5 +1,5 @@
 const RiveScript = require('rivescript');
-const { Paciente, Esf, Informacao, AgendamentoExame, Avaliacao} = require('../../app/models');
+const { Paciente, Esf, Informacao, Agendamento, Avaliacao} = require('../../app/models');
 const CPF = require('cpf-check');
 const moment = require('moment');
 
@@ -47,7 +47,7 @@ const ChatBot = function() {
 
   self.salvarCadastroPaciente = async (args) => {
     let paciente = {
-      "nome": args[0],
+      "name": args[0],
       "contato": args[3],
       "cpf": args[1],
       "esfId": args[2]
@@ -63,14 +63,14 @@ const ChatBot = function() {
 
   self.buscarEsf = async (id) => {
     let esf = await Esf.findByPk(id)
-    return esf ? esf.nome : null    
+    return esf ? esf.name : null    
   }
 
   self.listarEsfs = async () => {
     let string_esfs = "";
     let esfs = await Esf.findAll();
     esfs.forEach(esf => {
-      string_esfs += `${esf.id} - ${esf.nome}\n`  
+      string_esfs += `${esf.id} - ${esf.name}\n`  
     });
     return string_esfs
   }
@@ -108,7 +108,7 @@ const ChatBot = function() {
     }
 
     try {
-      return await AgendamentoExame.create(agendamento)
+      return await Agendamento.create(agendamento)
     } catch (error) {
       return false 
     }

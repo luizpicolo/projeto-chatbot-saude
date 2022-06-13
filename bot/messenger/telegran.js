@@ -3,7 +3,7 @@ const latinize = require('latinize');
 const ChatBot = require("../models")
 const telegran = require('../../config/tokens')
 const schedule = require('node-schedule');
-const { AgendamentoExame, Paciente } = require('../../app/models');
+const { Agendamento, Paciente } = require('../../app/models');
 const moment = require('moment');
 const bot = new TelegramBot(telegran.token, {polling: true});
 
@@ -27,7 +27,7 @@ exports.start = bot.on('message', async (msg, match) => {
 //         where: {
 //           my_date: {
 //             $gt: um_dia_atras,
-//             $lt: AgendamentoExame.data_agendamento,
+//             $lt: Agendamento.data_agendamento,
 //           },
 //         },
 //       });

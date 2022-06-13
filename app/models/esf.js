@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   const model_name = 'Esf';
 
   const Esf = sequelize.define(table_name, {
-    nome: {
+    name: {
       type: DataTypes.STRING,
     },
     email: {
@@ -23,6 +23,6 @@ module.exports = (sequelize, DataTypes) => {
   Esf.model_name = function () {
     return model_name
   };
-  
+
   return Esf;
 }

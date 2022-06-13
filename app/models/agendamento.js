@@ -7,10 +7,10 @@ moment.locale('pt-br');
 
 module.exports = (sequelize, DataTypes) => {
   
-    const table_name = 'agendamento_exames';
-    const model_name = 'AgendamentoExame';
+    const table_name = 'agendamentos';
+    const model_name = 'Agendamento';
   
-    const AgendamentoExame = sequelize.define(table_name, {      
+    const Agendamento = sequelize.define(table_name, {      
       data_agendamento: {
         type: DataTypes.DATE,
       },
@@ -27,19 +27,19 @@ module.exports = (sequelize, DataTypes) => {
     }, {
       hooks: {
         beforeUpdate : async (record, options) => {
-          const paciente = await sequelize.models.pacientes.findByPk(record.id);
+          const paciente = await sequelize.models.pacientes.findByPk(record.pacienteId);
           bot.sendMessage(paciente.telegran_id, `Olá, tenho novidades sobre o seu exame, ele foi agendado para ${moment(record.data_agendamento).format('LLL')}`); 
         }
       }
     });
   
-    AgendamentoExame.associate = function(models) {
-      AgendamentoExame.belongsTo(models.Paciente, { as: 'paciente' });
+    Agendamento.associate = function(models) {
+      Agendamento.belongsTo(models.Paciente, { as: 'paciente' });
     };
     
-    AgendamentoExame.model_name = function () {
+    Agendamento.model_name = function () {
       return model_name
     };
     
-    return AgendamentoExame;
+    return Agendamento;
   }

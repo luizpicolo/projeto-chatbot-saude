@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     const model_name = 'Paciente';
   
     const Paciente = sequelize.define(table_name, {
-      nome: {
+      name: {
         type: DataTypes.STRING,
       },
       contato:{
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   
     Paciente.associate = function(models) {
       Paciente.belongsTo(models.Esf, { as: 'esf' });
-      Paciente.hasMany(models.AgendamentoExame, { as: 'agendamentos' });
+      Paciente.hasMany(models.Agendamento, { as: 'agendamentos' });
       Paciente.hasMany(models.Avaliacao, { as: 'avaliacoes' });
     };
   

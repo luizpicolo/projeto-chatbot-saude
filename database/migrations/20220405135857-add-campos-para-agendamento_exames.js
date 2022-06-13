@@ -2,12 +2,12 @@
 
 module.exports = {
   async up (queryInterface, DataTypes) {
-    await queryInterface.addColumn('agendamento_exames', 'createdAt', {
+    await queryInterface.addColumn('agendamentos', 'createdAt', {
       allowNull: false,
       type: DataTypes.DATE,
       defaultValue: DataTypes.fn('NOW')
     });
-    await queryInterface.addColumn('agendamento_exames', 'updatedAt', {
+    await queryInterface.addColumn('agendamentos', 'updatedAt', {
       allowNull: false,
       type: DataTypes.DATE,
       defaultValue: DataTypes.fn('NOW')
@@ -15,7 +15,7 @@ module.exports = {
   },
 
   async down (queryInterface) {
-    await queryInterface.removeColumn('agendamento_exames', 'createdAt');
-    await queryInterface.removeColumn('agendamento_exames', 'updatedAt');
+    await queryInterface.removeColumn('agendamentos', 'createdAt');
+    await queryInterface.removeColumn('agendamentos', 'updatedAt');
   }
 };

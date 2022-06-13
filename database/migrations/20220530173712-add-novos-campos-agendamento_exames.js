@@ -2,15 +2,15 @@
 
 module.exports = {
   async up (queryInterface, DataTypes) {
-    await queryInterface.addColumn('agendamento_exames', 'horario_previsto', {
+    await queryInterface.addColumn('agendamentos', 'horario_previsto', {
       allowNull: false,
       type: DataTypes.STRING
     });
-    await queryInterface.addColumn('agendamento_exames', 'dia_previsto', {
+    await queryInterface.addColumn('agendamentos', 'dia_previsto', {
       allowNull: false,
       type: DataTypes.STRING
     });
-    await queryInterface.addColumn('agendamento_exames', 'status', {
+    await queryInterface.addColumn('agendamentos', 'status', {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
@@ -19,8 +19,8 @@ module.exports = {
   },
 
   async down (queryInterface) {
-    await queryInterface.removeColumn('agendamento_exames', 'horario_previsto');
-    await queryInterface.removeColumn('agendamento_exames', 'dia_previsto');
-    await queryInterface.removeColumn('agendamento_exames', 'status');
+    await queryInterface.removeColumn('agendamentos', 'horario_previsto');
+    await queryInterface.removeColumn('agendamentos', 'dia_previsto');
+    await queryInterface.removeColumn('agendamentos', 'status');
   }
 };

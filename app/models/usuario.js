@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   const model_name = 'Usuario';
 
   const Usuario = sequelize.define(table_name, {
-    nome: {
+    name: {
       type: DataTypes.STRING,
     },
     email: {
