@@ -75,6 +75,6 @@
 
 > topic pedido_confirmado
     + inicio
-    - O pedido foi encaminhado, aguarde nosso retorno.\n\n
+    - O pedido foi encaminhado, sua solicitação será avaliada, aguarde nosso retorno confirmando o seu agendamento.\n\n
     ^ {topic=finalizar}{@inicio}
 < topic
