@@ -74,7 +74,7 @@
 
 > topic pedido_confirmado
     + inicio
-    - O pedido foi encaminhado, aguarde nosso retorno.\n\n
+    - O pedido foi encaminhado, sua solicitação será avaliada, aguarde nosso retorno confirmando o seu agendamento.\n\n
     ^ <call>salvarAgendamentoPrevio "<call>mostrarDia <get dia></call>" "<call>mostrarHorario <get horario></call>"</call>
     ^ {topic=finalizar}{@inicio}
 < topic
