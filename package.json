@@ -8,7 +8,7 @@
   "dependencies": {
     "@adminjs/express": "^4.1.0",
     "@adminjs/sequelize": "^2.1.5",
-    "adminjs": "^5.9.8",
+    "adminjs": "^5.10.4",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "cpf-check": "^3.0.0",
