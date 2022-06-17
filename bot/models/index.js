@@ -68,7 +68,11 @@ const ChatBot = function() {
 
   self.listarEsfs = async () => {
     let string_esfs = "";
-    let esfs = await Esf.findAll();
+    let esfs = await Esf.findAll({
+      order: [
+        ['id', 'ASC']
+      ]
+    });
     esfs.forEach(esf => {
       string_esfs += `${esf.id} - ${esf.name}\n`  
     });
@@ -91,7 +95,11 @@ const ChatBot = function() {
 
   self.listarInformacoes = async () => {
     let string_info = "";
-    let info = await Informacao.findAll();
+    let info = await Informacao.findAll({
+      order: [
+        ['id', 'ASC']
+      ]
+    });
     info.forEach(info => {
       string_info += `${info.id} - ${info.tipo}\n`  
     });
