@@ -22,10 +22,15 @@ const resources = [
   { resource: Agendamento, 
     options: {
       listProperties: ['id', 'pacienteId', 'data_agendamento', 'dia_previsto', 'horario_previsto', 'status', 'createdAt', 'updatedAt'],
-      // properties: { 
-      //   pacienteId: { type: 'reference' },
-      //   //data_agendamento: { type: 'datetime' }
-      // },
+      // properties: {
+      //   data_agendamento: {
+      //     props: { dateFormat: "dd/MM/yyyy" }
+      //   }
+      // }
+      properties: { 
+        //pacienteId: { type: 'reference' },
+        data_agendamento: { type: 'datetime' }
+      },
       //parent: { name: 'id' },
       //sort: { direction: 'desc' },
     }
