@@ -84,7 +84,7 @@
 
 > topic inserir_esf
     + inicio
-    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n
+    - Maravilha <get nome>. Agora, selecione seu ESF, também conhecido como posto de saúde do seu bairro 😁. \n\n
     ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ <call>listarEsfs</call>
     ^ {topic=inserir_esf}{topic=setesf}

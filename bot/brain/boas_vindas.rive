@@ -1,6 +1,6 @@
 > topic boas_vindas
     + inicio
-    - Olá, sou a bot <bot nome> 👩🏻, espero lhe encontrar bem 😁. Digite o que deseja fazer?\n
+    - Olá, sou a bot <bot nome> 👩🏻, espero lhe encontrar bem 😁. Digite o que deseja fazer?\n\n
     ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ 1 - Agendar exame\n
     ^ 2 - Consulta do exame marcado\n

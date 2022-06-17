@@ -1,6 +1,6 @@
 > topic agendamento_horario
     + inicio
-    - Vamos começar então 😄, selecione o dia da semana que você está mais disponivel:\n
+    - Vamos começar então 😄, selecione o dia da semana que você está mais disponivel:\n\n
     ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ 1 - Segunda-feira\n
     ^ 2 - Terça-feira\n
@@ -9,7 +9,7 @@
     ^ 5 - Sexta-feira
 
     + (1|2|3|4|5)
-    - <set dia=<star>> O dia da semana esta correto? <call>mostrarDia <get dia></call> \n
+    - <set dia=<star>> O dia da semana esta correto? <call>mostrarDia <get dia></call> \n\n
     ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ 1 - Sim\n
     ^ 2 - Não
@@ -31,7 +31,7 @@
 
 > topic horario
     + inicio
-    - Selecione o horário que está disponível:\n
+    - Selecione o horário que está disponível:\n\n
     ^ Para sua resposta, digite apenas números, cada número representa uma respectiva resposta.\n\n
     ^ Período matutino (Manhã)\n
     ^ 1 - 7h às 8h\n
