@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const telegran = require('../config/tokens')
 const schedule = require('node-schedule');
-const { Agendamento, Paciente } = require('../app/models');
+const { Agendamento, Paciente, Esf } = require('../app/models');
 const moment = require('moment');
 const { Op } = require('sequelize');
 const bot = new TelegramBot(telegran.token, {polling: false});
@@ -14,7 +14,11 @@ schedule.scheduleJob('*/1 * * * *', async () => {
 
   var agendamentos = await Agendamento.findAll({
     include: [
-        { model: Paciente, as: 'paciente' }
+        { model: Paciente, as: 'paciente', 
+            include: {
+                model: Esf, as: 'esf'  
+            } 
+        }
     ],
     where: {
       data_agendamento: {
@@ -25,6 +29,6 @@ schedule.scheduleJob('*/1 * * * *', async () => {
 
   agendamentos.forEach(agenda => {
     let paciente = agenda.paciente
-    bot.sendMessage(paciente.telegran_id, `Olá, ${paciente.name}, seu exame está chegando perto, ele está marcado para ${moment(agenda.data_agendamento).format('LLL')}`); 
+    bot.sendMessage(paciente.telegran_id, `Olá, ${paciente.name}, seu exame está chegando perto, ele está agendado para ${moment(agenda.data_agendamento).format('LLL')} na ${paciente.esf.name}. \n\n Aguardamos sua presença 😘`); 
   });
 });
