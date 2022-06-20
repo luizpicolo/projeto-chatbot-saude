@@ -6,7 +6,8 @@
     ^ 2 - Terça-feira\n
     ^ 3 - Quarta-feira\n
     ^ 4 - Quinta-feira\n
-    ^ 5 - Sexta-feira
+    ^ 5 - Sexta-feira\n\n
+    ^ 6 - Finalizar operação
 
     + (1|2|3|4|5)
     - <set dia=<star>> O dia da semana esta correto? <call>mostrarDia <get dia></call> \n
@@ -15,6 +16,9 @@
     ^ 2 - Não
     ^ {topic=checar_dia}
 
+    + (6)
+    - Okay, até a próxima {topic=random}
+    
     // Sub tópico para verificar se o dia selecionado está correto
     > topic checar_dia
         + 1
@@ -42,11 +46,15 @@
     ^ 5 - 13h às 14h\n
     ^ 6 - 14h às 15h\n 
     ^ 7 - 15h às 16h\n 
-    ^ 8 - 16h às 17h
+    ^ 8 - 16h às 17h\n\n
+    ^ 9 - Finalizar operação
 
     + (1|2|3|4|5|6|7|8)
     - <set horario=<star>>
     ^ {topic=mostrar_agendamento}{@inicio}
+    
+    + (9)
+    - Okay, até a próxima {topic=random}
 
     + *
     - Infelizmente eu não tenho resposta para essa opção. {topic=horario}{@inicio}
