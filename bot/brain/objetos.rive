@@ -91,3 +91,8 @@
         return "Erro ao salvar a avaliação\n"
     }
 < object
+
+//Função para identificação
+> object mostrar javascript
+   return identificaçao();
+< object

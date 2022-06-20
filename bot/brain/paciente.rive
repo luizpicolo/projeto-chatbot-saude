@@ -71,6 +71,7 @@
 
         + 1
         - Checando se o CPF é válido... <call>checarCPF <get cpf></call>
+        ^ <call>mostrar</call>
         * <call>checarCPF <get cpf></call> == true => {topic=inserir_esf}{@inicio}
         * <call>checarCPF <get cpf></call> == false => {topic=inserir_cpf}{topic=checar_cpf}{@*}
         

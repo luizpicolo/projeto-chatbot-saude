@@ -135,6 +135,15 @@ const ChatBot = function() {
   self.checarCPF = function(cpf){
     return CPF.validate(cpf)  
   }
+
+  self.identificacao= function(){
+    let paciente = Paciente.findOne({ where: { [self.messager]: self.id.toString() } });
+    if(paciente.cpf != null){ 
+      return "vc já possui cadastro"
+    } else {
+      return "ainda não existe"
+    }
+  }
 }
 
 module.exports = ChatBot
