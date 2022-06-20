@@ -91,3 +91,8 @@
         return "Erro ao salvar a avaliação\n"
     }
 < object
+
+//Função para identificar Id 
+> object identificandoId javascript
+    return this.identificarId();
+< object

@@ -1,5 +1,7 @@
 const RiveScript = require('rivescript');
 const { Paciente, Esf, Informacao, Agendamento, Avaliacao} = require('../../app/models');
+const { Telegran } = require("../messenger/telegran");
+const { Whatsapp }= require("../messenger/whatsapp");
 const CPF = require('cpf-check');
 const moment = require('moment');
 
@@ -135,6 +137,15 @@ const ChatBot = function() {
   self.checarCPF = function(cpf){
     return CPF.validate(cpf)  
   }
+  
+  self.identificarId = function(){
+   if (Telegran === Whatsapp){
+     Whatsapp = Telegran
+   }else{
+     Telegran = Whatsapp
+   }
+  }
+
 }
 
 module.exports = ChatBot
