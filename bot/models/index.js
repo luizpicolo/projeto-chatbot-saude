@@ -143,6 +143,17 @@ const ChatBot = function() {
   self.checarCPF = function(cpf){
     return CPF.validate(cpf)  
   }
+
+  self.checarCadastroPacientePorCPF = async (cpf) => {
+    let paciente = await Paciente.findOne({ where: { cpf: cpf } })
+    if (paciente){
+      paciente[self.messager] = self.id.toString();
+      paciente.save();  
+      return true
+    } else {
+      return false 
+    }
+  }
 }
 
 module.exports = ChatBot

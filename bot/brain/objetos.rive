@@ -70,6 +70,10 @@
     return this.verificarCadastroPaciente();
 < object
 
+> object checarCadastroPacientePorCPF javascript
+    return this.checarCadastroPacientePorCPF(args[0])
+< object
+
 > object checarCPF javascript
     return this.checarCPF(args[0]);
 < object

@@ -7,7 +7,7 @@
     ^ 2 - Não \n 
 
     + 1
-    - {topic=inserir_nome}{@inicio}
+    - {topic=inserir_cpf}{@inicio}
 
     + 2
     - Que pena. Nos vemos em outra oportunidade {topic=random}. \n\n 
@@ -37,7 +37,7 @@
 
         + 1
         - Prazer em lhe conhecer, <get nome>! \n\n 
-        ^ {topic=inserir_cpf}{@inicio}
+        ^ {topic=inserir_esf}{@inicio}
 
         + 2
         - Está tudo bem, digite novamente o seu nome completo ou como você gostaria de ser chamada. {topic=inserir_nome}{topic=setnome}
@@ -71,7 +71,7 @@
 
         + 1
         - Checando se o CPF é válido... <call>checarCPF <get cpf></call>
-        * <call>checarCPF <get cpf></call> == true => {topic=inserir_esf}{@inicio}
+        * <call>checarCPF <get cpf></call> == true => {topic=checar_cadastro}{@inicio}
         * <call>checarCPF <get cpf></call> == false => {topic=inserir_cpf}{topic=checar_cpf}{@*}
         
         + 2
@@ -80,6 +80,17 @@
         + *
         - Seu cpf contém alguns erros ou não é válido 🙁, vamos tentar novamente. {topic=inserir_cpf}{@inicio}
     < topic
+< topic
+
+> topic checar_cadastro
+    + inicio
+    - Checando se o CPF existe...
+    * <call>checarCadastroPacientePorCPF <get cpf></call> == true => {topic=checar_cadastro}{@mensagem}
+    * <call>checarCadastroPacientePorCPF <get cpf></call> == false => {topic=inserir_nome}{@inicio}
+
+    + mensagem
+    - Verifiquei que você já possuia um cadastro. Então, atualizamos ele com sua nova identidade. \n\n
+    ^ {topic=random}{@inicio}
 < topic
 
 > topic inserir_esf
