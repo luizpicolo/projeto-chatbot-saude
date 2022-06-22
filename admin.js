@@ -3,7 +3,7 @@ const AdminJSExpress = require('@adminjs/express')
 const AdminJSSequelize = require('@adminjs/sequelize')
 const options = require('./config/options.js');
 AdminJS.registerAdapter(AdminJSSequelize);
-const { Usuario } = require('../models');
+const { Usuario } = require('./models');
 
 const adminJs = new AdminJS(options)
 
