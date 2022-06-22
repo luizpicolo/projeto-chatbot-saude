@@ -44,7 +44,7 @@ services:
     restart: always 
     container_name: web_app
     environment:
-      ENV: development
+      ENV: production
     volumes:
       - .:/app
       - node_modules:/app/node_modules
