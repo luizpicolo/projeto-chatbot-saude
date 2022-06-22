@@ -90,7 +90,7 @@
 
     + mensagem
     - Verifiquei que você já possuia um cadastro. Então, atualizamos ele com sua nova identidade. \n\n
-    ^ {topic=random}{@inicio}
+    ^ {topic=boas_vindas}{@inicio}
 < topic
 
 > topic inserir_esf
@@ -148,7 +148,7 @@
  + 1
  - Perfeito, estou salvando seu dados, só um minutinho.\n
  ^ <call>salvarCadastroPaciente "<get nome>" "<get cpf>" <get esf> "<get contato>"</call> 
- ^ {topic=random}{@*}
+ ^ {topic=boas_vindas}{@inicio}
 
  + 2
  - Digite novamente, com apenas números, seu telefone do contato. {topic=inserir_contato}{topic=set_contato}
