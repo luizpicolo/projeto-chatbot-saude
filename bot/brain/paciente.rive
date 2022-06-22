@@ -148,7 +148,7 @@
  + 1
  - Perfeito, estou salvando seu dados, só um minutinho.\n
  ^ <call>salvarCadastroPaciente "<get nome>" "<get cpf>" <get esf> "<get contato>"</call> 
- ^ {topic=random}{@oi}
+ ^ {topic=random}{@*}
 
  + 2
  - Digite novamente, com apenas números, seu telefone do contato. {topic=inserir_contato}{topic=set_contato}
