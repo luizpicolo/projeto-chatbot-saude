@@ -4,6 +4,7 @@ const AdminJSSequelize = require('@adminjs/sequelize')
 const options = require('./config/options.js');
 AdminJS.registerAdapter(AdminJSSequelize);
 const { Usuario } = require('./app/models');
+const bcrypt = require('bcryptjs');
 
 const adminJs = new AdminJS(options)
 
