@@ -74,7 +74,7 @@ Agora, criaremos o primeiro usuário
 
 Por fim, se tudo correr normalmente, iniciaremos o projeto e acessaremos o admin por meio do link http://localhost:3000 com usuário e senha presente no arquivo `database/seeders/20220411005746-usuario_admin.js`
 
-    docker-compose up
+    docker-compose -f docker-compose.yml -f development.yml up -d
 
 # Coisas a fazer
 
