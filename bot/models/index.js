@@ -36,6 +36,25 @@ const ChatBot = function() {
     }
   };
 
+  self.mostrarDataExamePacienteReagendadas = async function() {
+    try {
+      let paciente = await self.verificarCadastroPaciente();
+      let paciente_ = await Paciente.findByPk(paciente.id, {include: ['agendamentos']});
+      let agendamentos = paciente_.agendamentos;
+      let agendamento = [...agendamentos].pop()
+      let data = agendamento.data_agendamento;
+      //const data_atual = Date.now();
+
+      if(data){
+        return "Exame reagendado:\n " + self.formatarData(data);
+      } else{
+        return 'Nenhum reagendamento';
+      } 
+  } catch (error){
+       return 'Nenhum reagendamento' + error
+  } 
+};
+
   self.verificarCadastroPaciente = async () => {
     try {
       let paciente = await Paciente.findOne({ where: { [self.messager]: self.id.toString() } });
