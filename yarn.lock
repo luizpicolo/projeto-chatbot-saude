@@ -3964,10 +3964,10 @@ node-schedule@^2.1.0:
     long-timeout "0.1.1"
     sorted-array-functions "^1.3.0"
 
-node-telegram-bot-api@^0.57.0:
-  version "0.57.0"
-  resolved "https://registry.yarnpkg.com/node-telegram-bot-api/-/node-telegram-bot-api-0.57.0.tgz#eedd1958c629eab2bdf4c823de3205f1c3bf57ba"
-  integrity sha512-joLDEfPBB9BYi9ClB7X1+YGhlu5m/wB4YtM80jzHsFVtmfJn93bwpJsdh7DcA4lEVaxw7TsnIT0tux3ZLmk3vw==
+node-telegram-bot-api@^0.58.0:
+  version "0.58.0"
+  resolved "https://registry.yarnpkg.com/node-telegram-bot-api/-/node-telegram-bot-api-0.58.0.tgz#4127a556bd584431ec74187e35af17d2d9b6ed48"
+  integrity sha512-DmP5wBON9stOiunvUw/NvTb1clMYvj+c3NnSqbPZdVd6hNkNRnM97eqPZIH4UsBJ+4n+XFGpU33dCzjqD1sv3A==
   dependencies:
     array.prototype.findindex "^2.0.2"
     bl "^1.2.3"
@@ -3981,10 +3981,10 @@ node-telegram-bot-api@^0.57.0:
     request "^2.83.0"
     request-promise "^4.2.2"
 
-nodemon@^2.0.15:
-  version "2.0.16"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.16.tgz#d71b31bfdb226c25de34afea53486c8ef225fdef"
-  integrity sha512-zsrcaOfTWRuUzBn3P44RDliLlp263Z/76FPoHFr3cFFkOz0lTPAcIw8dCzfdVIx/t3AtDYCZRCDkoCojJqaG3w==
+nodemon@^2.0.18:
+  version "2.0.18"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.18.tgz#0f5a3aa7b4587f2626e6f01369deba89cb0462a2"
+  integrity sha512-uAvrKipi2zAz8E7nkSz4qW4F4zd5fs2wNGsTx+xXlP8KXqd9ucE0vY9wankOsPboeDyuUGN9vsXGV1pLn80l/A==
   dependencies:
     chokidar "^3.5.2"
     debug "^3.2.7"
