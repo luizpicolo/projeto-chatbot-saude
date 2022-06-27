@@ -13,7 +13,6 @@
     + 2
     - Seu exame está marcado para o seguinte horário:\n 
     ^ <call>mostrarDataExamePaciente</call>\n\n 
-    ^ <call>mostrarDataExamePacienteReagendadas</call>\n
     ^ {topic=menu_inicial}{@inicio} 
 
     + 3

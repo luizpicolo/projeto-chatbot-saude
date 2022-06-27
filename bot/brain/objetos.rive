@@ -58,11 +58,6 @@
     return data;
 < object
 
-> object mostrarDataExamePacienteReagendadas javascript
-    var data = this.mostrarDataExamePacienteReagendadas();
-    return data;
-< object
-
 > object salvarCadastroPaciente javascript
     if (this.salvarCadastroPaciente(args)){
         return "Sucesso 👍🏼 👍🏼 😁 😁\n"

@@ -25,35 +25,22 @@ const ChatBot = function() {
     try {
       let paciente = await self.verificarCadastroPaciente();
       let paciente_ = await Paciente.findByPk(paciente.id, {include: ['agendamentos']});
-      let data = paciente_.agendamentos[0].data_agendamento;
-      if (data){
-        return self.formatarData(data)
-      } else {
-        return "Ainda não há data agendada" 
-      }   
-    } catch (error) {
-      return "Ainda não há data agendada"  
-    }
-  };
-
-  self.mostrarDataExamePacienteReagendadas = async function() {
-    try {
-      let paciente = await self.verificarCadastroPaciente();
-      let paciente_ = await Paciente.findByPk(paciente.id, {include: ['agendamentos']});
+     
       let agendamentos = paciente_.agendamentos;
       let agendamento = [...agendamentos].pop()
-      let data = agendamento.data_agendamento;
-      //const data_atual = Date.now();
+      let data= agendamento.data_agendamento;
 
-      if(data){
-        return "Exame reagendado:\n " + self.formatarData(data);
-      } else{
-        return 'Nenhum reagendamento';
-      } 
-  } catch (error){
-       return 'Nenhum reagendamento' + error
-  } 
-};
+      let data_atual = new Date();
+
+      if (data > data_atual){
+        return self.formatarData(data);
+      } else if (data < data_atual){ 
+        return  "Não existe data agendada"; 
+    }
+    } catch (error) {
+      return "Não existe data agendada" + error
+    }
+  };
 
   self.verificarCadastroPaciente = async () => {
     try {
