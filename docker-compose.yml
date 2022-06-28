@@ -35,6 +35,8 @@ services:
       - .:/app
       - node_modules:/app/node_modules
     command: node /app/bot
+    depends_on:
+      - redis
 
   task: 
     build: 
@@ -63,7 +65,6 @@ services:
     command: npm start --host 0.0.0.0
     depends_on:
       - postgres
-      - redis
 
 volumes:
   postgres-data:

@@ -25,7 +25,6 @@ app.use(express.json());
 
 const jobs = {
   add: async(msg) => {
-    console.log(msg);
     if (msg.message){
       const chatId = msg.message.chat.id;
       const resp = await chatbot.loading_done(latinize(msg.message.text), chatId, 'telegran')
@@ -42,21 +41,26 @@ const jobs = {
   }
 }
 
-const worker = new Worker({connection: connectionDetails, queues: ["messageQueue"]}, jobs);
+const worker = new Worker({connection: connectionDetails, queues: ["messagesQueue"]}, jobs);
 const queue = new Queue({ connection: connectionDetails }, jobs);
 
 (async function() {
   const url = await ngrok.connect(port);
-  console.log(url)
+  console.log('----------------------');
+  console.log(`- URL: ${url}`)
+  console.log('----------------------');
   bot.setWebHook(`${url}/message`);
   await worker.connect();
   worker.start();
 })();
 
-app.post('/message', async (req, res, next) => {
+app.post('/message', async (req, res) => {
   await queue.connect();
-  await queue.enqueue("messageQueue", "add", req.body);
+  await queue.enqueue("messagesQueue", "add", req.body);
   await queue.end();
+  if (req.body.message){
+    res.sendStatus(200);
+  }
 });
 
 app.listen(port, () => {
