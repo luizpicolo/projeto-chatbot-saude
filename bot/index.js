@@ -1,5 +1,3 @@
-const telegran = require("./messenger/telegran");
-const whatsapp = require("./messenger/whatsapp");
+const bot = require("./messenger");
 
-telegran.start;
-whatsapp.start;
+bot.start;
