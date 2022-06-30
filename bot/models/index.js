@@ -1,9 +1,7 @@
 const RiveScript = require('rivescript');
 const { Paciente, Esf, Informacao, Agendamento, Avaliacao} = require('../../app/models');
 const CPF = require('cpf-check');
-const moment = require('moment');
-
-moment.locale('pt-br');
+const moment = require('moment').locale('pt-br');
 
 const ChatBot = function() {
   var self = this;

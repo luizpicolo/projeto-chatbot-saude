@@ -1,9 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
-const telegran = require('../../config/tokens')
-const bot = new TelegramBot(telegran.token, {polling: false});
-const moment = require('moment');
-
-moment.locale('pt-br');
+const Secrets = require('../../config/secrets.js')
+const bot = new TelegramBot(Secrets.telegran.token, {polling: false});
+const moment = require('moment').locale('pt-br');
 
 module.exports = (sequelize, DataTypes) => {
   

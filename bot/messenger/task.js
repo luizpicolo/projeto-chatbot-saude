@@ -1,10 +1,10 @@
 const TelegramBot = require('node-telegram-bot-api');
-const telegran = require('../config/tokens')
+const Secrets = require('../../config/secrets.js')
 const schedule = require('node-schedule');
-const { Agendamento, Paciente, Esf } = require('../app/models');
+const { Agendamento, Paciente, Esf } = require('../../app/models');
 const moment = require('moment').locale('pt-br');;
 const { Op } = require('sequelize');
-const bot = new TelegramBot(telegran.token, {polling: false});
+const bot = new TelegramBot(Secrets.telegran.token, {polling: false});
 
 schedule.scheduleJob('* * */12 * *', async () => {
   const data_final = moment(new Date()).add(2, 'd').format('YYYY/MM/DD');
