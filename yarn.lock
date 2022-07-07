@@ -1555,10 +1555,10 @@ accepts@~1.3.8:
     mime-types "~2.1.34"
     negotiator "0.6.3"
 
-adminjs@^5.10.4:
-  version "5.10.4"
-  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-5.10.4.tgz#4ae9f57b78e1b9c1c62e38691c97b938016f85bd"
-  integrity sha512-bBo8GoDUxBguqKk7Nb6X9L6zfauFJYzALaqGxgHe6iLEvwTNfUWy9aNcDC6ScIn8cpiLO6zopOJ0siWsUqi+gA==
+adminjs@^5.11.0:
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-5.11.0.tgz#2947a5a7b0f3efd5ff34e4cbac4fa3b50640fea0"
+  integrity sha512-sqGKskqwRTqZUXMWKNbpV+1HQT+oCamgISe3Kok+uvphCF2ARYuAz7tX1Vpq2jvuIVRuJoBmWnIx6+a4iK0fJw==
   dependencies:
     "@adminjs/design-system" "^2.2.4"
     "@babel/core" "^7.10.2"
@@ -5372,10 +5372,10 @@ sequelize-pool@^7.1.0:
   resolved "https://registry.yarnpkg.com/sequelize-pool/-/sequelize-pool-7.1.0.tgz#210b391af4002762f823188fd6ecfc7413020768"
   integrity sha512-G9c0qlIWQSK29pR/5U2JF5dDQeqqHRragoyahj/Nx4KOOQ3CPPfzxnfqFPCSB7x5UgjOgnZ61nSxz+fjDpRlJg==
 
-sequelize@^6.21.1:
-  version "6.21.1"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.21.1.tgz#91d3030c42e0a31125b501686e348bf4bd73a963"
-  integrity sha512-vbRreGOdBFLoGUrSINaNVLnaGZGSjhLq2b80tBezuqxbumMG3V2QkCnsvgggQ+LoRVYxERwWin1BL7YO4b5PSQ==
+sequelize@^6.21.2:
+  version "6.21.2"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.21.2.tgz#28d3c9c376471670c651e0345ea42e0017b6f112"
+  integrity sha512-K0c6j/Y6yfucBL9XYHMVWqYGFShPsj6ZzMrQcOAjqzyE+a1XMBOoTXXjRvJS+fz6cKeh2D3ZqhYDRwN8nfvOMQ==
   dependencies:
     "@types/debug" "^4.1.7"
     "@types/validator" "^13.7.1"
@@ -5713,10 +5713,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==
 
-twilio@^3.77.3:
-  version "3.77.3"
-  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.77.3.tgz#b96c68268435a12db7cc070febdfca2ab387a75a"
-  integrity sha512-t2hNaG1cMHRCm1GpHzYTi3q8D7UzU2cgSQTx18K3gXxRIwjf+f0RdAbX0TQDraEBG7zmsa2r2IJxT5Zx3VjFKA==
+twilio@^3.78.0:
+  version "3.78.0"
+  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.78.0.tgz#d03913d13dd9b74fc39fada686e001b9bdef6235"
+  integrity sha512-XowaxcOeLVNnvxx3t81seLZ/hE/N4z6yt9Vg+KtGhj81gf2ghUa57cr5QtqsI06qnknsGcId5I9X4mRoxZ4nMg==
   dependencies:
     axios "^0.26.1"
     dayjs "^1.8.29"
