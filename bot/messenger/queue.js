@@ -27,13 +27,20 @@ const queue = new Queue({ connection: Config.redis }, 'jobs');
   bot.setWebHook(`${url}/message`);
 })();
 
+app.get('/', async (req, res) => {
+  res.send("Hello World");
+})
+
 app.post('/message', async (req, res) => {
   await queue.connect();
   await queue.enqueue("messagesQueue", "add", req.body);
   await queue.end();
-  if (req.body.message){
-    res.sendStatus(200);
-  }
+  res.status(200).send("");
+});
+
+app.post('/message_out', async (req, res) => {
+  console.log(req.body)
+  res.status(200).send("");
 });
 
 app.listen(port, () => {
