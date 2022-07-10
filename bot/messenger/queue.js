@@ -28,18 +28,13 @@ const queue = new Queue({ connection: Config.redis }, 'jobs');
 })();
 
 app.get('/', async (req, res) => {
-  res.send("Hello World");
+  res.sendStatus(200)
 })
 
 app.post('/message', async (req, res) => {
   await queue.connect();
   await queue.enqueue("messagesQueue", "add", req.body);
   await queue.end();
-  res.status(200).send("");
-});
-
-app.post('/message_out', async (req, res) => {
-  console.log(req.body)
   res.status(200).send("");
 });
 
