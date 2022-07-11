@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         beforeUpdate : async (record, options) => {
           const paciente = await sequelize.models.pacientes.findByPk(record.pacienteId);
 
-          const msg = `Olá, ${paciente.name}, espero lhe encontrar muito bem.\n\nTenho novidades sobre o seu exame, ele foi agendado para ${moment(record.data_agendamento).format('LLL')} em sua ESF.\n\n Caso tenha problema com a data, poço fazer um novo agendamento para você, é só me chamar 😉.`;
+          const msg = `Olá, ${paciente.name}, espero lhe encontrar muito bem.\n\nTenho novidades sobre o seu exame, ele foi agendado para ${moment(record.data_agendamento).format('LLL')} em sua ESF.\n\n Caso tenha problema com a data, posso fazer um novo agendamento para você, é só me chamar 😉.`;
           
           if (record.status){
             if (paciente.telegran_id){
