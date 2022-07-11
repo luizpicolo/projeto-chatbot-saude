@@ -12,8 +12,6 @@ const bot = new TelegramBot(Secrets.telegran.token);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const queue = new Queue({ connection: Config.redis }, 'jobs');
-
 (async function() {
   let url = '';
   if (Secrets.webhooks.url == ''){
@@ -32,6 +30,7 @@ app.get('/', async (req, res) => {
 })
 
 app.post('/message', async (req, res) => {
+  const queue = new Queue({ connection: Config.redis }, 'jobs');
   await queue.connect();
   await queue.enqueue("messagesQueue", "add", req.body);
   await queue.end();
