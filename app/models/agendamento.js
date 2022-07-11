@@ -39,6 +39,8 @@ module.exports = (sequelize, DataTypes) => {
             if (paciente.whatsapp_id){
               client.messages.create({from: Secrets.whatsapp.from, body: msg, to: `whatsapp:${paciente.whatsapp_id}`})
             }
+
+            record.status = false;
           }
         }
       }
