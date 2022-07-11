@@ -30,10 +30,15 @@ app.get('/', async (req, res) => {
 })
 
 app.post('/message', async (req, res) => {
+  console.log("Start Queue")
   const queue = new Queue({ connection: Config.redis }, 'jobs');
+  queue.on("error", function (error) {
+    console.log(error);
+  });
   await queue.connect();
   await queue.enqueue("messagesQueue", "add", req.body);
   await queue.end();
+  console.log("Finish Queue")
   res.status(200).send("");
 });
 
