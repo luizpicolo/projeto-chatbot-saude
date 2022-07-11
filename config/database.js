@@ -9,7 +9,7 @@ module.exports = {
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
     dialectOptions: {
-        bigNumberStrings: true
+      bigNumberStrings: true
     }
   },
 
@@ -20,6 +20,9 @@ module.exports = {
       host: process.env.DB_HOST,
       port: process.env.DB_PORT,
       dialect: process.env.DB_DIALECT,
+      dialectOptions: {
+        bigNumberStrings: true
+      }
   },
   
   production: {
@@ -30,7 +33,7 @@ module.exports = {
       port: process.env.DB_PORT,
       dialect: process.env.DB_DIALECT,
       dialectOptions: {
-          bigNumberStrings: true,
+        bigNumberStrings: true,
       }
   },
   
