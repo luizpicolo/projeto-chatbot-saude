@@ -2,7 +2,8 @@ const TelegramBot = require('node-telegram-bot-api');
 const Secrets = require('../../config/secrets.js')
 const bot = new TelegramBot(Secrets.telegran.token, {polling: false});
 const client = require('twilio')(Secrets.whatsapp.accountSid, Secrets.whatsapp.authToken);
-const moment = require('moment').locale('pt-br');
+const moment = require('moment');
+moment.locale('pt-br');
 
 module.exports = (sequelize, DataTypes) => {
   
