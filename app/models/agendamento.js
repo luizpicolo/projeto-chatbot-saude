@@ -1,6 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const Secrets = require('../../config/secrets.js')
 const bot = new TelegramBot(Secrets.telegran.token, {polling: false});
+const client = require('twilio')(Secrets.whatsapp.accountSid, Secrets.whatsapp.authToken);
 const moment = require('moment').locale('pt-br');
 
 module.exports = (sequelize, DataTypes) => {
@@ -26,7 +27,16 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {
         beforeUpdate : async (record, options) => {
           const paciente = await sequelize.models.pacientes.findByPk(record.pacienteId);
-          bot.sendMessage(paciente.telegran_id, `Olá, ${paciente.name}, espero lhe encontrar muito bem.\n\nTenho novidades sobre o seu exame, ele foi agendado para ${moment(record.data_agendamento).format('LLL')} em sua ESF.`) ; 
+
+          const msg = `Olá, ${paciente.name}, espero lhe encontrar muito bem.\n\nTenho novidades sobre o seu exame, ele foi agendado para ${moment(record.data_agendamento).format('LLL')} em sua ESF.`;
+          
+          if (paciente.telegran_id){
+            bot.sendMessage(paciente.telegran_id, msg);
+          }
+          
+          if (paciente.whatsapp_id){
+            client.messages.create({from: Secrets.whatsapp.from, body: msg, to: `whatsapp:${paciente.whatsapp_id}`})
+          }
         }
       }
     });
