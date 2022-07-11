@@ -31,12 +31,14 @@ module.exports = (sequelize, DataTypes) => {
 
           const msg = `Olá, ${paciente.name}, espero lhe encontrar muito bem.\n\nTenho novidades sobre o seu exame, ele foi agendado para ${moment(record.data_agendamento).format('LLL')} em sua ESF.`;
           
-          if (paciente.telegran_id){
-            bot.sendMessage(paciente.telegran_id, msg);
-          }
-          
-          if (paciente.whatsapp_id){
-            client.messages.create({from: Secrets.whatsapp.from, body: msg, to: `whatsapp:${paciente.whatsapp_id}`})
+          if (record.status){
+            if (paciente.telegran_id){
+              bot.sendMessage(paciente.telegran_id, msg);
+            }
+            
+            if (paciente.whatsapp_id){
+              client.messages.create({from: Secrets.whatsapp.from, body: msg, to: `whatsapp:${paciente.whatsapp_id}`})
+            }
           }
         }
       }
