@@ -54,10 +54,10 @@
   dependencies:
     path-to-regexp "^6.2.0"
 
-"@adminjs/sequelize@^2.1.5":
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/@adminjs/sequelize/-/sequelize-2.1.5.tgz#421feaec5498f0d9f7d0b1f4a5d2e7a65bf09b5b"
-  integrity sha512-Qqe60xoNEQO1GI4sAnSHGNvg6k/Z3/5hvg0SgrYeEVpYJA3BhmCbgw+WaO8D4w8NrFMVTG0DCOy2NZ8i4BrG9A==
+"@adminjs/sequelize@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@adminjs/sequelize/-/sequelize-3.0.0.tgz#afc35ce1c0e729f20063090f55058e2c9f115e8d"
+  integrity sha512-vp5XxRubbcCqOqxs4B8vngcgCINLS9TvzEekpBemVyw4rceaLMBvO+C5CIOzOUbPwACSkTcvYoj7o+mF1x8MqA==
   dependencies:
     escape-regexp "0.0.1"
     flat "^5.0.0"
