@@ -47,10 +47,10 @@
     styled-system "^5.1.5"
     text-mask-addons "^3.8.0"
 
-"@adminjs/express@^4.1.0":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@adminjs/express/-/express-4.1.3.tgz#5d058ffe6fdb26233974a359c819620ddaaaafc9"
-  integrity sha512-zmA1dhwl31ub5lMT037aEc5Km8SlUxaeb3/xlO8qc44NdScliEiHxaKOm+EItSmsemV/OMOOHepTWqYcXtIgiQ==
+"@adminjs/express@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@adminjs/express/-/express-5.0.0.tgz#ef8fa8be022cfb3b62c8ca83d683bbec199b0289"
+  integrity sha512-/ej4WV0hi5Jgtk94ISCilfwmpwFYM1SC2q96M8iC18CMTTM/YUXglEdfMtOlujumvL80BSnxWWSK/2jep83z/Q==
   dependencies:
     path-to-regexp "^6.2.0"
 
