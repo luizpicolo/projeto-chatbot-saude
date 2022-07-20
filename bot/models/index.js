@@ -23,16 +23,22 @@ const ChatBot = function() {
 
   self.mostrarDataExamePaciente = async function() {
     try {
-      let paciente = await self.verificarCadastroPaciente();
+      let paciente = await Paciente.findOne({ where: { [self.messager]: self.id.toString() } });
       let paciente_ = await Paciente.findByPk(paciente.id, {include: ['agendamentos']});
-      let data = paciente_.agendamentos[0].data_agendamento;
-      if (data){
-        return self.formatarData(data)
-      } else {
-        return "Ainda não há data agendada" 
-      }   
+     
+      let agendamentos = paciente_.agendamentos;
+      let agendamento = [...agendamentos].pop();
+      let data = agendamento.data_agendamento;
+
+      let data_atual = new Date();
+
+      if (data > data_atual){
+        return self.formatarData(data);
+      } else { 
+        return "Não existe data agendada"; 
+    }
     } catch (error) {
-      return "Ainda não há data agendada"  
+      return "Não existe data agendada" + error;
     }
   };
 
