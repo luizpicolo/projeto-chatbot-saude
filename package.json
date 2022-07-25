@@ -7,9 +7,9 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@adminjs/express": "^4.1.0",
-    "@adminjs/sequelize": "^2.1.5",
-    "adminjs": "^6.0.0",
+    "@adminjs/sequelize": "^3.0.0",
+    "@adminjs/express": "^5.0.0",
+    "adminjs": "^6.0.1",
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
@@ -26,7 +26,7 @@
     "moment": "^2.29.4",
     "morgan": "~1.10.0",
     "ngrok": "^4.3.1",
-    "node-resque": "^9.1.7",
+    "node-resque": "^9.2.0",
     "node-schedule": "^2.1.0",
     "node-telegram-bot-api": "^0.58.0",
     "pg": "^8.7.3",
@@ -36,7 +36,7 @@
     "rivescript": "^2.2.0",
     "sequelize": "^6.21.3",
     "tslib": "^2.4.0",
-    "twilio": "^3.79.0"
+    "twilio": "^3.80.0"
   },
   "devDependencies": {
     "localtunnel": "^2.0.2",
