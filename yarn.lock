@@ -1828,10 +1828,10 @@ accepts@~1.3.8:
     mime-types "~2.1.34"
     negotiator "0.6.3"
 
-adminjs@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.0.1.tgz#5fa58a285a5cec9fb29dc3aafcd244c08402c99d"
-  integrity sha512-y3E1khczIjFc1dNO8jBF36PZKQA4Fj0ar3ZHcIT/MdP+xAtLOrH5CfZw2Fxd/KzqPmi7amvG9GcO2msCfxPwTw==
+adminjs@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.0.2.tgz#7d1d2b915ec36cf412b3cfa976b7631cba3910bc"
+  integrity sha512-RjI9ColZupzp+0wX3oShtZ/tTb95aQ8/7sf/PuQNPK6ZgWrNdLf1NnZiv9K74H3FoRoE0RN10zTRDa011jAlSA==
   dependencies:
     "@adminjs/design-system" "^3.0.0"
     "@babel/core" "^7.10.2"
