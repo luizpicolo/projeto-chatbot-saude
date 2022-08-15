@@ -1,5 +1,7 @@
-const AdminJS = require('adminjs')
-const AdminJSExpress = require('@adminjs/express')
+require('dotenv/config');
+
+const AdminJS = require('adminjs');
+const AdminJSExpress = require('@adminjs/express');
 const AdminJSSequelize = require('@adminjs/sequelize')
 const options = require('./config/options.js');
 AdminJS.registerAdapter(AdminJSSequelize);
@@ -20,8 +22,8 @@ if (process.env.NODE_ENV == 'production'){
       }
       return false
     },
-    cookieName: 'adminjs',
-    cookiePassword: 'some-secret-password-used-to-secure-cookie',
+    cookieName: process.env.COOKIE_NAME,
+    cookiePassword: process.env.COOKIE_PASSWORD,
   })
 } else {
   module.exports = adminRouter = AdminJSExpress.buildRouter(adminJs);
