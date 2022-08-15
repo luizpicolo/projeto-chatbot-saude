@@ -24,7 +24,7 @@ if (process.env.NODE_ENV == 'production'){
     },
     cookieName: process.env.COOKIE_NAME,
     cookiePassword: process.env.COOKIE_PASSWORD,
-  })
+  }, null, { resave: false, saveUninitialized: true });
 } else {
   module.exports = adminRouter = AdminJSExpress.buildRouter(adminJs);
 }
