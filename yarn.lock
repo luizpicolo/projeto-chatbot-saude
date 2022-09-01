@@ -1225,6 +1225,19 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@hello-pangea/dnd@^16.0.0":
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/@hello-pangea/dnd/-/dnd-16.0.0.tgz#b97791286395924ffbdb4cd0f27f06f2985766d5"
+  integrity sha512-FprEzwrGMvyclVf8pWTrPbUV7/ZFt6NmL76ePj1mMyZG195htDUkmvET6CBwKJTXmV+AE/GyK4Lv3wpCqrlY/g==
+  dependencies:
+    "@babel/runtime" "^7.18.9"
+    css-box-model "^1.2.1"
+    memoize-one "^6.0.0"
+    raf-schd "^4.0.3"
+    react-redux "^8.0.2"
+    redux "^4.2.0"
+    use-memo-one "^1.1.2"
+
 "@hypnosphi/create-react-context@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@hypnosphi/create-react-context/-/create-react-context-0.3.1.tgz#f8bfebdc7665f5d426cba3753e0e9c7d3154d7c6"
@@ -1295,19 +1308,6 @@
   version "2.11.6"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
-
-"@react-forked/dnd@^15.0.0":
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/@react-forked/dnd/-/dnd-15.0.0.tgz#7fcf1200486fa2a194153b1a0cebbaa642f99cf1"
-  integrity sha512-8AYjDxtlZzZcXlXjWv9B8ZiRzcHsn4xjvzA+FIo0u7EGuL1qlOrkvu13eHuBX33x4S4xWdsMYxY3EBpgt4qmHQ==
-  dependencies:
-    "@babel/runtime" "^7.18.9"
-    css-box-model "^1.2.1"
-    memoize-one "^6.0.0"
-    raf-schd "^4.0.3"
-    react-redux "^8.0.2"
-    redux "^4.2.0"
-    use-memo-one "^1.1.2"
 
 "@rollup/plugin-babel@^5.2.1":
   version "5.3.1"
@@ -1882,10 +1882,10 @@ acorn@^8.5.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
   integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
 
-adminjs@^6.1.4:
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.1.4.tgz#4a540bbceafe8c3bdd7ce0a21e4368dabab45c28"
-  integrity sha512-SZCLOW7yqhzFqthLPwwJ/YSUGxzlsVZ6tMKVB9Lmx6WX6LoLcVD9TzggsVP8UEW6bF2qW7LVv8I+7GzKq5HP8A==
+adminjs@^6.1.5:
+  version "6.1.5"
+  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.1.5.tgz#c6db59e89474a7d562ebd5b0010b11d24fd2fc39"
+  integrity sha512-nJ/fKUprFQGQHFiktKwfw/FD277M26F+PvechQFEgEwMvK2tzJj/bPq7Be0rG1w+QEPjpoRM2re+NBh1id0www==
   dependencies:
     "@adminjs/design-system" "^3.0.1"
     "@babel/core" "^7.10.2"
@@ -1896,7 +1896,7 @@ adminjs@^6.1.4:
     "@babel/preset-react" "^7.10.1"
     "@babel/preset-typescript" "^7.10.1"
     "@babel/register" "^7.10.1"
-    "@react-forked/dnd" "^15.0.0"
+    "@hello-pangea/dnd" "^16.0.0"
     "@rollup/plugin-babel" "^5.2.1"
     "@rollup/plugin-commonjs" "^22.0.1"
     "@rollup/plugin-json" "^4.1.0"
