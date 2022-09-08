@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package.json /app/package.json
 COPY yarn.lock /app/yarn.lock
 
+RUN apk add --no-cache git
 RUN yarn install
 
 ENV TZ=America/Campo_Grande
