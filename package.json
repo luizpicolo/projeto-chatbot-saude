@@ -36,7 +36,7 @@
     "rivescript": "^2.2.0",
     "sequelize": "^6.21.6",
     "tslib": "^2.4.0",
-    "twilio": "^3.82.0"
+    "twilio": "^3.82.1"
   },
   "devDependencies": {
     "localtunnel": "^2.0.2",
