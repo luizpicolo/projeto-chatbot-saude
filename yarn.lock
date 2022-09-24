@@ -1882,10 +1882,10 @@ acorn@^8.5.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
   integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
 
-adminjs@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.2.0.tgz#74f04d24446cccb7e830c33386a69f7abbf3dbab"
-  integrity sha512-9TjilbtXpbTytOEkRzNGTOfWmpV/Ov2de+hiqE3hDqCATEbjKXgg1jJWaxgRuSJCsnWa4YamtoFPkmno9/El9A==
+adminjs@^6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.2.1.tgz#83bbf7417a1d7cbfce9bf59b8d855dc172c2ca5d"
+  integrity sha512-h8t40On1t89MMcC+nbEDdstY72OzlyhDGS9MUlBRrHgzzz5TRcHA3wc+bVRrO9OvGNMaD/3by4H0U8LFRleDrA==
   dependencies:
     "@adminjs/design-system" "^3.0.1"
     "@babel/core" "^7.10.2"
@@ -5308,10 +5308,10 @@ restore-cursor@^3.1.0:
     onetime "^5.1.0"
     signal-exit "^3.0.2"
 
-retry-as-promised@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/retry-as-promised/-/retry-as-promised-5.0.0.tgz#f4ecc25133603a2d2a7aff4a128691d7bc506d54"
-  integrity sha512-6S+5LvtTl2ggBumk04hBo/4Uf6fRJUwIgunGZ7CYEBCeufGFW1Pu6ucUf/UskHeWOIsUcLOGLFXPig5tR5V1nA==
+retry-as-promised@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/retry-as-promised/-/retry-as-promised-6.1.0.tgz#11eca9a0f97804d552ec8e74bc4eb839bd226dc4"
+  integrity sha512-Hj/jY+wFC+SB9SDlIIFWiGOHnNG0swYbGYsOj2BJ8u2HKUaobNKab0OIC0zOLYzDy0mb7A4xA5BMo4LMz5YtEA==
 
 rivescript@^2.2.0:
   version "2.2.0"
@@ -5435,10 +5435,10 @@ sequelize-pool@^7.1.0:
   resolved "https://registry.yarnpkg.com/sequelize-pool/-/sequelize-pool-7.1.0.tgz#210b391af4002762f823188fd6ecfc7413020768"
   integrity sha512-G9c0qlIWQSK29pR/5U2JF5dDQeqqHRragoyahj/Nx4KOOQ3CPPfzxnfqFPCSB7x5UgjOgnZ61nSxz+fjDpRlJg==
 
-sequelize@^6.21.4:
-  version "6.21.4"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.21.4.tgz#8f5cb248d7cfc86ca9bf7e1f8306ac4bd83167de"
-  integrity sha512-5A0+giRhGHerTDRMsZ54TYRB8oQPWxeVscbc4USG9wRtw2Eqik0Vk0p2EVDrhoq7tmNBh2nHpd9YMfvGdwPEJw==
+sequelize@^6.21.6:
+  version "6.21.6"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.21.6.tgz#4e94b65fec9db212655130cc13dd8780e45aac33"
+  integrity sha512-dM3VqyhdCznAv2HY0zIdeFLTEt+Jnv54o6UaBm0pFGB+Ke9ax5AxBeF4BD9vwiON0gBk+ZJ8WZHQSnIq/POuvA==
   dependencies:
     "@types/debug" "^4.1.7"
     "@types/validator" "^13.7.1"
@@ -5449,7 +5449,7 @@ sequelize@^6.21.4:
     moment "^2.29.1"
     moment-timezone "^0.5.34"
     pg-connection-string "^2.5.0"
-    retry-as-promised "^5.0.0"
+    retry-as-promised "^6.1.0"
     semver "^7.3.5"
     sequelize-pool "^7.1.0"
     toposort-class "^1.0.1"
@@ -5781,10 +5781,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==
 
-twilio@^3.81.0:
-  version "3.81.0"
-  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.81.0.tgz#3b7c5b3cf534d2caf589e226e029c5faf7c960b3"
-  integrity sha512-ipeYAhAxD0ql/1Jq0DfTm1SvU+kdGcS+JJEbfWuCOG5vyyiB6C4nlLGR/tdojZDwuP7Dxf4TZ+oFE+6FL8c3Aw==
+twilio@^3.82.0:
+  version "3.82.0"
+  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.82.0.tgz#591c3964675ed01bd21f0a511f26c05f8033d564"
+  integrity sha512-7j21FIb0tq3udzlOitrnMaIBIMrnB0gO9sDzxHytNfZlMAZXWVIRSP3SodU9lxLTVjyZeFLfr7Qqs1Xafo36uQ==
   dependencies:
     axios "^0.26.1"
     dayjs "^1.8.29"
