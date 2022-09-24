@@ -1882,10 +1882,10 @@ acorn@^8.5.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
   integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
 
-adminjs@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.2.1.tgz#83bbf7417a1d7cbfce9bf59b8d855dc172c2ca5d"
-  integrity sha512-h8t40On1t89MMcC+nbEDdstY72OzlyhDGS9MUlBRrHgzzz5TRcHA3wc+bVRrO9OvGNMaD/3by4H0U8LFRleDrA==
+adminjs@^6.2.4:
+  version "6.2.4"
+  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.2.4.tgz#71bf13965f56346c86efb09db6dd2d5737a9c603"
+  integrity sha512-xjxzeHUWiZadFX9iDuRww6j+lqWtEV5Hl/i/DA8CXTbj7wtL8z/6ayvXe3AvqIWsV1wC2Jq71jQBD6s+3SyJdQ==
   dependencies:
     "@adminjs/design-system" "^3.0.1"
     "@babel/core" "^7.10.2"
@@ -4201,7 +4201,7 @@ mimic-response@^3.1.0:
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-3.1.0.tgz#2d1d59af9c1b129815accc2c46a022a5ce1fa3c9"
   integrity sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==
 
-minimatch@^3.0.4, minimatch@^3.1.1:
+minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
@@ -4325,15 +4325,15 @@ node-telegram-bot-api@^0.59.0:
     request "^2.83.0"
     request-promise "^4.2.2"
 
-nodemon@^2.0.19:
-  version "2.0.19"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.19.tgz#cac175f74b9cb8b57e770d47841995eebe4488bd"
-  integrity sha512-4pv1f2bMDj0Eeg/MhGqxrtveeQ5/G/UVe9iO6uTZzjnRluSA4PVWf8CW99LUPwGB3eNIA7zUFoP77YuI7hOc0A==
+nodemon@^2.0.20:
+  version "2.0.20"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.20.tgz#e3537de768a492e8d74da5c5813cb0c7486fc701"
+  integrity sha512-Km2mWHKKY5GzRg6i1j5OxOHQtuvVsgskLfigG25yTtbyfRGn/GNvIbRyOf1PSCKJ2aT/58TiuUsuOU5UToVViw==
   dependencies:
     chokidar "^3.5.2"
     debug "^3.2.7"
     ignore-by-default "^1.0.1"
-    minimatch "^3.0.4"
+    minimatch "^3.1.2"
     pstree.remy "^1.1.8"
     semver "^5.7.1"
     simple-update-notifier "^1.0.7"
@@ -5435,10 +5435,10 @@ sequelize-pool@^7.1.0:
   resolved "https://registry.yarnpkg.com/sequelize-pool/-/sequelize-pool-7.1.0.tgz#210b391af4002762f823188fd6ecfc7413020768"
   integrity sha512-G9c0qlIWQSK29pR/5U2JF5dDQeqqHRragoyahj/Nx4KOOQ3CPPfzxnfqFPCSB7x5UgjOgnZ61nSxz+fjDpRlJg==
 
-sequelize@^6.21.6:
-  version "6.21.6"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.21.6.tgz#4e94b65fec9db212655130cc13dd8780e45aac33"
-  integrity sha512-dM3VqyhdCznAv2HY0zIdeFLTEt+Jnv54o6UaBm0pFGB+Ke9ax5AxBeF4BD9vwiON0gBk+ZJ8WZHQSnIq/POuvA==
+sequelize@^6.23.1:
+  version "6.23.1"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.23.1.tgz#5762b471a5efc05fc021e321574335b95c67ae78"
+  integrity sha512-z8EwzAthEfw0kAaFfqjN36DF6EjfUIEScThl2meKTJLgQiRb+I0t+3J7faNAsC/bhQ6GVD4W7dKXP3DOtAjAKg==
   dependencies:
     "@types/debug" "^4.1.7"
     "@types/validator" "^13.7.1"
@@ -5781,10 +5781,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==
 
-twilio@^3.82.0:
-  version "3.82.0"
-  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.82.0.tgz#591c3964675ed01bd21f0a511f26c05f8033d564"
-  integrity sha512-7j21FIb0tq3udzlOitrnMaIBIMrnB0gO9sDzxHytNfZlMAZXWVIRSP3SodU9lxLTVjyZeFLfr7Qqs1Xafo36uQ==
+twilio@^3.82.1:
+  version "3.82.1"
+  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.82.1.tgz#77be64dbacefc4bdbb39f7cc2b1b9194f4fb4d89"
+  integrity sha512-3OIFYUjd0g25x2uZbCqsuT1o5r1r9o2/VDYcl1s+WS6323wxm/dvcMfAlMnLx0+YfG2XB7XS3u7BWZGNJoxtGA==
   dependencies:
     axios "^0.26.1"
     dayjs "^1.8.29"
