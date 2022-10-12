@@ -13,12 +13,12 @@
     prosemirror-transform "^1.2.1"
     prosemirror-view "^1.13.3"
 
-"@adminjs/design-system@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@adminjs/design-system/-/design-system-3.0.1.tgz#1a866244da3c1b833a53aee56307907a16295317"
-  integrity sha512-s7/zAMIWzCb/O2NHfOJ1TNcAVrWe1EeDref3fM1Y1Bsyocj6IkGBVU+0Q1AUIOzEQJlmDxFAyrPUzFgFOKUaoQ==
+"@adminjs/design-system@^3.0.3":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@adminjs/design-system/-/design-system-3.0.4.tgz#4de1d9a6c4bc67ccd3311c529da4d708c4c1c39b"
+  integrity sha512-lzRaw8ULJfyAR/IQHcW3YMSEla4nLn3tTywuo1bLvPgel4MNsC+qP0pFEIwT2LQTM87zNtTakcB4GEkJerOFqw==
   dependencies:
-    "@carbon/icons-react" "^10.49.0"
+    "@carbon/icons-react" "^11.8.0"
     "@hypnosphi/create-react-context" "^0.3.1"
     "@tiptap/extension-character-count" "2.0.0-beta.31"
     "@tiptap/extension-code" "2.0.0-beta.28"
@@ -39,7 +39,7 @@
     jw-paginate "^1.0.4"
     lodash "^4.17.20"
     polished "^3.6.5"
-    react-currency-input-field "https://github.com/dziraf/react-currency-input-field"
+    react-currency-input-field "^3.6.5"
     react-datepicker "^4.8.0"
     react-phone-input-2 "^2.15.1"
     react-select "^5.2.2"
@@ -1071,17 +1071,17 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
 
-"@carbon/icon-helpers@^10.28.0":
-  version "10.33.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.33.0.tgz#6b9e467529c7f950fe87a6f45ae0efdcb9b55a26"
-  integrity sha512-cdax+RiemAnrATgxL5zyCsD5CV1rJAVTjORXyKxhKSu9Fw6AFJEovJLR9+QQBbPaj/QNTB4o7mJ3YD15LLlB2w==
+"@carbon/icon-helpers@^10.34.0":
+  version "10.34.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.34.0.tgz#04b2957d07e0a98bb66c97c6b71430a955243887"
+  integrity sha512-Ov9EBc1tR/DDrMI0pN1drj2jb27ISmYFBLdDji+aivVJkLPy8R/jikJOsOBgIq2kUjQJYNN199k2acHKjZdYIg==
 
-"@carbon/icons-react@^10.49.0":
-  version "10.49.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.49.0.tgz#178f62fe2f5b343fa2d2034fb14203b01d44b894"
-  integrity sha512-Lzz0A/DfR0fBye0pyxA/7+EPr1e0GeA5qYlxoOwOVJrp/L2vFuKPOe7QLBHkNgKly/BAdqN9Uo1IHKbp6Zljeg==
+"@carbon/icons-react@^11.8.0":
+  version "11.9.0"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.9.0.tgz#9f74e041f3d5c0382ce35c43fa8b86d71db71484"
+  integrity sha512-T8itc4VMRPWeDjt48WXME63INhYswixMTFiJ+9qN95o2k/+L3/RCJeg1E5zUS2RXJXeZ+vqpEhNqhZ3uTmwB5g==
   dependencies:
-    "@carbon/icon-helpers" "^10.28.0"
+    "@carbon/icon-helpers" "^10.34.0"
     "@carbon/telemetry" "0.1.0"
     prop-types "^15.7.2"
 
@@ -1868,12 +1868,12 @@ acorn@^8.5.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
   integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
 
-adminjs@^6.2.4:
-  version "6.2.4"
-  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.2.4.tgz#71bf13965f56346c86efb09db6dd2d5737a9c603"
-  integrity sha512-xjxzeHUWiZadFX9iDuRww6j+lqWtEV5Hl/i/DA8CXTbj7wtL8z/6ayvXe3AvqIWsV1wC2Jq71jQBD6s+3SyJdQ==
+adminjs@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.4.0.tgz#d2236e973fabc4afc3afbb9590cd610b6161514a"
+  integrity sha512-djjRGfzEXD6J6uIHwZRGYuRQ4XEiWKJeHJy2bYK9QJlkhCQNih5KoIYmNaKdqEJFeg8sYpNNcsLeWT3PBjxQZw==
   dependencies:
-    "@adminjs/design-system" "^3.0.1"
+    "@adminjs/design-system" "^3.0.3"
     "@babel/core" "^7.10.2"
     "@babel/parser" "^7.10.2"
     "@babel/plugin-transform-runtime" "^7.10.1"
@@ -1894,20 +1894,20 @@ adminjs@^6.2.4:
     babel-plugin-styled-components "^1.11.1"
     commander "^5.1.0"
     flat "^4.1.0"
-    i18next "^21.6.16"
+    i18next "^21.9.2"
     lodash "^4.17.21"
     ora "^5.4.1"
     prop-types "^15.7.2"
     punycode "^2.1.1"
     react "^18.1.0"
     react-dom "^18.1.0"
-    react-i18next "^11.16.7"
+    react-i18next "^11.18.6"
     react-is "^18.1.0"
     react-redux "^8.0.2"
     react-router "^6.3.0"
     react-router-dom "^6.3.0"
     redux "^4.2.0"
-    rollup "^2.77.2"
+    rollup "^2.79.1"
     rollup-plugin-terser "^7.0.2"
     slash "^3.0.0"
     styled-components "^5.3.5"
@@ -3469,10 +3469,10 @@ https-proxy-agent@^5.0.0:
     agent-base "6"
     debug "4"
 
-i18next@^21.6.16:
-  version "21.9.2"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-21.9.2.tgz#3f7c5594393eb27117c1db4c38f5ec766e68de0e"
-  integrity sha512-00fVrLQOwy45nm3OtC9l1WiLK3nJlIYSljgCt0qzTaAy65aciMdRy9GsuW+a2AtKtdg9/njUGfRH30LRupV7ZQ==
+i18next@^21.9.2:
+  version "21.10.0"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-21.10.0.tgz#85429af55fdca4858345d0e16b584ec29520197d"
+  integrity sha512-YeuIBmFsGjUfO3qBmMOc0rQaun4mIpGKET5WDwvu8lU7gvwpcariZLNtL0Fzj+zazcHUrlXHiptcFhBMFaxzfg==
   dependencies:
     "@babel/runtime" "^7.17.2"
 
@@ -4940,10 +4940,10 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-"react-currency-input-field@https://github.com/dziraf/react-currency-input-field":
-  version "3.6.4"
-  uid "8899f7505f854eaeb58cc9674b69f0f379e65ca1"
-  resolved "https://github.com/dziraf/react-currency-input-field#8899f7505f854eaeb58cc9674b69f0f379e65ca1"
+react-currency-input-field@^3.6.5:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/react-currency-input-field/-/react-currency-input-field-3.6.5.tgz#67ed7005a2f1402cb70a23050f6b997e6d1452b6"
+  integrity sha512-tP62WFAhkVv0RGOQVGEPE3MfgciQ4gkiASlmLBDu6tdfMC3jFhIkLU1uqUy3glUvRHyT4avnX/YVVbbXKHLtnA==
 
 react-datepicker@^4.8.0:
   version "4.8.0"
@@ -4970,7 +4970,7 @@ react-fast-compare@^3.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-i18next@^11.16.7:
+react-i18next@^11.18.6:
   version "11.18.6"
   resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.18.6.tgz#e159c2960c718c1314f1e8fcaa282d1c8b167887"
   integrity sha512-yHb2F9BiT0lqoQDt8loZ5gWP331GwctHz9tYQ8A2EIEUu+CcEdjBLQWli1USG3RdWQt3W+jqQLg/d4rrQR96LA==
@@ -5303,7 +5303,7 @@ rollup-plugin-terser@^7.0.2:
     serialize-javascript "^4.0.0"
     terser "^5.0.0"
 
-rollup@^2.77.2:
+rollup@^2.79.1:
   version "2.79.1"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.79.1.tgz#bedee8faef7c9f93a2647ac0108748f497f081c7"
   integrity sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==
