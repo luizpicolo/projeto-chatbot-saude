@@ -4283,10 +4283,10 @@ node-releases@^2.0.6:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
 
-node-resque@^9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/node-resque/-/node-resque-9.2.0.tgz#e1bd78220391a413c9f8df845a71b1875fdd997c"
-  integrity sha512-N2pOCtapV0RmIp/psg0kA03AqWmgBlr3WQECsEzjBTbKq45pFC16LJYTgYvTuceGZLplDVTusdiqLPVfe4cxwA==
+node-resque@^9.2.1:
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/node-resque/-/node-resque-9.2.1.tgz#f02d3ba15a3694a3fde47d7065bbae163ed6611c"
+  integrity sha512-1m3WSaYKRz0KwxsX8mqyMojKoAqyLlWAqlMhZtOrzv8ztHAhJ24UhXSgwtGruw2+Lz5SpHdJLciblAlJzmin/g==
   dependencies:
     ioredis "^5.2.1"
 
