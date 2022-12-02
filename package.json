@@ -9,7 +9,7 @@
   "dependencies": {
     "@adminjs/sequelize": "^3.0.0",
     "@adminjs/express": "^5.0.1",
-    "adminjs": "^6.6.2",
+    "adminjs": "^6.7.0",
     "axios": "^1.1.3",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
