@@ -5296,10 +5296,10 @@ retry-as-promised@^6.1.0:
   resolved "https://registry.yarnpkg.com/retry-as-promised/-/retry-as-promised-6.1.0.tgz#11eca9a0f97804d552ec8e74bc4eb839bd226dc4"
   integrity sha512-Hj/jY+wFC+SB9SDlIIFWiGOHnNG0swYbGYsOj2BJ8u2HKUaobNKab0OIC0zOLYzDy0mb7A4xA5BMo4LMz5YtEA==
 
-rivescript@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/rivescript/-/rivescript-2.2.0.tgz#348fca5fcd55bdfa51f3a5155998374226ff9593"
-  integrity sha512-sL1c0snpNfB/DKoEQEA+8VpfXQJG/bwELzNLg2deQYqIANWOqvc4+bBF14YnCZLjNdAP8IPu/byV2yNZq5pWSw==
+rivescript@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/rivescript/-/rivescript-2.2.1.tgz#45bfc3b98ea84f5ece822faab041642eedf675fc"
+  integrity sha512-ea+8qS0pbOYdH4Q9yoyPiCsfbqQ6zQl77F3pa4JijnQCWEcI1F9sS/mFlo3Ihs0Yxkuee32sYEX2Zi7S1Y1gqg==
   dependencies:
     babel-loader "^7.1.5"
     babel-polyfill "^6.26.0"
