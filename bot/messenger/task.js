@@ -8,7 +8,9 @@ const client = require('twilio')(Secrets.whatsapp.accountSid, Secrets.whatsapp.a
 const bot = new TelegramBot(Secrets.telegran.token, {polling: false});
 moment.locale('pt-br');
 
-schedule.scheduleJob('0 8/8 * * *', async () => {
+// Todos os minutos   - */1 * * * *
+// A cada 8 horas     - 0 8/8 * * *
+schedule.scheduleJob('*/1 * * * *', async () => {
   const data_final = moment(new Date()).add(2, 'd').format('YYYY/MM/DD');
   const data_inicial = moment(new Date()).format('YYYY/MM/DD');
 
