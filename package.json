@@ -36,7 +36,7 @@
     "redis": "^4.3.1",
     "request": "^2.88.2",
     "rivescript": "^2.2.0",
-    "twilio": "^3.83.1",
+    "twilio": "^3.84.0",
     "sequelize": "^6.25.5",
     "tslib": "^2.4.1"
   },
