@@ -45,13 +45,12 @@ module.exports = (sequelize, DataTypes) => {
               .then(() => {
                   console.log("All messages sent, in series!");
               });
-              //bot.sendMessage(paciente.telegran_id, msg).then();
             }
             
             if (paciente.whatsapp_id){
-              client.messages.create({from: Secrets.whatsapp.from, body: msg, to: `whatsapp:${paciente.whatsapp_id}`}).then(
-
-              )
+              client.messages.create(
+                {from: Secrets.whatsapp.from, body: MSG, to: `whatsapp:${paciente.whatsapp_id}`}
+              ).then()
             }
 
             record.status = false;
