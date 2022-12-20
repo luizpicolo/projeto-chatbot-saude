@@ -37,7 +37,7 @@
     "request": "^2.88.2",
     "rivescript": "^2.2.0",
     "twilio": "^3.83.1",
-    "sequelize": "^6.25.5",
+    "sequelize": "^6.27.0",
     "tslib": "^2.4.1"
   },
   "devDependencies": {
