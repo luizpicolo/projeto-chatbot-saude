@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@adminjs/design-system@^3.0.3":
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/@adminjs/design-system/-/design-system-3.1.2.tgz#0a36fce0ece16c0a3b0ef84df4d5e39b0c9f635e"
-  integrity sha512-0QjmYLRZ4pds2jw3we+NuMDz6VwwU6EfJE5nrY7Di05ksICpaQBgCIkOY7k644gHnGQD1WwDTYkFFqVtycJh3g==
+"@adminjs/design-system@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@adminjs/design-system/-/design-system-3.1.5.tgz#69958a623d065e9232931236e370e3aeb7cdc108"
+  integrity sha512-fd3WMuPUZngW83/VJHPQpTUJBtjwewJxtjqZ2YWuHfU4WqsE3H3Yfv65kIxePgGKHgIFAMPcwaQgWBPExB8L9g==
   dependencies:
     "@carbon/icons-react" "^11.8.0"
     "@hypnosphi/create-react-context" "^0.3.1"
@@ -23,6 +23,7 @@
     "@tiptap/extension-text" "^2.0.0-beta.206"
     "@tiptap/extension-text-align" "^2.0.0-beta.206"
     "@tiptap/extension-typography" "^2.0.0-beta.206"
+    "@tiptap/prosemirror-tables" "^1.1.3"
     "@tiptap/react" "^2.0.0-beta.206"
     "@tiptap/starter-kit" "^2.0.0-beta.206"
     date-fns "2.15.0"
@@ -37,6 +38,7 @@
     prosemirror-model "^1.18.1"
     prosemirror-schema-list "^1.2.2"
     prosemirror-state "^1.4.1"
+    prosemirror-tables "^1.3.0"
     prosemirror-transform "^1.7.0"
     prosemirror-view "^1.28.2"
     react-currency-input-field "^3.6.5"
@@ -1642,6 +1644,11 @@
   resolved "https://registry.yarnpkg.com/@tiptap/extension-typography/-/extension-typography-2.0.0-beta.207.tgz#11eed84f09f2de80bbfc4af3cafac7383b10a6df"
   integrity sha512-EYZkQIvIDt4r/aYGarozU5qIWRPSoAHiqXNYUJ8IQ0zG1hDmugd0bsIbnXByxXVwetC5EpC2etLRjiLUHXYyUQ==
 
+"@tiptap/prosemirror-tables@^1.1.3":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@tiptap/prosemirror-tables/-/prosemirror-tables-1.1.4.tgz#e123978f13c9b5f980066ba660ec5df857755916"
+  integrity sha512-O2XnDhZV7xTHSFxMMl8Ei3UVeCxuMlbGYZ+J2QG8CzkK8mxDpBa66kFr5DdyAhvdi1ptpcH9u7/GMwItQpN4sA==
+
 "@tiptap/react@^2.0.0-beta.206":
   version "2.0.0-beta.207"
   resolved "https://registry.yarnpkg.com/@tiptap/react/-/react-2.0.0-beta.207.tgz#bb43a8741e3a0f40e16330f5f689ec165f01d173"
@@ -1863,12 +1870,12 @@ acorn@^8.5.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.1.tgz#0a3f9cbecc4ec3bea6f0a80b66ae8dd2da250b73"
   integrity sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==
 
-adminjs@^6.6.2:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.7.0.tgz#0442492a1d5badbcbddcc32ffbcbfd73448c0a2c"
-  integrity sha512-vliG+4qP7L0rBYXqBDOMx/UAl++hr/PLrHk0/tzcDCs6Nwm0JHh/rydE974J/YD5/CXBE5jo3MrCoijmG/uZoA==
+adminjs@^6.7.4:
+  version "6.7.4"
+  resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-6.7.4.tgz#8368b6f7de50c92b58bb76e2089dde6ba6d65be9"
+  integrity sha512-D9mjqO5FQMetlU/tfTyDSRer/7PdAWi28ZTzLFed25gLW/FhBF5kxoxRZAk3/du+MO7naaKKYsc6m0RypWp1JQ==
   dependencies:
-    "@adminjs/design-system" "^3.0.3"
+    "@adminjs/design-system" "^3.1.5"
     "@babel/core" "^7.10.2"
     "@babel/parser" "^7.10.2"
     "@babel/plugin-transform-runtime" "^7.10.1"
@@ -4756,7 +4763,7 @@ prosemirror-history@^1.3.0:
     prosemirror-transform "^1.0.0"
     rope-sequence "^1.3.0"
 
-prosemirror-keymap@^1.0.0, prosemirror-keymap@^1.2.0:
+prosemirror-keymap@^1.0.0, prosemirror-keymap@^1.1.2, prosemirror-keymap@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/prosemirror-keymap/-/prosemirror-keymap-1.2.0.tgz#d5cc9da9b712020690a994b50b92a0e448a60bf5"
   integrity sha512-TdSfu+YyLDd54ufN/ZeD1VtBRYpgZnTPnnbY+4R08DDgs84KrIPEPbJL8t1Lm2dkljFx6xeBE26YWH3aIzkPKg==
@@ -4764,7 +4771,7 @@ prosemirror-keymap@^1.0.0, prosemirror-keymap@^1.2.0:
     prosemirror-state "^1.0.0"
     w3c-keyname "^2.2.0"
 
-prosemirror-model@^1.0.0, prosemirror-model@^1.16.0, prosemirror-model@^1.18.1:
+prosemirror-model@^1.0.0, prosemirror-model@^1.16.0, prosemirror-model@^1.18.1, prosemirror-model@^1.8.1:
   version "1.18.3"
   resolved "https://registry.yarnpkg.com/prosemirror-model/-/prosemirror-model-1.18.3.tgz#d1026a78cff928fd600e90d87cf7d162e0a4e3fd"
   integrity sha512-yUVejauEY3F1r7PDy4UJKEGeIU+KFc71JQl5sNvG66CLVdKXRjhWpBW6KMeduGsmGOsw85f6EGrs6QxIKOVILA==
@@ -4780,7 +4787,7 @@ prosemirror-schema-list@^1.2.2:
     prosemirror-state "^1.0.0"
     prosemirror-transform "^1.0.0"
 
-prosemirror-state@^1.0.0, prosemirror-state@^1.2.2, prosemirror-state@^1.4.1:
+prosemirror-state@^1.0.0, prosemirror-state@^1.2.2, prosemirror-state@^1.3.1, prosemirror-state@^1.4.1:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/prosemirror-state/-/prosemirror-state-1.4.2.tgz#f93bd8a33a4454efab917ba9b738259d828db7e5"
   integrity sha512-puuzLD2mz/oTdfgd8msFbe0A42j5eNudKAAPDB0+QJRw8cO1ygjLmhLrg9RvDpf87Dkd6D4t93qdef00KKNacQ==
@@ -4789,14 +4796,25 @@ prosemirror-state@^1.0.0, prosemirror-state@^1.2.2, prosemirror-state@^1.4.1:
     prosemirror-transform "^1.0.0"
     prosemirror-view "^1.27.0"
 
-prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0, prosemirror-transform@^1.7.0:
+prosemirror-tables@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/prosemirror-tables/-/prosemirror-tables-1.3.0.tgz#262fa7d030f7bebef7b5fd9a045bce9a786c198c"
+  integrity sha512-ujzOb37O2ahmqI626Y0N0V/SZxuA9OGNYnsIMWdfecwkc8S8OShOqeD4kKUxpD0JcP81Z8qy/ulrXQuKhS4WUg==
+  dependencies:
+    prosemirror-keymap "^1.1.2"
+    prosemirror-model "^1.8.1"
+    prosemirror-state "^1.3.1"
+    prosemirror-transform "^1.2.1"
+    prosemirror-view "^1.13.3"
+
+prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0, prosemirror-transform@^1.2.1, prosemirror-transform@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/prosemirror-transform/-/prosemirror-transform-1.7.0.tgz#a8a0768f3ee6418d26ebef435beda9d43c65e472"
   integrity sha512-O4T697Cqilw06Zvc3Wm+e237R6eZtJL/xGMliCi+Uo8VL6qHk6afz1qq0zNjT3eZMuYwnP8ZS0+YxX/tfcE9TQ==
   dependencies:
     prosemirror-model "^1.0.0"
 
-prosemirror-view@^1.0.0, prosemirror-view@^1.1.0, prosemirror-view@^1.27.0, prosemirror-view@^1.28.2:
+prosemirror-view@^1.0.0, prosemirror-view@^1.1.0, prosemirror-view@^1.13.3, prosemirror-view@^1.27.0, prosemirror-view@^1.28.2:
   version "1.29.1"
   resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.29.1.tgz#9a4938d1a863ca76e23c6573d30e3ece2b17d9a0"
   integrity sha512-OhujVZSDsh0l0PyHNdfaBj6DBkbhYaCfbaxmTeFrMKd/eWS+G6IC+OAbmR9IsLC8Se1HSbphMaXnsXjupHL3UQ==
