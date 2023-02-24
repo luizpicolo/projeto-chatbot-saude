@@ -30,7 +30,7 @@
     "morgan": "~1.10.0",
     "ngrok": "^4.3.3",
     "node-resque": "^9.2.1",
-    "node-schedule": "^2.1.0",
+    "node-schedule": "^2.1.1",
     "node-telegram-bot-api": "^0.60.0",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
