@@ -64,13 +64,13 @@ No momento, nosso Bot da suporte apenas ao Telegram. Logo, altere os dados para 
 Após as configurações iniciais, vamos configurar o projeto junto ao docker.
 
     docker-compose build 
-    docker-compose run web yarn install
-    docker-compose run web yarn sequelize db:create
-    docker-compose run web yarn sequelize db:migrate
+    docker-compose run web npm install
+    docker-compose run web npx sequelize db:create
+    docker-compose run web npx sequelize db:migrate
 
 Agora, criaremos o primeiro usuário 
 
-    docker-compose run web yarn sequelize db:seed:all  
+    docker-compose run web npx sequelize db:seed:all  
 
 Por fim, se tudo correr normalmente, iniciaremos o projeto e acessaremos o admin por meio do link http://localhost:3000 com usuário e senha presente no arquivo `database/seeders/20220411005746-usuario_admin.js`
 
