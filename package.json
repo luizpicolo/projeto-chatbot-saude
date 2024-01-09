@@ -7,7 +7,6 @@
     "doc": "docs",
     "test": "test"
   },
-  "type": "module",
   "dependencies": {
     "@adminjs/express": "^5.0.1",
     "@adminjs/sequelize": "^3.0.0",
