@@ -40,41 +40,22 @@ Para que o projeto seja executada corretamente, nossa equipe recomenda o uso do 
 
 ## Configurando o projeto
 
-Altere as configurações para acesso ao banco de dados. Para tanto, renomeie o arquivo `config/database.example.js` para `config/database.js` e adicone os valores para os atributos.
+Altere as configurações para acesso ao banco de dados. Para tanto, renomeie o arquivo `.env.example` para `.env` e adicone os valores para os atributos.
 
-    module.exports = {
-      username: '',
-      password: '',
-      database: '',
-      host: '',
-      dialect: '',
-    }
+Após as configurações iniciais, vamos configurar o projeto junto ao docker em um ambiente de desenvolvimento.
 
-No momento, nosso Bot da suporte apenas ao Telegram. Logo, altere os dados para acesso ao seu Bot criado por meio do **BotFather**. Para isso, renomeie o arquivo `config/telegran.example.js` para `config/telegran.js` e adicone o token para o atributos.
-
-    module.exports = {
-      // Telegran
-      token: '',
-
-      // WhatsApp
-      accountSid: '',
-      authToken: ''
-    }
-
-Após as configurações iniciais, vamos configurar o projeto junto ao docker.
-
-    docker compose build 
-    docker compose run web npm install
-    docker compose run web npx sequelize db:create
-    docker compose run web npx sequelize db:migrate
+    docker compose -f docker-compose.yml -f compose/dev.yml build 
+    docker compose -f docker-compose.yml -f compose/dev.yml run web npm install
+    docker compose -f docker-compose.yml -f compose/dev.yml run web npx sequelize db:create
+    docker compose -f docker-compose.yml -f compose/dev.yml run web npx sequelize db:migrate
 
 Agora, criaremos o primeiro usuário 
 
-    docker-compose run web npx sequelize db:seed:all  
+    docker compose -f docker-compose.yml -f compose/dev.yml run web npx sequelize db:seed:all  
 
 Por fim, se tudo correr normalmente, iniciaremos o projeto e acessaremos o admin por meio do link http://localhost:3000 com usuário e senha presente no arquivo `database/seeders/20220411005746-usuario_admin.js`
 
-    docker compose -f docker-compose.yml -f development.yml up -d
+    docker compose -f docker-compose.yml -f compose/dev.yml up -d
 
 # Coisas a fazer
 
