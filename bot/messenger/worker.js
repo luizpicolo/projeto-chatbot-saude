@@ -11,11 +11,14 @@ const chatbot = new ChatBot();
 
 const jobs = {
   add: async(msg) => {
+    console.log("Start Worker")
     if (msg.message){
+      console.log("Send Telegran Message")
       const chatId = msg.message.chat.id;
       const resp = await chatbot.loading_done(latinize(msg.message.text), chatId, 'telegran')
       bot.sendMessage(chatId, resp);
     } else {
+      console.log("Send WhatsApp Message")
       client.messages
         .create({
           from: Secrets.whatsapp.from,
@@ -26,6 +29,7 @@ const jobs = {
           message => console.log(message.sid)
         );
     }
+    console.log("Finish Worker")
   }
 }
 
