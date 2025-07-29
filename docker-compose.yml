@@ -36,7 +36,6 @@ services:
       - 3001:3001
     volumes:
       - .:/app
-      - node_modules:/app/node_modules
     command: node /app/bot/messenger/queue.js
     depends_on:
       - redis
@@ -49,7 +48,6 @@ services:
     container_name: worker_app
     volumes:
       - .:/app
-      - node_modules:/app/node_modules
     command: node /app/bot/messenger/worker.js
     depends_on:
       - redis
@@ -62,7 +60,6 @@ services:
     container_name: task_app
     volumes:
       - .:/app
-      - node_modules:/app/node_modules
     command: node /app/bot/messenger/task.js
     
   web:
@@ -75,7 +72,6 @@ services:
       NODE_ENV: production
     volumes:
       - .:/app
-      - node_modules:/app/node_modules
     ports:
       - 3000:3000
     command: npm start --host 0.0.0.0
@@ -85,4 +81,3 @@ services:
 volumes:
   postgres-data:
   redis-data:
-  node_modules:
