@@ -41,7 +41,9 @@
     "rivescript": "^2.2.0",
     "sequelize": "^6.25.5",
     "tslib": "^2.4.1",
-    "twilio": "^3.83.1"
+    "twilio": "^3.83.1",
+    "@grpc/grpc-js": "^1.14.0",
+    "@grpc/proto-loader": "^0.8.0"
   },
   "devDependencies": {
     "factory-girl": "^5.0.4",

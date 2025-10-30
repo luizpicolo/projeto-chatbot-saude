@@ -1,9 +1,28 @@
 const TelegramBot = require('node-telegram-bot-api');
 const Secrets = require('../../config/secrets.js')
 const bot = new TelegramBot(Secrets.telegran.token, {polling: false});
-const client = require('twilio')(Secrets.whatsapp.accountSid, Secrets.whatsapp.authToken);
+//const client = require('twilio')(Secrets.whatsapp.accountSid, Secrets.whatsapp.authToken);
 const moment = require('moment');
 const Promise = require('bluebird');
+
+// gRPC
+const grpc = require('@grpc/grpc-js');
+const protoLoader = require('@grpc/proto-loader');
+const path = require('path');
+const { fileURLToPath } = require('url');
+
+const PROTO_PATH = path.join(__dirname, '../../proto', 'whatsapp.proto');
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+  keepCase: true,
+  longs: String,
+  enums: String,
+  defaults: true,
+  oneofs: true
+});
+const whatsappProto = grpc.loadPackageDefinition(packageDefinition).whatsapp;
+
+const client = new whatsappProto.WhatsAppService('host.docker.internal:50051', grpc.credentials.createInsecure()
+);
 
 moment.locale('pt-br');
 
@@ -48,9 +67,10 @@ module.exports = (sequelize, DataTypes) => {
             }
             
             if (paciente.whatsapp_id){
-              client.messages.create(
-                {from: Secrets.whatsapp.from, body: MSG, to: `whatsapp:${paciente.whatsapp_id}`}
-              ).then()
+              const clientID = paciente.whatsapp_id.replace('@c.us', '')
+              setTimeout(() => {
+                sendMessage(clientID, MSG);
+              }, 3000);
             }
 
             record.status = false;
@@ -69,3 +89,14 @@ module.exports = (sequelize, DataTypes) => {
     
     return Agendamento;
   }
+
+  // Função para enviar mensagem
+const sendMessage = (to, message) => {
+  client.SendMessage({ to, message }, (err, response) => {
+    if (err) {
+      console.error('Erro ao enviar mensagem:', err.message);
+    } else {
+      console.log('💬 Resposta:', response);
+    }
+  });
+}
