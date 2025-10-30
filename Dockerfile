@@ -11,4 +11,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 COPY . /app
 
+RUN mkdir -p /root/.node_modules/.adminjs && chmod -R 777 /root/.node_modules/.adminjs
+
 EXPOSE 3000
