@@ -77,7 +77,7 @@ function subscribeToMessages() {
 
 async function processIncomingMessage(message) {
   const lowerMessage = message.message.toLowerCase()
-  let response = await chatbot.loading_done(latinize(lowerMessage, message.from, 'whatsapp'));
+  let response = await chatbot.loading_done(latinize(lowerMessage), message.from, 'whatsapp');
   sendMessage(message.from, response);
 }
 
