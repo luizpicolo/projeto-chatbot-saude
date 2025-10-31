@@ -1,0 +1,1 @@
+grpcurl -plaintext -proto ./proto/whatsapp.proto -d '{"to": "5567999088371", "message": "Olá do gRPC!"}' localhost:50051 whatsapp.WhatsAppService/SendMessage

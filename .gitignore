@@ -1,3 +1,7 @@
-node_modules
 .env
+node_modules
+sessions
+.DS_Store
+server-whatsapp/node_modules
+server-whatsapp/sessions
 yarn-error.log

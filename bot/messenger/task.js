@@ -4,7 +4,6 @@ const schedule = require('node-schedule');
 const { Agendamento, Paciente, Esf } = require('../../app/models');
 const moment = require('moment');
 const { Op } = require('sequelize');
-const client = require('twilio')(Secrets.whatsapp.accountSid, Secrets.whatsapp.authToken);
 const bot = new TelegramBot(Secrets.telegran.token, {polling: false});
 moment.locale('pt-br');
 

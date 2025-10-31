@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package whatsapp;
+
+service WhatsAppService {
+  rpc SendMessage (SendMessageRequest) returns (SendMessageResponse);
+  rpc GetStatus (Empty) returns (StatusResponse);
+  rpc SubscribeToMessages (Empty) returns (stream IncomingMessage);
+}
+
+message SendMessageRequest {
+  string to = 1;      // Número do destino, ex: "5511999999999@c.us"
+  string message = 2; // Mensagem a ser enviada
+}
+
+message SendMessageResponse {
+  bool success = 1;
+  string info = 2;
+}
+
+message StatusResponse {
+  bool connected = 1;
+  string message = 2;
+}
+
+message IncomingMessage {
+  string from = 1;        // Número de quem enviou
+  string message = 2;     // Conteúdo da mensagem
+  string timestamp = 3;   // Timestamp da mensagem
+  string messageId = 4;   // ID da mensagem
+}
+
+message Empty {}

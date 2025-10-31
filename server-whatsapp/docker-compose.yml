@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    build: .
+    container_name: whatsapp-bot-gprc
+    ports:
+      - "50051:50051"
+    restart: unless-stopped
+    volumes:
+      - ./sessions:/usr/src/app/sessions
+    environment:
+      - NODE_ENV=production
+    tty: true
