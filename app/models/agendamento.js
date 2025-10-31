@@ -90,7 +90,7 @@ module.exports = (sequelize, DataTypes) => {
     return Agendamento;
   }
 
-  // Função para enviar mensagem
+// Função para enviar mensagem
 const sendMessage = (to, message) => {
   client.SendMessage({ to, message }, (err, response) => {
     if (err) {
