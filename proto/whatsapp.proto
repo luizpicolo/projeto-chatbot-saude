@@ -5,6 +5,7 @@ package whatsapp;
 service WhatsAppService {
   rpc SendMessage (SendMessageRequest) returns (SendMessageResponse);
   rpc GetStatus (Empty) returns (StatusResponse);
+  rpc SubscribeToMessages (Empty) returns (stream IncomingMessage);
 }
 
 message SendMessageRequest {
@@ -20,6 +21,13 @@ message SendMessageResponse {
 message StatusResponse {
   bool connected = 1;
   string message = 2;
+}
+
+message IncomingMessage {
+  string from = 1;        // Número de quem enviou
+  string message = 2;     // Conteúdo da mensagem
+  string timestamp = 3;   // Timestamp da mensagem
+  string messageId = 4;   // ID da mensagem
 }
 
 message Empty {}

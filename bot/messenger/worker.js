@@ -5,9 +5,27 @@ const ChatBot = require("../models");
 const Secrets = require('../../config/secrets');
 const Config = require('../../config/database.js');
 
-const client = require('twilio')(Secrets.whatsapp.accountSid, Secrets.whatsapp.authToken); 
 const bot = new TelegramBot(Secrets.telegran.token);
 const chatbot = new ChatBot();
+
+// gRPC
+const grpc = require('@grpc/grpc-js');
+const protoLoader = require('@grpc/proto-loader');
+const path = require('path');
+const { fileURLToPath } = require('url');
+
+const PROTO_PATH = path.join(__dirname, '../../proto', 'whatsapp.proto');
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+  keepCase: true,
+  longs: String,
+  enums: String,
+  defaults: true,
+  oneofs: true
+});
+const whatsappProto = grpc.loadPackageDefinition(packageDefinition).whatsapp;
+
+const client = new whatsappProto.WhatsAppService('host.docker.internal:50051', grpc.credentials.createInsecure()
+);
 
 const jobs = {
   add: async(msg) => {
@@ -32,6 +50,48 @@ const jobs = {
     console.log("Finish Worker")
   }
 }
+
+function subscribeToMessages() {
+  console.log("🔔 Inscrevendo-se para receber mensagens...")
+
+  const call = client.SubscribeToMessages({})
+
+  call.on("data", (message) => {
+    console.log("\n📩 Nova mensagem recebida:")
+    console.log(`   De: ${message.from}`)
+    console.log(`   Mensagem: ${message.message}`)
+    console.log(`   Timestamp: ${message.timestamp}`)
+    console.log(`   ID: ${message.messageId}`)
+
+    processIncomingMessage(message)
+  })
+
+  call.on("end", () => {
+    console.log("❌ Stream encerrado pelo servidor")
+  })
+
+  call.on("error", (err) => {
+    console.error("❌ Erro no stream:", err.message)
+  })
+}
+
+async function processIncomingMessage(message) {
+  const lowerMessage = message.message.toLowerCase()
+  let response = await chatbot.loading_done(latinize(lowerMessage, message.from, 'whatsapp'));
+  sendMessage(message.from, response);
+}
+
+function sendMessage(to, message) {
+  client.SendMessage({ to, message }, (err, response) => {
+    if (err) {
+      console.error("Erro ao enviar mensagem:", err.message)
+    } else {
+      console.log("💬 Resposta:", response)
+    }
+  })
+}
+
+subscribeToMessages()
 
 const worker = new Worker({connection: Config.redis, queues: ["messagesQueue"]}, jobs);
 
