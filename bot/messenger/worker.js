@@ -12,7 +12,6 @@ const chatbot = new ChatBot();
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
-const { fileURLToPath } = require('url');
 
 const PROTO_PATH = path.join(__dirname, '../../proto', 'whatsapp.proto');
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
