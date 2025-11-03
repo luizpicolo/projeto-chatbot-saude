@@ -1,16 +1,20 @@
 FROM node:16-alpine3.15
 
 WORKDIR /app
-COPY package.json package-lock.json /app/
 
-RUN apk add --no-cache git
-RUN npm install
+COPY package.json package-lock.json ./
+
+RUN apk add --no-cache git \
+  && npm ci --only=production
 
 ENV TZ=America/Campo_Grande
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-COPY . /app
+COPY . .
 
-RUN mkdir -p /root/.node_modules/.adminjs && chmod -R 777 /root/.node_modules/.adminjs
+RUN addgroup -S app && adduser -S app -G app
+USER app
 
 EXPOSE 3000
+
+CMD ["npm", "start"]
