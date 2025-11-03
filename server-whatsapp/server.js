@@ -35,13 +35,11 @@ server.addService(whatsappProto.WhatsAppService.service, {
   SubscribeToMessages: (call) => {
     console.log("🔔 Cliente conectado para receber mensagens")
 
-    // Register listener for incoming WhatsApp messages
     const unsubscribe = chatbot.onMessage((messageData) => {
       console.log(`📤 Enviando mensagem para cliente: ${messageData.from}`)
       call.write(messageData)
     })
 
-    // Handle client disconnect
     call.on("cancelled", () => {
       console.log("❌ Cliente desconectado")
       unsubscribe()

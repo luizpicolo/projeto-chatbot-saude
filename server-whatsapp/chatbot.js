@@ -35,7 +35,6 @@ class ChatBotWhatsApp {
     this.client.on("message", async (msg) => {
       console.log(`📩 Mensagem recebida de ${msg.from}: ${msg.body}`)
 
-      // Notify all registered listeners
       const messageData = {
         from: msg.from,
         message: msg.body,
@@ -51,7 +50,6 @@ class ChatBotWhatsApp {
         }
       })
 
-      // Keep the ping example
       if (msg.body === "!ping") {
         msg.reply("pong")
       }
@@ -63,7 +61,6 @@ class ChatBotWhatsApp {
   onMessage(callback) {
     this.messageListeners.push(callback)
     return () => {
-      // Return unsubscribe function
       const index = this.messageListeners.indexOf(callback)
       if (index > -1) {
         this.messageListeners.splice(index, 1)

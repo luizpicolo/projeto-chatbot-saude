@@ -23,7 +23,7 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 });
 const whatsappProto = grpc.loadPackageDefinition(packageDefinition).whatsapp;
 
-const client = new whatsappProto.WhatsAppService('host.docker.internal:50051', grpc.credentials.createInsecure()
+const server = new whatsappProto.WhatsAppService('host.docker.internal:50051', grpc.credentials.createInsecure()
 );
 
 const jobs = {
@@ -53,7 +53,7 @@ const jobs = {
 function subscribeToMessages() {
   console.log("🔔 Inscrevendo-se para receber mensagens...")
 
-  const call = client.SubscribeToMessages({})
+  const call = server.SubscribeToMessages({})
 
   call.on("data", (message) => {
     console.log("\n📩 Nova mensagem recebida:")
@@ -81,7 +81,7 @@ async function processIncomingMessage(message) {
 }
 
 function sendMessage(to, message) {
-  client.SendMessage({ to, message }, (err, response) => {
+  server.SendMessage({ to, message }, (err, response) => {
     if (err) {
       console.error("Erro ao enviar mensagem:", err.message)
     } else {
