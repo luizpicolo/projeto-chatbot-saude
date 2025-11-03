@@ -7,9 +7,27 @@ const { Op } = require('sequelize');
 const bot = new TelegramBot(Secrets.telegran.token, {polling: false});
 moment.locale('pt-br');
 
+// gRPC
+const grpc = require('@grpc/grpc-js');
+const protoLoader = require('@grpc/proto-loader');
+const path = require('path');
+
+const PROTO_PATH = path.join(__dirname, '../../proto', 'whatsapp.proto');
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+  keepCase: true,
+  longs: String,
+  enums: String,
+  defaults: true,
+  oneofs: true
+});
+const whatsappProto = grpc.loadPackageDefinition(packageDefinition).whatsapp;
+
+const client = new whatsappProto.WhatsAppService('host.docker.internal:50051', grpc.credentials.createInsecure()
+);
+
 // Todos os minutos   - */1 * * * *
 // A cada 8 horas     - 0 8/8 * * *
-schedule.scheduleJob('*/1 * * * *', async () => {
+schedule.scheduleJob('0 8/8 * * *', async () => {
   const data_final = moment(new Date()).add(2, 'd').format('YYYY/MM/DD');
   const data_inicial = moment(new Date()).format('YYYY/MM/DD');
 
@@ -37,7 +55,10 @@ schedule.scheduleJob('*/1 * * * *', async () => {
     }
     
     if (paciente.whatsapp_id){
-      client.messages.create({from: Secrets.whatsapp.from, body: msg, to: `whatsapp:${paciente.whatsapp_id}`})
+      const clientID = paciente.whatsapp_id.replace('@c.us', '')
+      setTimeout(() => {
+        sendMessage(clientID, msg);
+      }, 3000);
     }
   });
 });

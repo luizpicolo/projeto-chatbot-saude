@@ -36,15 +36,15 @@ const jobs = {
       bot.sendMessage(chatId, resp);
     } else {
       console.log("Send WhatsApp Message")
-      client.messages
-        .create({
-          from: Secrets.whatsapp.from,
-          body: await chatbot.loading_done(latinize(msg['Body']), msg['WaId'], 'whatsapp'),
-          to: `whatsapp:${msg['WaId']}`
-        })
-        .then(
-          message => console.log(message.sid)
-        );
+      // client.messages
+      //   .create({
+      //     from: Secrets.whatsapp.from,
+      //     body: await chatbot.loading_done(latinize(msg['Body']), msg['WaId'], 'whatsapp'),
+      //     to: `whatsapp:${msg['WaId']}`
+      //   })
+      //   .then(
+      //     message => console.log(message.sid)
+      //   );
     }
     console.log("Finish Worker")
   }
