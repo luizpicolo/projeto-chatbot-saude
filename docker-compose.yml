@@ -26,20 +26,20 @@ services:
     volumes:
       - redis-data:/var/lib/redis/data
 
-  queue: 
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    restart: always 
-    container_name: queue_app
-    ports:
-      - 3001:3001
-    volumes:
-      - .:/app
-      - node_modules:/app/node_modules
-    command: node /app/bot/messenger/queue.js
-    depends_on:
-      - redis
+  # queue: 
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   restart: always 
+  #   container_name: queue_app
+  #   ports:
+  #     - 3001:3001
+  #   volumes:
+  #     - .:/app
+  #     - node_modules:/app/node_modules
+  #   command: node /app/bot/messenger/queue.js
+  #   depends_on:
+  #     - redis
 
   worker: 
     build: 

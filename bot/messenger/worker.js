@@ -1,17 +1,15 @@
-const { Worker }  = require("node-resque");
+const { Worker, Queue }  = require("node-resque");
 const TelegramBot = require('node-telegram-bot-api');
 const latinize = require('latinize');
 const ChatBot = require("../models");
 const Secrets = require('../../config/secrets');
 const Config = require('../../config/database.js');
-
-const bot = new TelegramBot(Secrets.telegran.token);
-const chatbot = new ChatBot();
-
-// gRPC
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
+
+const bot = new TelegramBot(Secrets.telegran.token, { polling: true });
+const chatbot = new ChatBot();
 
 const PROTO_PATH = path.join(__dirname, '../../proto', 'whatsapp.proto');
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
@@ -23,78 +21,100 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 });
 const whatsappProto = grpc.loadPackageDefinition(packageDefinition).whatsapp;
 
-const server = new whatsappProto.WhatsAppService('host.docker.internal:50051', grpc.credentials.createInsecure()
+const server = new whatsappProto.WhatsAppService(
+  'host.docker.internal:50051',
+  grpc.credentials.createInsecure()
 );
 
-const jobs = {
-  add: async(msg) => {
-    console.log("Start Worker")
-    if (msg.message){
-      console.log("Send Telegran Message")
-      const chatId = msg.message.chat.id;
-      const resp = await chatbot.loading_done(latinize(msg.message.text), chatId, 'telegran')
-      bot.sendMessage(chatId, resp);
+const sendMessage = (to, message) => {
+  server.SendMessage({ to, message }, (err, response) => {
+    if (err) {
+      console.error("Erro ao enviar mensagem:", err.message);
     } else {
-      console.log("Send WhatsApp Message")
-      // client.messages
-      //   .create({
-      //     from: Secrets.whatsapp.from,
-      //     body: await chatbot.loading_done(latinize(msg['Body']), msg['WaId'], 'whatsapp'),
-      //     to: `whatsapp:${msg['WaId']}`
-      //   })
-      //   .then(
-      //     message => console.log(message.sid)
-      //   );
+      console.log("Mensagem enviada:", response);
     }
-    console.log("Finish Worker")
+  });
+}
+
+const processIncomingMessage = async (msg) => {
+  if (msg.channel === 'telegram') {
+    console.log("Processando mensagem do Telegram...");
+    const text = latinize(msg.text.toLowerCase());
+    const resp = await chatbot.loading_done(text, msg.chatId, 'telegran');
+    await bot.sendMessage(msg.chatId, resp);
+    console.log("Mensagem enviada ao Telegram");
+  } 
+  else if (msg.channel === 'whatsapp') {
+    console.log("Processando mensagem do WhatsApp...");
+    const text = latinize(msg.message.toLowerCase());
+    const resp = await chatbot.loading_done(text, msg.from, 'whatsapp');
+    sendMessage(msg.from, resp);
+    console.log("Mensagem enviada ao WhatsApp");
+  } 
+  else {
+    console.warn("Canal desconhecido:", msg);
   }
 }
 
-function subscribeToMessages() {
-  console.log("🔔 Inscrevendo-se para receber mensagens...")
+const jobs = {
+  processIncomingMessage: async (msg) => {
+    await processIncomingMessage(msg);
+  }
+};
 
-  const call = server.SubscribeToMessages({})
+const worker = new Worker(
+  { connection: Config.redis, queues: ["messagesQueue"] }, jobs
+);
 
-  call.on("data", (message) => {
-    console.log("\n📩 Nova mensagem recebida:")
-    console.log(`   De: ${message.from}`)
-    console.log(`   Mensagem: ${message.message}`)
-    console.log(`   Timestamp: ${message.timestamp}`)
-    console.log(`   ID: ${message.messageId}`)
+const subscribeToMessages = async () => {
+  console.log("Inscrevendo-se para receber mensagens via WhatsApp...");
+  const queue = new Queue({ connection: Config.redis }, {});
+  await queue.connect();
 
-    processIncomingMessage(message)
-  })
+  const call = server.SubscribeToMessages({});
+
+  call.on("data", async (message) => {
+    console.log("\nNova mensagem do WhatsApp:");
+    console.log(`De: ${message.from}`);
+    console.log(`Mensagem: ${message.message}`);
+    await queue.enqueue("messagesQueue", "processIncomingMessage", [{
+      channel: 'whatsapp',
+      from: message.from,
+      message: message.message
+    }]);
+    console.log("Mensagem WhatsApp adicionada à fila Redis");
+  });
 
   call.on("end", () => {
-    console.log("❌ Stream encerrado pelo servidor")
-  })
+    console.log("Stream WhatsApp encerrado");
+  });
 
   call.on("error", (err) => {
-    console.error("❌ Erro no stream:", err.message)
-  })
+    console.error("Erro no stream WhatsApp:", err.message);
+  });
 }
 
-async function processIncomingMessage(message) {
-  const lowerMessage = message.message.toLowerCase()
-  let response = await chatbot.loading_done(latinize(lowerMessage), message.from, 'whatsapp');
-  sendMessage(message.from, response);
+const subscribeToTelegram = async () => {
+  console.log("Inscrevendo-se para receber mensagens via Telegram...");
+  const queue = new Queue({ connection: Config.redis }, {});
+  await queue.connect();
+
+  bot.on('message', async (message) => {
+    console.log("\nNova mensagem do Telegram:");
+    console.log(`De: ${message.chat.id}`);
+    console.log(`Mensagem: ${message.text}`);
+    await queue.enqueue("messagesQueue", "processIncomingMessage", [{
+      channel: 'telegram',
+      chatId: message.chat.id,
+      text: message.text
+    }]);
+    console.log("Mensagem Telegram adicionada à fila Redis");
+  });
 }
-
-function sendMessage(to, message) {
-  server.SendMessage({ to, message }, (err, response) => {
-    if (err) {
-      console.error("Erro ao enviar mensagem:", err.message)
-    } else {
-      console.log("💬 Resposta:", response)
-    }
-  })
-}
-
-subscribeToMessages()
-
-const worker = new Worker({connection: Config.redis, queues: ["messagesQueue"]}, jobs);
 
 (async function() {
   await worker.connect();
   worker.start();
+  subscribeToMessages();
+  subscribeToTelegram();
 })();

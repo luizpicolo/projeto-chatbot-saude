@@ -22,12 +22,12 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 });
 const whatsappProto = grpc.loadPackageDefinition(packageDefinition).whatsapp;
 
-const client = new whatsappProto.WhatsAppService('host.docker.internal:50051', grpc.credentials.createInsecure()
+const server = new whatsappProto.WhatsAppService('host.docker.internal:50051', grpc.credentials.createInsecure()
 );
 
 // Todos os minutos   - */1 * * * *
 // A cada 8 horas     - 0 8/8 * * *
-schedule.scheduleJob('0 8/8 * * *', async () => {
+schedule.scheduleJob('*/1 * * * *', async () => {
   const data_final = moment(new Date()).add(2, 'd').format('YYYY/MM/DD');
   const data_inicial = moment(new Date()).format('YYYY/MM/DD');
 
@@ -56,9 +56,18 @@ schedule.scheduleJob('0 8/8 * * *', async () => {
     
     if (paciente.whatsapp_id){
       const clientID = paciente.whatsapp_id.replace('@c.us', '')
-      setTimeout(() => {
-        sendMessage(clientID, msg);
-      }, 3000);
+      sendMessage(clientID, msg);
     }
   });
 });
+
+// Função para enviar mensagem
+const sendMessage = (to, message) => {
+  server.SendMessage({ to, message }, (err, response) => {
+    if (err) {
+      console.error('Erro ao enviar mensagem:', err.message);
+    } else {
+      console.log('💬 Resposta:', response);
+    }
+  });
+}
