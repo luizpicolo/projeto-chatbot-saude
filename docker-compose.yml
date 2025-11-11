@@ -3,7 +3,7 @@ services:
     env_file:
     - .env
     image: postgres:14-alpine
-    restart: always 
+    restart: always
     container_name: postgres_db
     ports:
       - "5433:5432"
@@ -18,7 +18,7 @@ services:
     env_file:
     - .env
     image: 'redis:7-alpine'
-    restart: always 
+    restart: always
     container_name: redis_db
     command: redis-server --requirepass ${REDIS_PASSWORD}
     ports:
@@ -26,11 +26,11 @@ services:
     volumes:
       - redis-data:/var/lib/redis/data
 
-  # queue: 
-  #   build: 
+  # queue:
+  #   build:
   #     context: .
   #     dockerfile: Dockerfile
-  #   restart: always 
+  #   restart: always
   #   container_name: queue_app
   #   ports:
   #     - 3001:3001
@@ -41,11 +41,11 @@ services:
   #   depends_on:
   #     - redis
 
-  worker: 
-    build: 
+  worker:
+    build:
       context: .
       dockerfile: Dockerfile
-    restart: always 
+    restart: always
     container_name: worker_app
     volumes:
       - .:/app
@@ -53,23 +53,27 @@ services:
     command: node /app/bot/messenger/worker.js
     depends_on:
       - redis
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
-  task: 
-    build: 
+  task:
+    build:
       context: .
       dockerfile: Dockerfile
-    restart: always 
+    restart: always
     container_name: task_app
     volumes:
       - .:/app
       - node_modules:/app/node_modules
     command: node /app/bot/messenger/task.js
-    
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
   web:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
-    restart: always 
+    restart: always
     container_name: web_app
     environment:
       NODE_ENV: production
@@ -81,6 +85,8 @@ services:
     command: npm start --host 0.0.0.0
     depends_on:
       - postgres
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   postgres-data:

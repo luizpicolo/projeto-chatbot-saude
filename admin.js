@@ -10,7 +10,8 @@ const bcrypt = require('bcryptjs');
 
 const adminJs = new AdminJS(options)
 
-if (process.env.NODE_ENV == 'production'){
+//if (process.env.NODE_ENV == 'production'){
+if (true){
   module.exports = adminRouter = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
     authenticate: async (email, password) => {
       const usuario = await Usuario.findOne({ email })

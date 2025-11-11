@@ -74,10 +74,12 @@ const subscribeToMessages = async () => {
   const call = server.SubscribeToMessages({});
 
   call.on("data", async (message) => {
+    const id = message.id || `${message.from}-${Date.now()}`;
     console.log("\nNova mensagem do WhatsApp:");
     console.log(`De: ${message.from}`);
     console.log(`Mensagem: ${message.message}`);
     await queue.enqueue("messagesQueue", "processIncomingMessage", [{
+      id,
       channel: 'whatsapp',
       from: message.from,
       message: message.message
@@ -100,10 +102,12 @@ const subscribeToTelegram = async () => {
   await queue.connect();
 
   bot.on('message', async (message) => {
+    const id = `${message.chat.id}-${message.message_id}`;
     console.log("\nNova mensagem do Telegram:");
     console.log(`De: ${message.chat.id}`);
     console.log(`Mensagem: ${message.text}`);
     await queue.enqueue("messagesQueue", "processIncomingMessage", [{
+      id,
       channel: 'telegram',
       chatId: message.chat.id,
       text: message.text
